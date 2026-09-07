@@ -2,7 +2,8 @@ name: Update Schedule
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Runs every 4 hours
+    # 06:00 and 22:00 Moscow / Kazan time (UTC+3) -> 03:00 and 19:00 UTC
+    - cron: '0 3,19 * * *'
   workflow_dispatch:        # Allows manual run from GitHub Actions tab
 
 permissions:
