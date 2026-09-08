@@ -96,40 +96,69 @@ def parse_lesson_text(txt):
     room = ""
     building = ""
 
-    # 1. Building
-    bld_pattern = r"(?:\(|\b)(Кремл?\.?\s*\d+[А-Яа-яA-Za-z]?|УНИКС[^\)\;]*?|Кремл?\.?\s*16[А-Яа-яA-Za-z]?|Кремл?\.?\s*18|Кремл?\.?\s*35)\)?"
-    bld_match = re.search(bld_pattern, clean, flags=re.IGNORECASE)
-    if bld_match:
-        b = bld_match.group(1).strip("() \t\n")
-        if b.lower().startswith("крем"):
-            num_match = re.search(r"(\d+[А-Яа-яA-Za-z]?)", b)
-            if num_match:
-                b = f"Кремл. {num_match.group(1)}"
-        elif "уникс" in b.lower():
-            b = "УНИКС"
-        building = b
-    elif "уникс" in clean.lower():
-        building = "УНИКС"
-
-    # 2. Room
-    room_pattern = r"(?:ауд\.?\s*)+(.*?)(?=\s*(?:\(?\s*[Кк]ремл?\.?|\(?\s*УНИКС|\s*\-\s*д\.|\s*\-\s*лек\.|\s*\-\s*лаб\.|\s*\-\s*пр\.|\;|\)|$))"
-    r_match = re.search(room_pattern, clean, flags=re.IGNORECASE)
-    if r_match:
-        r_str = r_match.group(1).strip(" ,.-;()\t\n")
-        if r_str:
-            room = r_str
-
-    if not room and building:
-        f_match = re.search(r"(\d{3,4}[А-Яа-яA-Za-z]?)\s*\(?", clean)
-        if f_match:
-            room = f_match.group(1).strip()
-    elif not room and "уникс" in clean.lower():
-        room = "спорткомплекс"
-
-    # 3. Teachers
+    sub_cleans = [s.strip() for s in clean.split(";") if s.strip()]
+    subgroups = []
+    
     teacher_pattern = r"[А-ЯЁ][а-яё]+\s+[А-ЯЁ]\.\s*[А-ЯЁ]\.?"
-    teachers = re.findall(teacher_pattern, clean)
-    teacher_str = ", ".join(teachers)
+    
+    for sub in sub_cleans:
+        building = ""
+        room = ""
+        
+        # 1. Building
+        bld_pattern = r"(?:\(|)(Кремл?\.?\s*\d+[А-Яа-яA-Za-z]?|УНИКС[^\)\;]*?|Кремл?\.?\s*16[А-Яа-яA-Za-z]?|Кремл?\.?\s*18|Кремл?\.?\s*35)\)?"
+        bld_match = re.search(bld_pattern, sub, flags=re.IGNORECASE)
+        if bld_match:
+            b = bld_match.group(1).strip("() \\t\\n")
+            if b.lower().startswith("крем"):
+                num_match = re.search(r"(\d+[А-Яа-яA-Za-z]?)", b)
+                if num_match:
+                    b = f"Кремл. {num_match.group(1)}"
+            elif "уникс" in b.lower():
+                b = "УНИКС"
+            building = b
+        elif "уникс" in sub.lower():
+            building = "УНИКС"
+
+        # 2. Room
+        room_pattern = r"(?:ауд\.?\s*)+(.*?)(?=\s*(?:\(?\s*[Кк]ремл?\.?|\(?\s*УНИКС|\s*\-\s*д\.|\s*\-\s*лек\.|\s*\-\s*лаб\.|\s*\-\s*пр\.|\;|\)|$))"
+        r_match = re.search(room_pattern, sub, flags=re.IGNORECASE)
+        if r_match:
+            r_str = r_match.group(1).strip(" ,.-;()\\t\\n")
+            if r_str:
+                room = r_str
+
+        if not room and building:
+            f_match = re.search(r"(\d{3,4}[А-Яа-яA-Za-z]?)\s*\(?", sub)
+            if f_match:
+                room = f_match.group(1).strip()
+        elif not room and "уникс" in sub.lower():
+            room = "спорткомплекс"
+
+        # 3. Teachers
+        teachers = re.findall(teacher_pattern, sub)
+        room_list = [r.strip() for r in re.split(r'[,/]', room) if r.strip()] if room else []
+
+        if len(teachers) > 1 and len(room_list) > 1 and len(teachers) == len(room_list):
+            for t, r in zip(teachers, room_list):
+                subgroups.append({
+                    "teacher": t,
+                    "room": r,
+                    "building": building
+                })
+        else:
+            teacher_str = ", ".join(teachers)
+            subgroups.append({
+                "teacher": teacher_str,
+                "room": room,
+                "building": building
+            })
+
+    # If there are multiple subgroups, filter out completely empty ones
+    if len(subgroups) > 1:
+        subgroups = [sg for sg in subgroups if sg["teacher"] or sg["room"]]
+    if not subgroups:
+        subgroups = [{"teacher": "", "room": "", "building": ""}]
 
     # 4. Lesson Type
     clean_low = clean.lower()
@@ -150,7 +179,7 @@ def parse_lesson_text(txt):
 
     # 5. Subject
     subject = clean
-    room_rx = re.search(r"(?:ауд\.?|\b[0-9]{3,4}\s*\(?Кремл)", clean, flags=re.IGNORECASE)
+    room_rx = re.search(r"(?:ауд\.?|[0-9]{3,4}\s*\(?Кремл)", clean, flags=re.IGNORECASE)
     if room_rx:
         subject = subject[:room_rx.start()]
     
@@ -159,11 +188,13 @@ def parse_lesson_text(txt):
         if idx != -1:
             subject = subject[:idx]
     
-    for t in teachers:
+    all_teachers = re.findall(teacher_pattern, clean)
+    for t in all_teachers:
         subject = subject.replace(t, "")
     
     subject = re.sub(r"\s*-\s*д\.?(?:\s|$)", "", subject, flags=re.IGNORECASE)
-    subject = subject.strip(" ,.-;()\t\n")
+    subject = subject.split(";")[0]
+    subject = subject.strip(" ,.-;()\\t\\n")
     subject = re.sub(r"\s+", " ", subject)
 
     # 6. Custom time (PE)
@@ -182,19 +213,23 @@ def parse_lesson_text(txt):
                     "end": f"{h2:02d}:{m2}"
                 }
 
-    return {
-        "subject": subject,
-        "clean": clean,
-        "teacher": teacher_str,
-        "room": room,
-        "building": building,
-        "type": l_type,
-        "isAdditional": is_additional,
-        "weekType": week_type,
-        "weekStart": week_start,
-        "weekEnd": week_end,
-        "customTime": custom_time
-    }
+    results = []
+    for sg in subgroups:
+        results.append({
+            "subject": subject,
+            "clean": clean,
+            "teacher": sg["teacher"],
+            "room": sg["room"],
+            "building": sg["building"],
+            "type": l_type,
+            "isAdditional": is_additional,
+            "weekType": week_type,
+            "weekStart": week_start,
+            "weekEnd": week_end,
+            "customTime": custom_time
+        })
+
+    return results
 
 def parse_schedule_xlsx(file_path, source_url):
     print("Loading workbook...")
@@ -323,40 +358,41 @@ def parse_schedule_xlsx(file_path, source_url):
 
             lesson_chunks = split_cell_into_lesson_texts(val)
             for chunk in lesson_chunks:
-                parsed = parse_lesson_text(chunk)
-                if not parsed:
+                parsed_list = parse_lesson_text(chunk)
+                if not parsed_list:
                     continue
-                meta = row_meta.get(ri)
-                if not meta:
-                    continue
+                for parsed in parsed_list:
+                    meta = row_meta.get(ri)
+                    if not meta:
+                        continue
 
-                key = f"{meta['dayIdx']}_{meta['timeSlot']}_{parsed['clean']}_{parsed['weekStart']}_{parsed['weekEnd']}_{parsed['weekType']}"
-                if key in seen:
-                    continue
-                seen.add(key)
+                    key = f"{meta['dayIdx']}_{meta['timeSlot']}_{parsed['clean']}_{parsed['weekStart']}_{parsed['weekEnd']}_{parsed['weekType']}_{parsed['teacher']}_{parsed['room']}"
+                    if key in seen:
+                        continue
+                    seen.add(key)
 
-                lesson_counter += 1
-                start_slot = parsed["customTime"]["start"] if parsed["customTime"] else meta["start"]
-                end_slot = parsed["customTime"]["end"] if parsed["customTime"] else meta["end"]
-                time_slot = f"{start_slot}-{end_slot}" if parsed["customTime"] else meta["timeSlot"]
+                    lesson_counter += 1
+                    start_slot = parsed["customTime"]["start"] if parsed["customTime"] else meta["start"]
+                    end_slot = parsed["customTime"]["end"] if parsed["customTime"] else meta["end"]
+                    time_slot = f"{start_slot}-{end_slot}" if parsed["customTime"] else meta["timeSlot"]
 
-                lesson = {
-                    "id": f"{g['group']}-{lesson_counter}",
-                    "subject": parsed["subject"],
-                    "rawText": parsed["clean"],
-                    "teacher": parsed["teacher"],
-                    "room": parsed["room"],
-                    "building": parsed["building"],
-                    "type": parsed["type"],
-                    "isAdditional": parsed["isAdditional"],
-                    "weekType": parsed["weekType"],
-                    "weekStart": parsed["weekStart"],
-                    "weekEnd": parsed["weekEnd"],
-                    "time": time_slot,
-                    "timeStart": start_slot,
-                    "timeEnd": end_slot
-                }
-                days_map[meta["dayIdx"]]["lessons"].append(lesson)
+                    lesson = {
+                        "id": f"{g['group']}-{lesson_counter}",
+                        "subject": parsed["subject"],
+                        "rawText": parsed["clean"],
+                        "teacher": parsed["teacher"],
+                        "room": parsed["room"],
+                        "building": parsed["building"],
+                        "type": parsed["type"],
+                        "isAdditional": parsed["isAdditional"],
+                        "weekType": parsed["weekType"],
+                        "weekStart": parsed["weekStart"],
+                        "weekEnd": parsed["weekEnd"],
+                        "time": time_slot,
+                        "timeStart": start_slot,
+                        "timeEnd": end_slot
+                    }
+                    days_map[meta["dayIdx"]]["lessons"].append(lesson)
 
         days_list = []
         for dn, di in days_order:
