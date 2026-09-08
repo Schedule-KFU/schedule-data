@@ -100,28 +100,26 @@ def parse_lesson_text(txt):
     subgroups = []
     
     teacher_pattern = r"[А-ЯЁ][а-яё]+\s+[А-ЯЁ]\.\s*[А-ЯЁ]\.?"
-    
+
     for sub in sub_cleans:
         building = ""
         room = ""
-        
+
         # 1. Building
-        bld_pattern = r"(?:\(|)(Кремл?\.?\s*\d+[А-Яа-яA-Za-z]?|УНИКС[^\)\;]*?|Кремл?\.?\s*16[А-Яа-яA-Za-z]?|Кремл?\.?\s*18|Кремл?\.?\s*35)\)?"
-        bld_match = re.search(bld_pattern, sub, flags=re.IGNORECASE)
-        if bld_match:
-            b = bld_match.group(1).strip("() \\t\\n")
-            if b.lower().startswith("крем"):
-                num_match = re.search(r"(\d+[А-Яа-яA-Za-z]?)", b)
-                if num_match:
-                    b = f"Кремл. {num_match.group(1)}"
-            elif "уникс" in b.lower():
-                b = "УНИКС"
-            building = b
-        elif "уникс" in sub.lower():
+        kreml_match = re.search(r"(?:\(\s*)?[Кк]р(?:ем|ме)[л\.]*\s*(\d+[\s\-]*(?:[А-Яа-яA-Za-z])?)\)?", sub, flags=re.IGNORECASE)
+        spartak_match = re.search(r"(?:\(\s*)?[Сс]партаковская\s*(\d+[\s\-]*(?:[А-Яа-яA-Za-z])?)\)?", sub, flags=re.IGNORECASE)
+
+        if kreml_match:
+            num = kreml_match.group(1).replace(" ", "").replace("-", "").upper()
+            building = f"Кремл. {num}"
+        elif spartak_match:
+            num = spartak_match.group(1).replace(" ", "").replace("-", "").upper()
+            building = f"Спартаковская {num}"
+        elif "уникс" in sub.lower() or "нужина" in sub.lower():
             building = "УНИКС"
 
         # 2. Room
-        room_pattern = r"(?:ауд\.?\s*)+(.*?)(?=\s*(?:\(?\s*[Кк]ремл?\.?|\(?\s*УНИКС|\s*\-\s*д\.|\s*\-\s*лек\.|\s*\-\s*лаб\.|\s*\-\s*пр\.|\;|\)|$))"
+        room_pattern = r"(?:ауд\.?\s*)+(.*?)(?=\s*(?:\(?\s*[Кк]р(?:ем|ме)[л\.]*|\(?\s*[Сс]партаковская|\(?\s*УНИКС|\(?\s*[Нн]ужина|\s*\-\s*д\.|\s*\-\s*лек\.|\s*\-\s*лаб\.|\s*\-\s*пр\.|\;|\)|$))"
         r_match = re.search(room_pattern, sub, flags=re.IGNORECASE)
         if r_match:
             r_str = r_match.group(1).strip(" ,.-;()\\t\\n")
