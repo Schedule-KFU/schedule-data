@@ -133,9 +133,11 @@ def parse_lesson_text(txt):
 
     # 4. Lesson Type
     clean_low = clean.lower()
+    is_additional = bool(re.search(r"\s*-\s*д\.?(?:\s|$)", clean_low))
+
     if "лаб." in clean_low or "лаборатор" in clean_low:
         l_type = "lab"
-    elif " - д." in clean_low or "дистанцион" in clean_low:
+    elif "дистанцион" in clean_low:
         l_type = "distance"
     elif "эор" in clean_low:
         l_type = "eor"
@@ -160,6 +162,7 @@ def parse_lesson_text(txt):
     for t in teachers:
         subject = subject.replace(t, "")
     
+    subject = re.sub(r"\s*-\s*д\.?(?:\s|$)", "", subject, flags=re.IGNORECASE)
     subject = subject.strip(" ,.-;()\t\n")
     subject = re.sub(r"\s+", " ", subject)
 
@@ -186,6 +189,7 @@ def parse_lesson_text(txt):
         "room": room,
         "building": building,
         "type": l_type,
+        "isAdditional": is_additional,
         "weekType": week_type,
         "weekStart": week_start,
         "weekEnd": week_end,
@@ -344,6 +348,7 @@ def parse_schedule_xlsx(file_path, source_url):
                     "room": parsed["room"],
                     "building": parsed["building"],
                     "type": parsed["type"],
+                    "isAdditional": parsed["isAdditional"],
                     "weekType": parsed["weekType"],
                     "weekStart": parsed["weekStart"],
                     "weekEnd": parsed["weekEnd"],
