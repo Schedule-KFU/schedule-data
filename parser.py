@@ -19,6 +19,19 @@ def get_latest_xlsx_url():
     pattern = r'href=["\'](https?://kpfu\.ru/portal/docs/[^"\']*?\.xlsx)["\']'
     matches = re.findall(pattern, html, flags=re.IGNORECASE)
     
+    exclude_keywords = ["peresdach", "sessii", "zachet", "komissij", "zachislenie", "dop"]
+
+    for m in matches:
+        m_low = m.lower()
+        if "raspisanie" in m_low and any(k in m_low for k in ["sem", "курс", "kurs"]):
+            if not any(ex in m_low for ex in exclude_keywords):
+                return m
+
+    for m in matches:
+        m_low = m.lower()
+        if "raspisanie" in m_low and not any(ex in m_low for ex in exclude_keywords):
+            return m
+
     for m in matches:
         if "raspisanie" in m.lower():
             return m
@@ -91,7 +104,7 @@ def parse_lesson_text(txt):
     elif re.search(r"\bч/н\b|\(ч/н\)", trimmed, flags=re.IGNORECASE):
         week_type = "even"
 
-    clean = re.sub(r"^\s*\(\s*(?:с\s+)?[^\)]*(?:нед|недел|[нч]/н)[^\)]*\)\s*", "", trimmed, flags=re.IGNORECASE).strip()
+    clean = re.sub(r"^\s*\(\s*(?:с\s+)?[^\)]*(?:нед|недел|[нч]/н|\d+\s*-\s*\d+)[^\)]*\)\s*(?:нед\.?)?\s*", "", trimmed, flags=re.IGNORECASE).strip()
 
     room = ""
     building = ""
@@ -126,12 +139,14 @@ def parse_lesson_text(txt):
             if r_str:
                 room = r_str
 
-        if not room and building:
-            f_match = re.search(r"(\d{3,4}[А-Яа-яA-Za-z]?)\s*\(?", sub)
-            if f_match:
-                room = f_match.group(1).strip()
-        elif not room and "уникс" in sub.lower():
+        if building == "УНИКС" or "уникс" in sub.lower() or "спорткомплекс" in sub.lower():
             room = "спорткомплекс"
+        elif not room and building:
+            f_match = re.search(r"\b(\d{3,4}[А-Яа-яA-Za-z]?)\b", sub)
+            if f_match:
+                candidate = f_match.group(1).strip()
+                if candidate not in ["2024", "2025", "2026", "2027"]:
+                    room = candidate
 
         # 3. Teachers
         teachers = re.findall(teacher_pattern, sub)
@@ -168,6 +183,8 @@ def parse_lesson_text(txt):
         l_type = "distance"
     elif "эор" in clean_low:
         l_type = "eor"
+    elif "цор" in clean_low:
+        l_type = "cor"
     elif "практи" in clean_low or "пр." in clean_low:
         l_type = "practice"
     elif "лек." in clean_low or "лекция" in clean_low:
@@ -177,7 +194,7 @@ def parse_lesson_text(txt):
 
     # 5. Subject
     subject = clean
-    room_rx = re.search(r"(?:ауд\.?|[0-9]{3,4}\s*\(?Кремл)", clean, flags=re.IGNORECASE)
+    room_rx = re.search(r"(?:ауд\.?|\b[0-9]{3,4}\s*\(?\s*[Кк]р(?:ем|ме)[л\.]*)", clean, flags=re.IGNORECASE)
     if room_rx:
         subject = subject[:room_rx.start()]
     
@@ -192,7 +209,13 @@ def parse_lesson_text(txt):
     
     subject = re.sub(r"\s*-\s*д\.?(?:\s|$)", "", subject, flags=re.IGNORECASE)
     subject = subject.split(";")[0]
-    subject = subject.strip(" ,.-;()\\t\\n")
+    subject = subject.strip(" ,.-;:\t\n")
+    if subject.endswith(")") and subject.count(")") > subject.count("("):
+        subject = subject[:-1].strip(" ,.-;:\t\n")
+    if subject.startswith("(") and subject.count("(") > subject.count(")"):
+        subject = subject[1:].strip(" ,.-;:\t\n")
+    if subject.startswith(")") and subject.count(")") > subject.count("("):
+        subject = subject[1:].strip(" ,.-;:\t\n")
     subject = re.sub(r"\s+", " ", subject)
 
     # 6. Custom time (PE)
@@ -213,13 +236,37 @@ def parse_lesson_text(txt):
 
     results = []
     for sg in subgroups:
+        t_type = l_type
+        if t_type == "other":
+            r_str = sg["room"]
+            b_str = sg["building"]
+            m_num = re.search(r"\d+", r_str)
+            if m_num:
+                r_num = int(m_num.group(0))
+                if "35" in b_str:
+                    # Floors <= 2: 1xx, 2xx (108, 109, 216, 218) are lecture halls
+                    if r_num < 300:
+                        t_type = "lecture"
+                    else:
+                        t_type = "practice"
+                elif "16" in b_str:
+                    # Floor 1: 1xx (110, 112) are lecture halls; 200+ are practice/labs
+                    if 100 <= r_num < 200:
+                        t_type = "lecture"
+                    else:
+                        t_type = "practice"
+                elif "спартак" in b_str.lower():
+                    t_type = "practice"
+            elif b_str == "УНИКС" or "спорт" in clean_low or "культур" in clean_low:
+                t_type = "practice"
+
         results.append({
             "subject": subject,
             "clean": clean,
             "teacher": sg["teacher"],
             "room": sg["room"],
             "building": sg["building"],
-            "type": l_type,
+            "type": t_type,
             "isAdditional": is_additional,
             "weekType": week_type,
             "weekStart": week_start,

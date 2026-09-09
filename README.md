@@ -95,12 +95,13 @@ This is the most detailed entity.
 - **`room`**: Room number. If a subgroup spans multiple rooms, they are separated by commas (e.g., `706,707`).
 - **`building`**: The building name (e.g., `Кремл. 35`, `УНИКС`).
 - **`type`**: Type of the lesson. Enum:
-  - `"lecture"`: Лекция
-  - `"practice"`: Практическое занятие
+  - `"lecture"`: Лекция (включая поточные лекционные залы 1-2 этажей)
+  - `"practice"`: Практическое занятие (включая аудитории верхних этажей и физкультуру)
   - `"lab"`: Лабораторная работа
   - `"distance"`: Дистанционное занятие
   - `"eor"`: ЭОР (Электронный образовательный ресурс)
-  - `"other"`: Другое (тип не указан явно)
+  - `"cor"`: ЦОР (Цифровой образовательный ресурс на базе edu.kpfu.ru)
+  - `"other"`: Другое (тип не указан явно и не может быть определен по аудитории)
 - **`isAdditional`**: Boolean. `true` if the lesson is marked as "дополнительная пара" (suffix `- д.`). The UI might want to highlight these differently.
 - **`weekType`**: Describes the parity/recurrence of the lesson. Enum:
   - `"all"`: Every week
