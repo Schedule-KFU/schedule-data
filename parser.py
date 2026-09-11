@@ -104,7 +104,7 @@ def parse_lesson_text(txt):
     elif re.search(r"\bч/н\b|\(ч/н\)", trimmed, flags=re.IGNORECASE):
         week_type = "even"
 
-    clean = re.sub(r"^\s*\(\s*(?:с\s+)?[^\)]*(?:нед|недел|[нч]/н|\d+\s*-\s*\d+)[^\)]*\)\s*(?:нед\.?)?\s*", "", trimmed, flags=re.IGNORECASE).strip()
+    clean = re.sub(r"^\s*(?:(?:с|до)\s+\d{1,2}[.:]\d{2}\s*|\d{1,2}[.:]\d{2}\s*-\s*\d{1,2}[.:]\d{2}\s*|[нч]/н\s+)*\(\s*(?:с\s+)?[^\)]*(?:нед|недел|[нч]/н|\d+\s*-\s*\d+)[^\)]*\)\s*(?:нед\.?)?\s*", "", trimmed, flags=re.IGNORECASE).strip()
 
     room = ""
     building = ""
@@ -209,6 +209,13 @@ def parse_lesson_text(txt):
     
     subject = re.sub(r"\s*-\s*д\.?(?:\s|$)", "", subject, flags=re.IGNORECASE)
     subject = subject.split(";")[0]
+
+    # Clean format/EOR/distance markers
+    subject = re.sub(r"\s*-\s*(?:лекция|занятие\s+проводится|в)\s*(?:в\s+)?(?:дистанционном\s+формате|формате\s+[ЭэЦц][Оо][Рр]|формате\s+ДО|[ЭэЦц][Оо][Рр]).*", "", subject, flags=re.IGNORECASE)
+    subject = re.sub(r"\s*-\s*в\s+формате.*", "", subject, flags=re.IGNORECASE)
+    subject = re.sub(r"\s*\(?\bв\s+формате\s+[ЭэЦц][Оо][Рр]\)?", "", subject, flags=re.IGNORECASE)
+    subject = re.sub(r"\s*-\s*(?:дистанционн|в\s+дистанционн).*", "", subject, flags=re.IGNORECASE)
+
     subject = subject.strip(" ,.-;:\t\n")
     if subject.endswith(")") and subject.count(")") > subject.count("("):
         subject = subject[:-1].strip(" ,.-;:\t\n")
@@ -328,7 +335,8 @@ def parse_schedule_xlsx(file_path, source_url):
                 final_name = f"09-{final_name}"
 
             course_name = cur_course
-            if ".04." in cur_major or "магистр" in cur_major.lower():
+            is_master = ".04." in cur_major or "магистр" in cur_major.lower() or "магистр" in cur_course.lower()
+            if is_master:
                 if "09-6" in final_name:
                     course_name = "1 курс (магистратура)"
                 elif "09-5" in final_name:
@@ -336,11 +344,39 @@ def parse_schedule_xlsx(file_path, source_url):
                 else:
                     course_name = "Магистратура"
 
+            m_base = re.match(r"^(09-\d{3})", final_name)
+            base = m_base.group(1) if m_base else final_name
+            m_sub = re.search(r"\((\d+)\)", final_name)
+            subgrp = m_sub.group(1) if m_sub else ""
+
+            rem = final_name.replace(base, "")
+            if subgrp:
+                rem = re.sub(r"\(" + subgrp + r"\)", "", rem)
+            spec = rem.strip(" ()")
+
+            if is_master:
+                c_num = "1 курс" if "09-6" in base else "2 курс"
+                if subgrp:
+                    clean_name = f"{base} ({subgrp}) ({c_num})"
+                    short_name = f"{base} ({subgrp})"
+                else:
+                    clean_name = f"{base} ({c_num})"
+                    short_name = base
+            else:
+                if subgrp:
+                    clean_name = f"{base} ({subgrp})"
+                    short_name = f"{base} ({subgrp})"
+                else:
+                    clean_name = base
+                    short_name = base
+
             groups.append({
                 "colIdx": ci,
                 "course": course_name,
                 "major": cur_major,
-                "group": final_name
+                "group": clean_name,
+                "shortGroup": short_name,
+                "specialization": spec
             })
 
     print(f"Detected {len(groups)} groups.")
@@ -449,21 +485,14 @@ def parse_schedule_xlsx(file_path, source_url):
                     "lessons": d["lessons"]
                 })
 
-        short_name = g["group"]
-        spec = ""
-        m = re.match(r"^(\d{2}-\d{3})\s*\((.*?)\)\s*\((\d+)\)$", g["group"])
-        if m:
-            short_name = f"{m.group(1)} ({m.group(3)})"
-            spec = m.group(2)
-
         result_groups.append({
             "id": g["group"],
             "group": g["group"],
             "course": g["course"],
             "major": g["major"],
             "days": days_list,
-            "shortGroup": short_name,
-            "specialization": spec
+            "shortGroup": g["shortGroup"],
+            "specialization": g["specialization"]
         })
 
     iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
