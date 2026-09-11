@@ -77,6 +77,7 @@ This is the most detailed entity.
   "room": "706",
   "building": "Кремл. 16А",
   "type": "other",
+  "url": "",
   "isAdditional": false,
   "weekType": "first_half",
   "weekStart": 1,
@@ -102,6 +103,7 @@ This is the most detailed entity.
   - `"eor"`: ЭОР (Электронный образовательный ресурс)
   - `"cor"`: ЦОР (Цифровой образовательный ресурс на базе edu.kpfu.ru)
   - `"other"`: Другое (тип не указан явно и не может быть определен по аудитории)
+- **`url`**: String. Direct link for online meetings (e.g., VK Calls `https://vk.ru/call/...`, Yandex Telemost `https://telemost.yandex.ru/...`) or learning portal (`https://edu.kpfu.ru`). Empty string `""` if not applicable.
 - **`isAdditional`**: Boolean. `true` if the lesson is marked as "дополнительная пара" (suffix `- д.`). The UI might want to highlight these differently.
 - **`weekType`**: Describes the parity/recurrence of the lesson. Enum:
   - `"all"`: Every week

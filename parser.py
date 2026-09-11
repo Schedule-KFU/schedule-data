@@ -241,6 +241,14 @@ def parse_lesson_text(txt):
                     "end": f"{h2:02d}:{m2}"
                 }
 
+    # 7. URL extraction
+    lesson_url = ""
+    url_match = re.search(r"https?://[^\s,\);]+", trimmed)
+    if url_match:
+        lesson_url = url_match.group(0).strip(" .,;")
+    elif "edu.kpfu.ru" in trimmed.lower():
+        lesson_url = "https://edu.kpfu.ru"
+
     results = []
     for sg in subgroups:
         t_type = l_type
@@ -274,6 +282,7 @@ def parse_lesson_text(txt):
             "room": sg["room"],
             "building": sg["building"],
             "type": t_type,
+            "url": lesson_url,
             "isAdditional": is_additional,
             "weekType": week_type,
             "weekStart": week_start,
@@ -465,6 +474,7 @@ def parse_schedule_xlsx(file_path, source_url):
                         "room": parsed["room"],
                         "building": parsed["building"],
                         "type": parsed["type"],
+                        "url": parsed["url"],
                         "isAdditional": parsed["isAdditional"],
                         "weekType": parsed["weekType"],
                         "weekStart": parsed["weekStart"],
