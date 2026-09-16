@@ -3,8 +3,15 @@ import os
 import re
 import json
 from datetime import datetime, timezone
-import requests
-import openpyxl
+try:
+    import requests
+except ImportError:
+    requests = None
+
+try:
+    import openpyxl
+except ImportError:
+    openpyxl = None
 
 KFU_URL = "https://kpfu.ru/computing-technology/raspisanie"
 HEADERS = {
@@ -12,9 +19,15 @@ HEADERS = {
 }
 
 def get_latest_xlsx_url():
-    resp = requests.get(KFU_URL, headers=HEADERS, timeout=20)
-    resp.encoding = resp.apparent_encoding
-    html = resp.text
+    if requests:
+        resp = requests.get(KFU_URL, headers=HEADERS, timeout=20)
+        resp.encoding = resp.apparent_encoding
+        html = resp.text
+    else:
+        import urllib.request
+        req = urllib.request.Request(KFU_URL, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
 
     pattern = r'href=["\'](https?://kpfu\.ru/portal/docs/[^"\']*?\.xlsx)["\']'
     matches = re.findall(pattern, html, flags=re.IGNORECASE)
@@ -53,7 +66,7 @@ def split_cell_into_lesson_texts(text):
     trimmed = text.strip()
     if not trimmed:
         return []
-    split_pattern = r"(?:;\s*(?=\()|\n\s*(?=\()|(?<=[\.\)])\s+(?=\((?:[нч]/н|[0-9]{1,2}\s*-\s*[0-9]{1,2})))"
+    split_pattern = r"(?:;\s*(?=\()|\n\s*(?=\()|(?<=[\.\)])\s+(?=\((?:[нч]/н|(?:с\s+)?[0-9]{1,2}[^)]*?нед|[0-9]{1,2}\s*-\s*[0-9]{1,2})))"
     parts = re.split(split_pattern, trimmed, flags=re.IGNORECASE)
     res = [p.strip() for p in parts if p.strip()]
     return res if res else [trimmed]
@@ -99,10 +112,38 @@ def parse_lesson_text(txt):
                     week_type = "first_half"
                 elif week_start == 10 and week_end == 18:
                     week_type = "second_half"
-    elif re.search(r"\bн/н\b|\(н/н\)", trimmed, flags=re.IGNORECASE):
-        week_type = "odd"
-    elif re.search(r"\bч/н\b|\(ч/н\)", trimmed, flags=re.IGNORECASE):
-        week_type = "even"
+    else:
+        # Match single-week, comma-separated weeks or multiple ranges inside parentheses with "нед" / "недел"
+        # e.g. (18 нед.), (9 нед. ), (11 нед. ), (5,7 нед. ), (16,17 нед. Пр.), (1-3,5-18 нед.)
+        week_paren_match = re.search(r"\(\s*(?:с\s+)?([^)]*?(?:нед|недел)[^)]*?)\)", trimmed, flags=re.IGNORECASE)
+        if week_paren_match:
+            content = week_paren_match.group(1)
+            content_low = content.lower()
+            if "н/н" in content_low:
+                week_type = "odd"
+            elif "ч/н" in content_low:
+                week_type = "even"
+            
+            nums = [int(n) for n in re.findall(r"(?<!\d)([1-9]|1[0-9]|2[0-5])(?!\d)", content)]
+            if nums:
+                week_start = min(nums)
+                week_end = max(nums)
+                if week_type == "all":
+                    if week_start == 1 and week_end == 9:
+                        week_type = "first_half"
+                    elif week_start == 10 and week_end == 18:
+                        week_type = "second_half"
+        elif re.search(r"\bн/н\b|\(н/н\)", trimmed, flags=re.IGNORECASE):
+            week_type = "odd"
+        elif re.search(r"\bч/н\b|\(ч/н\)", trimmed, flags=re.IGNORECASE):
+            week_type = "even"
+
+    # Also check if leading "н/н" or "ч/н" was outside parenthesis, e.g. "ч/н (2-18 неделя)"
+    if week_type == "all":
+        if re.search(r"^\s*н/н\b", trimmed, flags=re.IGNORECASE):
+            week_type = "odd"
+        elif re.search(r"^\s*ч/н\b", trimmed, flags=re.IGNORECASE):
+            week_type = "even"
 
     clean = re.sub(r"^\s*(?:(?:с|до)\s+\d{1,2}[.:]\d{2}\s*|\d{1,2}[.:]\d{2}\s*-\s*\d{1,2}[.:]\d{2}\s*|[нч]/н\s+)*\(\s*(?:с\s+)?[^\)]*(?:нед|недел|[нч]/н|\d+\s*-\s*\d+)[^\)]*\)\s*(?:нед\.?)?\s*", "", trimmed, flags=re.IGNORECASE).strip()
 
@@ -294,27 +335,83 @@ def parse_lesson_text(txt):
 
 def parse_schedule_xlsx(file_path, source_url):
     print("Loading workbook...")
-    wb = openpyxl.load_workbook(file_path, data_only=True)
-    sheet = wb.active
+    if openpyxl is not None:
+        wb = openpyxl.load_workbook(file_path, data_only=True)
+        sheet = wb.active
 
-    # Fast cell getter resolving merged ranges
-    merged_dict = {}
-    for mr in sheet.merged_cells.ranges:
-        val = sheet.cell(row=mr.min_row, column=mr.min_col).value
-        if val is not None:
-            s_val = str(val).strip()
-            if s_val:
-                for r in range(mr.min_row, mr.max_row + 1):
-                    for c in range(mr.min_col, mr.max_col + 1):
-                        merged_dict[(r, c)] = s_val
+        # Fast cell getter resolving merged ranges
+        merged_dict = {}
+        for mr in sheet.merged_cells.ranges:
+            val = sheet.cell(row=mr.min_row, column=mr.min_col).value
+            if val is not None:
+                s_val = str(val).strip()
+                if s_val:
+                    for r in range(mr.min_row, mr.max_row + 1):
+                        for c in range(mr.min_col, mr.max_col + 1):
+                            merged_dict[(r, c)] = s_val
 
-    def get_cell_val(row, col):
-        if (row, col) in merged_dict:
-            return merged_dict[(row, col)]
-        v = sheet.cell(row=row, column=col).value
-        return str(v).strip() if v is not None else ""
+        def get_cell_val(row, col):
+            if (row, col) in merged_dict:
+                return merged_dict[(row, col)]
+            v = sheet.cell(row=row, column=col).value
+            return str(v).strip() if v is not None else ""
 
-    max_col = sheet.max_column
+        max_col = sheet.max_column
+        max_row = sheet.max_row
+    else:
+        import zipfile
+        import xml.etree.ElementTree as ET
+
+        cells_dict = {}
+        merged_dict = {}
+        with zipfile.ZipFile(file_path) as z:
+            shared_strings = []
+            if "xl/sharedStrings.xml" in z.namelist():
+                tree = ET.fromstring(z.read("xl/sharedStrings.xml"))
+                ns = {"ns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+                for si in tree.findall("ns:si", ns):
+                    text = "".join(t.text for t in si.findall(".//ns:t", ns) if t.text)
+                    shared_strings.append(text)
+
+            sheet_tree = ET.fromstring(z.read("xl/worksheets/sheet1.xml"))
+            ns = {"ns": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+
+            def cell_ref_to_row_col(ref):
+                m = re.match(r"([A-Z]+)(\d+)", ref)
+                col_str, row_str = m.group(1), m.group(2)
+                col = 0
+                for char in col_str:
+                    col = col * 26 + (ord(char) - ord("A") + 1)
+                return int(row_str), col
+
+            for c_elem in sheet_tree.findall(".//ns:c", ns):
+                r, c = cell_ref_to_row_col(c_elem.attrib["r"])
+                t = c_elem.attrib.get("t")
+                v_elem = c_elem.find("ns:v", ns)
+                if v_elem is not None and v_elem.text is not None:
+                    val = v_elem.text
+                    if t == "s":
+                        val = shared_strings[int(val)]
+                    cells_dict[(r, c)] = str(val).strip()
+
+            for mc_elem in sheet_tree.findall(".//ns:mergeCell", ns):
+                ref = mc_elem.attrib["ref"]
+                start_ref, end_ref = ref.split(":")
+                r1, c1 = cell_ref_to_row_col(start_ref)
+                r2, c2 = cell_ref_to_row_col(end_ref)
+                top_val = cells_dict.get((r1, c1), "")
+                if top_val:
+                    for r in range(r1, r2 + 1):
+                        for c in range(c1, c2 + 1):
+                            merged_dict[(r, c)] = top_val
+
+        def get_cell_val(row, col):
+            if (row, col) in merged_dict:
+                return merged_dict[(row, col)]
+            return cells_dict.get((row, col), "")
+
+        max_col = max(c for (r, c) in cells_dict.keys())
+        max_row = max(r for (r, c) in cells_dict.keys())
     start_col = 5  # Column 'E'
 
     groups = []
@@ -402,7 +499,7 @@ def parse_schedule_xlsx(file_path, source_url):
     cur_start = "08:30"
     cur_end = "10:00"
 
-    for ri in range(19, min(sheet.max_row + 1, 116)):
+    for ri in range(19, min(max_row + 1, 116)):
         c_val = get_cell_val(ri, 3).lower() # Column C
         d_val = get_cell_val(ri, 4)         # Column D
 
@@ -439,7 +536,7 @@ def parse_schedule_xlsx(file_path, source_url):
         days_map = {di: {"name": dn, "idx": di, "lessons": []} for dn, di in days_order}
         seen = set()
 
-        for ri in range(19, min(sheet.max_row + 1, 116)):
+        for ri in range(19, min(max_row + 1, 116)):
             val = get_cell_val(ri, ci)
             if not val:
                 continue
@@ -523,10 +620,17 @@ def main():
     print(f"Latest XLSX URL: {latest_url}")
     local_file = "schedule.xlsx"
     print("Downloading XLSX...")
-    r = requests.get(latest_url, headers=HEADERS, timeout=45)
-    r.raise_for_status()
-    with open(local_file, "wb") as f:
-        f.write(r.content)
+    if requests is not None:
+        r = requests.get(latest_url, headers=HEADERS, timeout=45)
+        r.raise_for_status()
+        with open(local_file, "wb") as f:
+            f.write(r.content)
+    else:
+        import urllib.request
+        req = urllib.request.Request(latest_url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            with open(local_file, "wb") as f:
+                f.write(resp.read())
     
     try:
         db = parse_schedule_xlsx(local_file, latest_url)
