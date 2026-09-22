@@ -26,17 +26,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run parser
+      - name: Run schedule parser (IVMIIT)
         run: python parser.py
+
+      - name: Run curriculum parser (IVMIIT)
+        run: python curriculum_parser.py
+
+      - name: Run schedule parser (Physics)
+        run: python parser_physics.py
+
+      - name: Run curriculum parser (Physics)
+        run: python curriculum_parser_physics.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add schedule.json
+          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json
           if git diff --staged --quiet; then
-            echo "No changes in schedule."
+            echo "No changes in schedule or curriculum."
           else
-            git commit -m "Automated schedule update [skip ci]"
+            git commit -m "Automated data update (IVMIIT & Physics) [skip ci]"
             git push
           fi
