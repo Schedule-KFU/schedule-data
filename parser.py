@@ -58,7 +58,7 @@ def compute_semester_string():
     year = now.year
     is_autumn = month >= 9 or month <= 1
     sem_num = 1 if is_autumn else 2
-    acad_start = year if is_autumn else year - 1
+    acad_start = year if month >= 9 else year - 1
     acad_end = acad_start + 1
     return f"{sem_num} семестр {acad_start}/{acad_end}"
 
@@ -635,6 +635,23 @@ def main():
     try:
         db = parse_schedule_xlsx(local_file, latest_url)
         out_file = "schedule.json"
+
+        # Check if existing schedule.json exists and if content is identical
+        if os.path.exists(out_file):
+            try:
+                with open(out_file, "r", encoding="utf-8") as existing_f:
+                    existing_db = json.load(existing_f)
+                
+                if (existing_db.get("groups") == db.get("groups") and
+                    existing_db.get("semester") == db.get("semester") and
+                    existing_db.get("sourceUrl") == db.get("sourceUrl")):
+                    db["updatedAt"] = existing_db.get("updatedAt", db["updatedAt"])
+                    print("✅ Schedule content is identical to existing schedule.json. Preserving updatedAt timestamp.")
+                else:
+                    print(f"🔄 Schedule changes detected! Updated timestamp: {db['updatedAt']}")
+            except Exception as e:
+                print(f"Warning: Failed to compare with existing schedule.json: {e}")
+
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(db, f, ensure_ascii=False, indent=2)
         
