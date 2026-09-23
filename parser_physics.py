@@ -177,6 +177,26 @@ def parse_lesson_text(txt):
         "weekEnd": week_end
     }]
 
+def clean_major_and_note(raw: str) -> tuple:
+    if not raw:
+        return "", ""
+    practice_note = ""
+    practice_match = re.search(r'\(.*?(?:производственная\s+практика|практика).*?\)', raw, re.I)
+    if practice_match:
+        practice_note = practice_match.group(0).strip('() ')
+    lines = [l.strip() for l in raw.split("\n") if l.strip()]
+    first_line = lines[0] if lines else raw
+    cutoff = re.search(r'(?i)\s+(?:[cс]\s+\d+|\d{1,2}[./]\d{1,2}|\d+(?:-\d+)?\s*н\b|\(\s*\d{1,2}[./]|\(\s*\d+(?:-\d+)?\s*н|\(.*практика)', first_line)
+    if cutoff:
+        major = first_line[:cutoff.start()]
+    else:
+        major = first_line
+    major = re.sub(r'\(.*?\)', '', major)
+    major = re.sub(r'\s+', ' ', major).strip(' ,;.-')
+    if major:
+        major = major[0].upper() + major[1:]
+    return major, practice_note
+
 def parse_schedule_xlsx(file_path, source_url):
     wb = openpyxl.load_workbook(file_path, data_only=True)
     result_groups = []
@@ -244,14 +264,15 @@ def parse_schedule_xlsx(file_path, source_url):
             continue
 
         # 3. Locate groups in header_row
+        from collections import Counter
         groups = []
         for c in range(max(day_col, time_col) + 1, ws.max_column + 1):
-            g_val = get_val(header_row, c)
+            g_val = get_val(header_row, c).strip()
             m = re.search(r"06-\s*(\d{3})", g_val)
             if m:
                 clean_g = f"06-{m.group(1)}"
-                # Major from the row directly below
-                major = get_val(header_row + 1, c).replace("\n", " ")
+                raw_major = get_val(header_row + 1, c).strip()
+                clean_m, p_note = clean_major_and_note(raw_major)
 
                 # Check if group has subgroup in parens
                 sub_match = re.search(r"\((\d+)\)", g_val)
@@ -262,10 +283,19 @@ def parse_schedule_xlsx(file_path, source_url):
                     "col": c,
                     "group": full_group_name,
                     "shortGroup": clean_g,
-                    "major": major,
+                    "major": clean_m,
                     "course": course_name,
-                    "specialization": ""
+                    "specialization": "",
+                    "practiceNote": p_note
                 })
+
+        # Disambiguate duplicate group numbers on the same sheet (e.g. Master's profiles)
+        counts = Counter(g["group"] for g in groups)
+        for g in groups:
+            if counts[g["group"]] > 1:
+                g["specialization"] = g["major"]
+                g["group"] = f"{g['shortGroup']} ({g['major']})"
+            g["id"] = g["group"]
 
         print(f"Sheet '{sheet_name}': detected {len(groups)} groups for course '{course_name}'")
 
@@ -276,9 +306,9 @@ def parse_schedule_xlsx(file_path, source_url):
         cur_start = "08:30"
         cur_end = "10:00"
 
-        # Initialize days map for each group
+        # Initialize days map keyed by column index to isolate groups with shared numbers
         group_days_map = {
-            g["group"]: {di: {"name": dn, "idx": di, "lessons": []} for dn, di in DAYS_ORDER}
+            g["col"]: {di: {"name": dn, "idx": di, "lessons": []} for dn, di in DAYS_ORDER}
             for g in groups
         }
         seen_keys = set()
@@ -316,14 +346,14 @@ def parse_schedule_xlsx(file_path, source_url):
                         continue
 
                     for p in parsed_list:
-                        key = f"{g['group']}_{cur_day_idx}_{cur_time}_{p['subject']}_{p['weekStart']}_{p['weekEnd']}_{p['weekType']}_{p['teacher']}_{p['room']}"
+                        key = f"{g['col']}_{cur_day_idx}_{cur_time}_{p['subject']}_{p['weekStart']}_{p['weekEnd']}_{p['weekType']}_{p['teacher']}_{p['room']}"
                         if key in seen_keys:
                             continue
                         seen_keys.add(key)
 
                         lesson_counter += 1
                         lesson = {
-                            "id": f"{g['group']}-{lesson_counter}",
+                            "id": f"{g['id']}-{lesson_counter}",
                             "subject": p["subject"],
                             "rawText": p["clean"],
                             "teacher": p["teacher"],
@@ -339,13 +369,13 @@ def parse_schedule_xlsx(file_path, source_url):
                             "timeStart": cur_start,
                             "timeEnd": cur_end
                         }
-                        group_days_map[g["group"]][cur_day_idx]["lessons"].append(lesson)
+                        group_days_map[g["col"]][cur_day_idx]["lessons"].append(lesson)
 
         # Assemble groups for this sheet
         for g in groups:
             days_list = []
             for dn, di in DAYS_ORDER:
-                d = group_days_map[g["group"]][di]
+                d = group_days_map[g["col"]][di]
                 if d["lessons"]:
                     days_list.append({
                         "dayName": d["name"],
@@ -354,13 +384,14 @@ def parse_schedule_xlsx(file_path, source_url):
                     })
 
             result_groups.append({
-                "id": g["group"],
+                "id": g["id"],
                 "group": g["group"],
                 "course": g["course"],
                 "major": g["major"],
                 "days": days_list,
                 "shortGroup": g["shortGroup"],
-                "specialization": g["specialization"]
+                "specialization": g["specialization"],
+                "practiceNote": g.get("practiceNote") or ""
             })
 
     iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

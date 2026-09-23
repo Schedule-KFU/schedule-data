@@ -390,7 +390,7 @@ def parse_schedule_xlsx(file_path, source_url):
         elif "курс" in r17_low:
             cur_course = r17.strip()
         elif r17:
-            cur_major = r17.strip()
+            cur_major = re.sub(r'\s+', ' ', r17).strip()
 
         g_name = get_cell_val(18, ci)
         if g_name and "курс" not in g_name.lower() and re.search(r'(?:\d{2}-)?\d{3}', g_name):

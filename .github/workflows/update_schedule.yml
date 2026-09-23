@@ -38,11 +38,14 @@ jobs:
       - name: Run curriculum parser (Physics)
         run: python curriculum_parser_physics.py
 
+      - name: Merge schedules (IVMIIT + Physics)
+        run: python merge_schedules.py
+
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json
+          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json schedule_combined.json
           if git diff --staged --quiet; then
             echo "No changes in schedule or curriculum."
           else
