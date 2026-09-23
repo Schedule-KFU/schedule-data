@@ -20,162 +20,465 @@ OUTPUT_FILE = "schedule_physics.json"
 def get_latest_xlsx_url(retries=3):
     return base_get_latest_xlsx_url(PHYSICS_URL, HEADERS, retries=retries)
 
-def split_cell_into_lesson_texts(text):
-    trimmed = text.strip()
-    if not trimmed:
-        return []
-    # Split by semicolon or newline when followed by a new lesson start (e.g. subject or week range or course by choice)
-    parts = re.split(r"(?:;\s*(?=\b\d{1,2}[\s\-]*(?:н\b|нед|недел)|\b[А-ЯЁ][а-яё]+)|\n\s*(?=\b\d{1,2}[\s\-]*(?:н\b|нед|недел)|[А-ЯЁ][а-яё]+|Курс\s+по\s+выбору))", trimmed)
-    res = [p.strip() for p in parts if p.strip()]
-    return res if res else [trimmed]
+TEACHER_RE = re.compile(
+    r'\b([А-ЯЁа-яё][а-яё]+(?:-[А-ЯЁа-яё][а-яё]+)?)\s*([А-ЯЁ])\.\s*([А-ЯЁ])\.?(?=[^а-яА-Яa-zA-Z]|$)|'
+    r'\b([А-ЯЁ])\.\s*([А-ЯЁ])\.?\s+([А-ЯЁа-яё][а-яё]+(?:-[А-ЯЁа-яё][а-яё]+)?)|'
+    r'\b([А-ЯЁа-яё][а-яё]+(?:-[А-ЯЁа-яё][а-яё]+)?)\s*([А-ЯЁ])\.(?![а-яА-Яa-zA-Z])'
+)
 
-def parse_lesson_text(txt):
-    trimmed = txt.strip()
-    if not trimmed:
-        return None
+TEACHER_ALIASES = {
+    'Алакин А.Б.': 'Балакин А.Б.',
+    'Воронина': 'Воронина Е.В.'
+}
 
-    lower = trimmed.lower()
-    # Reject signatures, headers, footnotes
-    if "____" in trimmed or \
-       "департамент образования" in lower or \
-       "учебно-методическ" in lower or \
-       "утверждаю" in lower or \
-       "согласовано" in lower or \
-       "поминов" in lower or \
-       "турилова" in lower:
-        return None
+BUILDING_MAP = [
+    (re.compile(r'карла\s+маркса[\s,]+74[а-яА-Я]?|сц\b', re.I), "Спортивный центр (Карла Маркса, 74а)"),
+    (re.compile(r'кремлевск\w*[\s,]+35|2[\s-]*й\s+корпус', re.I), "2-й учебный корпус (Кремлевская, 35)"),
+    (re.compile(r'лево[- ]булачн\w*[\s,]+44', re.I), "Лево-Булачная, 44"),
+    (re.compile(r'межлаук\w*[\s,]+1', re.I), "Межлаука, 1"),
+    (re.compile(r'кск\s+уникс\b|уникс\b', re.I), "КСК УНИКС"),
+    (re.compile(r'химическ\w*\s+институт\w*|хим\.?\s*ин-т', re.I), "Химический институт"),
+    (re.compile(r'гл\.?\s*з(?:д)?\.?|главн\w*\s+здан\w*', re.I), "Главное здание"),
+    (re.compile(r'\d*\s*конф\w*[- ]зал\b|конф\w*[- ]зал\b|к\.?-?з\.?', re.I), "Конференц-зал"),
+    (re.compile(r'лицей\b', re.I), "Лицей им. Лобачевского"),
+    (re.compile(r'ляф\b', re.I), "Лаборатория ядерной физики (ЛЯФ)"),
+    (re.compile(r'фиц\s+каз\s+нц\s+ран|каз\s+нц\s+ран', re.I), "ФИЦ КазНЦ РАН"),
+]
 
-    # Check for online / call URLs
-    url_match = re.search(r'(https?://[^\s)"]+)', trimmed)
-    url = url_match.group(1).rstrip('.,;') if url_match else ""
+def extract_teachers_with_raw(text):
+    teachers = []
+    raws = []
+    for m in TEACHER_RE.finditer(text):
+        raw_match = m.group(0).strip()
+        if m.group(1):
+            s_name = m.group(1).capitalize()
+            t_name = f"{s_name} {m.group(2)}.{m.group(3)}."
+        elif m.group(4):
+            s_name = m.group(6).capitalize()
+            t_name = f"{s_name} {m.group(4)}.{m.group(5)}."
+        elif m.group(7):
+            s_name = m.group(7).capitalize()
+            t_name = f"{s_name} {m.group(8)}."
+        else:
+            continue
+        t_name = TEACHER_ALIASES.get(t_name, t_name)
+        teachers.append(t_name)
+        raws.append(raw_match)
 
-    # Week bounds & parity
+    # Check for Voronina without initials
+    m_vor = re.search(r'\bВоронина\b(?!\s+[А-ЯЁ]\.)', text)
+    if m_vor and 'Воронина Е.В.' not in teachers:
+        teachers.append('Воронина Е.В.')
+        raws.append(m_vor.group(0))
+
+    res_t, res_r = [], []
+    for t, r in zip(teachers, raws):
+        if t not in res_t:
+            res_t.append(t)
+            res_r.append(r)
+    return res_t, res_r
+
+def extract_building(text):
+    for pat, name in BUILDING_MAP:
+        if pat.search(text):
+            return name
+    return "Кремлевская, 16А (Институт физики)"
+
+def extract_room(text):
+    cleaned = re.sub(r'(?:с\s+)?\b\d{1,2}(?:\s*-\s*\d{1,2})?(?:\s*,\s*\d{1,2}(?:\s*-\s*\d{1,2})?)*\s*н\.?', ' ', text, flags=re.I)
+    
+    # 1. Explicit aud
+    m = re.search(r'ауд\.?\s*([0-9А-Яа-яA-Za-z]+(?:\s*,\s*[0-9А-Яа-яA-Za-z]+)*)', cleaned, re.I)
+    if m:
+        return m.group(1).strip()
+
+    # 2. 1 конф.-зал / 1 конференц-зал
+    m_kz = re.search(r'\b(\d{1,2})\s*конф[\w.]*[- ]?зал\b', cleaned, re.I)
+    if m_kz:
+        return f"{m_kz.group(1)} конф.-зал"
+
+    # 3. ЛЯФ rooms
+    m_lyaf = re.search(r'ляф[\s,]*(?:к\.?|комн?\.?)?\s*([0-9\s,]+)', cleaned, re.I)
+    lyaf_room = ""
+    if m_lyaf and m_lyaf.group(1).strip():
+        nums = [n.strip() for n in m_lyaf.group(1).split(',') if n.strip()]
+        lyaf_room = "к. " + ", ".join(nums)
+
+    # 4. Multi-digit rooms or single digit + letter
+    m_multi = re.findall(r'\b([0-9]{3,4}[а-мА-Мо-яО-Яa-zA-Z]?|[1-9][а-мА-Мо-яО-Яa-zA-Z])\b', cleaned)
+    valid_rooms = [r for r in m_multi if r not in ["2024", "2025", "2026", "2027", "2028"]]
+    if valid_rooms:
+        res = ", ".join(valid_rooms)
+        if lyaf_room:
+            return f"{res}, {lyaf_room}"
+        return res
+    if lyaf_room:
+        return lyaf_room
+    return ""
+
+def extract_weeks(text):
     week_start = 1
     week_end = 18
     week_type = "all"
-
-    if "ч.н" in lower or "ч/н" in lower or "четн" in lower:
+    low = text.lower()
+    
+    if "ч.н" in low or "ч/н" in low or "ч\\н" in low or "четн" in low:
         week_type = "even"
-    elif "н.н" in lower or "н/н" in lower or "нечет" in lower:
+    elif "н.н" in low or "н/н" in low or "н\\н" in low or "нечет" in low:
         week_type = "odd"
 
-    range_match = re.search(r'(?:с\s+)?(\d{1,2})\s*-\s*(\d{1,2})\s*(?:н\b|нед)', trimmed, re.I)
-    if range_match:
-        week_start = int(range_match.group(1))
-        week_end = int(range_match.group(2))
+    all_nums = []
+    for m in re.finditer(r'(?:с\s+)?(\d{1,2})\s*-\s*(\d{1,2})', text, re.I):
+        after = text[m.end():m.end()+15].lower()
+        if 'н' in after or 'нед' in after or 'пн' in after or 'вт' in after:
+            all_nums.extend([int(m.group(1)), int(m.group(2))])
+            
+    for m in re.finditer(r'(\d{1,2})\s*(?:н\b|нед|н\.)', text, re.I):
+        val = int(m.group(1))
+        prev_str = text[max(0, m.start()-15):m.start()]
+        comma_nums = re.findall(r'\b(\d{1,2})\s*,', prev_str)
+        for cn in comma_nums:
+            all_nums.append(int(cn))
+        all_nums.append(val)
+
+    s_match = re.search(r'\bс\s+(\d{1,2})\s*н\b', text, re.I)
+    if s_match:
+        all_nums.extend([int(s_match.group(1)), 18])
+
+    if all_nums:
+        week_start = min(all_nums)
+        week_end = max(all_nums)
         if week_type == "all":
             if week_start == 1 and week_end == 9:
                 week_type = "first_half"
             elif week_start == 10 and week_end == 18:
                 week_type = "second_half"
-    else:
-        single_week = re.search(r'\b(\d{1,2})\s*(?:н\b|нед)', trimmed, re.I)
-        if single_week:
-            w_val = int(single_week.group(1))
-            week_start = w_val
-            week_end = w_val
 
-    # Lesson Type
-    if "(лаб" in lower or "лаб." in lower or "лаборат" in lower:
-        l_type = "lab"
-    elif "(пр" in lower or "пр." in lower or "практ" in lower:
-        l_type = "practice"
-    elif "(л)" in lower or "(л+" in lower or "лек." in lower or "лекция" in lower:
-        l_type = "lecture"
-    elif "дистанцион" in lower or "онлайн" in lower:
-        l_type = "distance"
-    elif "эор" in lower:
-        l_type = "eor"
-    elif "цор" in lower:
-        l_type = "cor"
-    else:
-        l_type = "other"
+    return week_start, week_end, week_type
 
-    is_additional = bool(re.search(r"\s*-\s*д\.?(?:\s|$)", lower))
+def extract_subgroup(text):
+    m = re.search(r'\b([12])\s*(?:гр|подгр|п/г)', text, re.I)
+    if m:
+        return int(m.group(1))
+    return None
 
-    # Teachers
-    teacher_pattern = r"[А-ЯЁ][а-яё]+\s+[А-ЯЁ]\.\s*[А-ЯЁ]\.?"
-    teachers = re.findall(teacher_pattern, trimmed)
+def extract_lesson_type(text):
+    low = text.lower()
+    if "(лаб" in low or "лаб." in low or "лаборат" in low or re.search(r'\b-\s*лаб\b', low):
+        return "lab"
+    elif "(пр" in low or "пр." in low or "практ" in low or re.search(r'\b-\s*пр\b', low):
+        return "practice"
+    elif "(л)" in low or "(л+" in low or "лек." in low or "лекция" in low or re.search(r'\b-\s*(?:лек|л\b)', low):
+        return "lecture"
+    elif "дистанцион" in low or "онлайн" in low:
+        return "distance"
+    elif "эор" in low:
+        return "eor"
+    elif "цор" in low:
+        return "cor"
+    elif "физическая культура" in low or "спорт" in low:
+        return "practice"
+    return "other"
 
-    # Building & Room
-    building = "Кремл. 16А"
-    room = ""
+def clean_subject(raw_text, raw_teachers, room):
+    s = raw_text
+    # 1. Strip elective header prefix
+    s = re.sub(r'К[у]?рс\s+по\s+выбору\s*(?:\([^)]*\))?:?', ' ', s, flags=re.IGNORECASE)
 
-    if "межлаука" in lower:
-        building = "Межлаука 1"
-    elif "лево-булач" in lower or "булач" in lower:
-        building = "Лево-Булачная 44"
-    elif "лицей" in lower:
-        building = "Лицей Лобачевского"
-    elif "уникс" in lower:
-        building = "УНИКС"
-    elif "к.-з." in lower or "к/з" in lower:
-        building = "Концертный зал"
-
-    aud_match = re.search(r'ауд\.?\s*([0-9А-Яа-яA-Za-z]+)', trimmed, re.I)
-    if aud_match:
-        room = aud_match.group(1).strip()
-    else:
-        # Search for room numbers (3-4 digits like 110, 1309, 806, 907)
-        candidate_rooms = [
-            m.group(1) for m in re.finditer(r'\b([0-9]{3,4}[а-яА-Яa-zA-Z]?)\b', trimmed)
-            if m.group(1) not in ["2024", "2025", "2026", "2027", "2028"]
-        ]
-        if candidate_rooms:
-            room = candidate_rooms[-1]
-
-    # Clean Subject Name
-    subject = trimmed
-    for t in teachers:
-        subject = subject.replace(t, " ")
-    if url:
-        subject = subject.replace(url, " ")
-
-    # Remove week annotations
-    subject = re.sub(r'(?:с\s+)?\b\d{1,2}\s*-\s*\d{1,2}\s*н\.?', ' ', subject, flags=re.I)
-    subject = re.sub(r'\b\d{1,2}(?:\s*,\s*\d{1,2})+\s*н\.?', ' ', subject, flags=re.I)
-    subject = re.sub(r'\b\d{1,2}\s*н\.?', ' ', subject, flags=re.I)
-
-    # Remove room and aud
+    # 2. Strip teachers
+    for rt in raw_teachers:
+        s = s.replace(rt, ' ')
+        parts = rt.split()
+        if parts:
+            s = re.sub(r'\b' + re.escape(parts[0]) + r'\b', ' ', s)
+    s = re.sub(r'\b[А-ЯЁа-яё][а-яё]+(?:-[А-ЯЁа-яё][а-яё]+)?\s*[А-ЯЁ]\.\s*[А-ЯЁ]\.?', ' ', s)
+    s = re.sub(r'\b[А-ЯЁ]\.\s*[А-ЯЁ]\.?\s+[А-ЯЁа-яё]+', ' ', s)
+    s = re.sub(r'\b[А-ЯЁа-яё][а-яё]+\s*[А-ЯЁ]\.?', ' ', s)
+    s = re.sub(r'\b[А-ЯЁ]\.[А-ЯЁ]\.?\b', ' ', s)
+    s = re.sub(r'\bВоронина\b', ' ', s)
+    
+    # 3. Strip URLs, times, weeks
+    s = re.sub(r'https?://\S+', ' ', s)
+    s = re.sub(r'\b\d{1,2}[.:]\d{2}\s*-\s*\d{1,2}[.:]\d{2}\b', ' ', s)
+    s = re.sub(r'(?:с\s+)?\b\d{1,2}(?:\s*-\s*\d{1,2})?(?:\s*,\s*\d{1,2}(?:\s*-\s*\d{1,2})?)*\s*н\.?', ' ', s, flags=re.I)
+    s = re.sub(r'\bс\s+\d{1,2}\s*н\.?', ' ', s, flags=re.I)
+    
+    # 4. Strip rooms & buildings
     if room:
-        subject = re.sub(r'\b' + re.escape(room) + r'\b', ' ', subject)
-    subject = re.sub(r'ауд\.?\s*', ' ', subject, flags=re.I)
+        for r_part in room.split(','):
+            r_part = r_part.strip()
+            if r_part:
+                s = re.sub(r'\b' + re.escape(r_part) + r'\b', ' ', s)
+    s = re.sub(r'\bауд\.?\s*', ' ', s, flags=re.I)
+    s = re.sub(r'\bк\.\s*\d+\b', ' ', s, flags=re.I)
+    s = re.sub(r'\bкомн?\.?\s*\d+\b', ' ', s, flags=re.I)
+    s = re.sub(r'\b[0-9]{3,4}[а-яА-Яa-zA-Z]?\b', ' ', s)
+    s = re.sub(r'\b[1-9][а-яА-Яa-zA-Z]\b', ' ', s)
+    s = re.sub(r'\((?:л|пр|лаб|л\+пр|лек|практ|дист|онлайн)\)', ' ', s, flags=re.I)
+    s = re.sub(r'\b-\s*(?:л|пр|лаб|лек|практ)\.?', ' ', s, flags=re.I)
+    
+    for b_kw in [
+        r'карла\s+маркса[\s,]+74[а-яА-Я]?', r'сц\b',
+        r'кремлевск\w*[\s,]+35', r'кремлевская[\s,]+16[а-яА-Я]?',
+        r'лево[- ]булачн\w*[\s,]+44', r'межлаук\w*[\s,]+1',
+        r'кск\s+уникс\b', r'уникс\b', r'химическ\w*\s+институт\w*',
+        r'хим\.?\s*ин-т', r'гл\.?\s*з(?:д)?\.?', r'главн\w*\s+здан\w*',
+        r'\d*\s*конф[\w.]*[- ]?зал\b', r'к\.?-?з\.?', r'лицей\b',
+        r'ляф[\s,]*(?:к\.?|комн?\.?)?\s*[0-9\s,]*',
+        r'фиц\s+каз\s+нц\s+ран|каз\s+нц\s+ран'
+    ]:
+        s = re.sub(b_kw, ' ', s, flags=re.I)
+        
+    s = re.sub(r'\b\d/\d\*?\s*гр\.?', ' ', s, flags=re.I)
+    s = re.sub(r'\b\d\s*(?:подгр|гр|п/г)\.?', ' ', s, flags=re.I)
+    s = re.sub(r'\b[чн]\.[н\.]*', ' ', s, flags=re.I)
+    s = re.sub(r'\b[чн]/[н\.]*', ' ', s, flags=re.I)
+    s = re.sub(r'\b[чн]\\[н\.]*', ' ', s, flags=re.I)
+    s = re.sub(r'[,;\n\r\t:]+', ' ', s)
+    s = re.sub(r'\s+', ' ', s).strip(' ,.-/()')
+    return s
 
-    # Remove type tags
-    subject = re.sub(r'\((?:л|пр|лаб|л\+пр|лек|практ)\)', ' ', subject, flags=re.I)
+def is_pure_elective_header(l):
+    low = l.strip().lower()
+    return bool(re.match(r'^(?:к[у]?рс|дисциплина)\s+по\s+выбору\s*:?\s*(?:\([^)]*\))?\s*:?$', low))
 
-    # Remove building names from subject
-    for b_kw in ["межлаука", "лево-булачная", "лицей им. н.и. лобачевского", "лицей", "1 к.-з.", "уникс"]:
-        subject = re.sub(b_kw, ' ', subject, flags=re.I)
+def is_building_or_room_line(l):
+    for pat, _ in BUILDING_MAP:
+        if pat.search(l):
+            return True
+    if re.search(r'конф\b', l, re.I):
+        return True
+    if re.match(r'^\s*(?:[cс]\s+)?\d+(?:[\s,-]+\d+)*\s*н\b', l, re.I):
+        if not re.search(r'\b[А-ЯЁ][а-яё]{3,}.*?\((?:л|пр|лаб|лек|практ)\)', l):
+            return True
+    return False
 
-    # Remove subgroup indicators (1/2 гр., 1 гр, ч.н., н.н.)
-    subject = re.sub(r'\b\d/\d\s*гр\.?', ' ', subject, flags=re.I)
-    subject = re.sub(r'\b\d\s*гр\.?', ' ', subject, flags=re.I)
-    subject = re.sub(r'\b[чн]\.[н\.]*', ' ', subject, flags=re.I)
-    subject = re.sub(r'\b[чн]/[н\.]*', ' ', subject, flags=re.I)
+def is_subject_header_line(l):
+    low = l.strip().lower()
+    if is_building_or_room_line(l):
+        return False
+    if is_pure_elective_header(l):
+        return False
+    if re.match(r'^\((?:л|пр|лаб|л\+пр|лек|практ)\)', low):
+        return False
+    if re.search(r'[А-ЯЁа-яё]{3,}.*?\((?:л|пр|лаб|л\+пр|лек|практ)\)', l):
+        return True
+    if any(low.startswith(p) for p in ["курс по выбору", "крс по выбору", "дисциплина по выбору", "физическая культура", "элективные курсы"]):
+        return True
+    if re.match(r'^\d{1,2}(?:-\d{1,2})?\s*н\.?\s+[А-ЯЁ]', l):
+        return True
+    t_list, _ = extract_teachers_with_raw(l)
+    if not t_list and not re.search(r'\b\d{1,2}-\d{1,2}н\b', l) and not re.search(r'\b[0-9]{3,4}\b', l):
+        if len(re.findall(r'[А-ЯЁа-яё]{3,}', l)) >= 1:
+            return True
+    return False
 
-    # Normalize whitespace & punctuation
-    subject = re.sub(r'[,;\n\r\t]+', ' ', subject)
-    subject = re.sub(r'\s+', ' ', subject).strip(' ,.-/()')
+def split_semicolons_outside_parens(text):
+    res = []
+    in_paren = 0
+    for char in text:
+        if char == '(':
+            in_paren += 1
+            res.append(char)
+        elif char == ')':
+            if in_paren > 0:
+                in_paren -= 1
+            res.append(char)
+        elif char == ';' and in_paren == 0:
+            res.append('\n')
+        else:
+            res.append(char)
+    return ''.join(res)
 
-    if not subject or len(subject) < 2:
-        return None
+def expand_colon_line(line):
+    # Pattern: [weeks] [Subject]: [sub-lessons separated by ;]
+    m = re.match(r'^(?:(?:\d{1,2}(?:-\d{1,2})?\s*н\.?\s+)?)([^:]+):\s*(.+)$', line)
+    if not m:
+        return [line]
+    base_subj = m.group(1).strip()
+    rest = m.group(2).strip()
+    
+    if not re.search(r'(?:с\s+)?\d+.*(?:н|нед).*-(?:\s*лек|\s*л\b|\s*пр|\s*лаб|\s*вся)', rest, re.I):
+        return [line]
+        
+    parts = [p.strip() for p in rest.split(';') if p.strip()]
+    trailing_room = ''
+    if parts and (parts[-1].startswith('ауд') or re.match(r'^[0-9]{3,4}[а-яА-Яa-zA-Z]?$', parts[-1]) or re.match(r'^[1-9][а-яА-Яa-zA-Z]$', parts[-1])):
+        trailing_room = parts.pop()
 
-    teacher_str = ", ".join(teachers)
+    expanded = []
+    for p in parts:
+        if re.search(r'\b[А-ЯЁ][а-яё]{4,}', p) and not re.search(r'-\s*(?:лек|л\b|пр|лаб)', p):
+            expanded.append(f'{p} {trailing_room}')
+        else:
+            expanded.append(f'{base_subj} {p} {trailing_room}')
+    return expanded
 
-    return [{
-        "subject": subject,
-        "clean": trimmed,
-        "teacher": teacher_str,
-        "room": room,
-        "building": building,
-        "type": l_type,
-        "url": url,
-        "isAdditional": is_additional,
-        "weekType": week_type,
-        "weekStart": week_start,
-        "weekEnd": week_end
-    }]
+def parse_physics_cell(cell_text):
+    trimmed = cell_text.strip()
+    if not trimmed:
+        return []
+    
+    lower = trimmed.lower()
+    if "____" in trimmed or "департамент образования" in lower or "турилова" in lower or "поминов" in lower:
+        return []
+
+    # 1. Expand colons if present
+    expanded_colon_lines = []
+    for raw_l in cell_text.split('\n'):
+        raw_l = raw_l.strip()
+        if not raw_l: continue
+        expanded_colon_lines.extend(expand_colon_line(raw_l))
+    
+    text_colon_expanded = '\n'.join(expanded_colon_lines)
+
+    # 2. Split semicolons outside parentheses into newlines
+    text_semi = split_semicolons_outside_parens(text_colon_expanded)
+
+    # 3. Split in-line subjects pasted without newlines (e.g. "... 809 Спутниковые системы... (пр)")
+    # Insert \n before a subject header pattern only when preceded by room, teacher initial, or building
+    text_separated = re.sub(
+        r'(\b[0-9]{3,4}[а-яА-Яa-zA-Z]?|[А-ЯЁ]\.|гл\.?\s*з(?:д)?\.?|уникс|зал)\s+([А-ЯЁ][а-яё]{3,}.*?\((?:л|пр|лаб|л\+пр|лек|практ)\))',
+        r'\1\n\2',
+        text_semi
+    )
+    text_separated = re.sub(
+        r'(\b[0-9]{3,4}[а-яА-Яa-zA-Z]?|[А-ЯЁ]\.|гл\.?\s*з(?:д)?\.?|уникс|зал)\s+(\d{1,2}(?:-\d{1,2})?\s*н\.?\s+[А-ЯЁ][а-яё]{3,})',
+        r'\1\n\2',
+        text_separated
+    )
+    text_separated = re.sub(
+        r'(\b[0-9]{3,4}[а-яА-Яa-zA-Z]?|[А-ЯЁ]\.|гл\.?\s*з(?:д)?\.?|уникс|зал)\s+(К[у]?рс\s+по\s+выбору\s*(?:\([^)]*\))?:?\s*[А-ЯЁ])',
+        r'\1\n\2',
+        text_separated
+    )
+
+    raw_lines = [l.strip() for l in text_separated.split('\n') if l.strip()]
+    if not raw_lines:
+        return []
+
+    # Join lowercase continuation lines and extract elective category
+    lines = []
+    elective_prefix = ""
+    for l in raw_lines:
+        if is_pure_elective_header(l):
+            elective_prefix = "Курс по выбору: "
+            continue
+        if lines and (l[0].islower() and not l.startswith('ауд')) and not l.startswith('(л') and not l.startswith('(пр') and not l.startswith('(лаб'):
+            lines[-1] = lines[-1] + ' ' + l
+        else:
+            lines.append(l)
+
+    sections = []
+    cur_sec = []
+    for l in lines:
+        if is_subject_header_line(l) and cur_sec:
+            sections.append(cur_sec)
+            cur_sec = [l]
+        else:
+            cur_sec.append(l)
+    if cur_sec:
+        sections.append(cur_sec)
+
+    results = []
+    for sec in sections:
+        sec_text = '\n'.join(sec)
+        first_line = sec[0]
+        url_match = re.search(r'(https?://[^\s)"]+)', sec_text)
+        url = url_match.group(1).rstrip('.,;') if url_match else ""
+        is_additional = bool(re.search(r"\s*-\s*д\.?(?:\s|$)", sec_text.lower()))
+
+        type_lines = [(i, l) for i, l in enumerate(sec) if re.match(r'^\((?:л|пр|лаб|л\+пр|лек|практ)\)', l.strip().lower())]
+        teacher_lines = []
+        for i, l in enumerate(sec):
+            t_list, r_list = extract_teachers_with_raw(l)
+            if t_list:
+                teacher_lines.append((i, l, t_list, r_list))
+
+        common_teachers, common_raw_t = extract_teachers_with_raw(sec_text)
+        base_subj = clean_subject(first_line, common_raw_t, '')
+        if elective_prefix and not base_subj.lower().startswith("курс по выбору"):
+            base_subj = elective_prefix + base_subj
+
+        if len(type_lines) >= 2:
+            t_names = ', '.join(common_teachers)
+            for _, tl in type_lines:
+                w_start, w_end, w_type = extract_weeks(tl)
+                results.append({
+                    'subject': base_subj,
+                    'rawText': f'{base_subj}\n{tl}',
+                    'teacher': t_names,
+                    'room': extract_room(tl) or extract_room(sec_text),
+                    'building': extract_building(tl) or extract_building(sec_text),
+                    'type': extract_lesson_type(tl),
+                    'url': url,
+                    'isAdditional': is_additional,
+                    'weekStart': w_start,
+                    'weekEnd': w_end,
+                    'weekType': w_type,
+                    'subgroup': extract_subgroup(tl)
+                })
+        elif len(teacher_lines) >= 2 and any(extract_subgroup(l) or extract_room(l) for _, l, _, _ in teacher_lines):
+            subj_type = extract_lesson_type(sec_text)
+            for idx_t, (line_idx, l_str, t_list, r_list) in enumerate(teacher_lines):
+                next_idx = teacher_lines[idx_t+1][0] if idx_t+1 < len(teacher_lines) else len(sec)
+                sub_lines = sec[line_idx:next_idx]
+                sub_text = '\n'.join(sub_lines)
+                w_start, w_end, w_type = extract_weeks(sub_text)
+                results.append({
+                    'subject': base_subj,
+                    'rawText': f'{base_subj}\n{sub_text}',
+                    'teacher': ', '.join(t_list),
+                    'room': extract_room(sub_text) or extract_room(sec_text),
+                    'building': extract_building(sub_text) or extract_building(sec_text),
+                    'type': subj_type,
+                    'url': url,
+                    'isAdditional': is_additional,
+                    'weekStart': w_start,
+                    'weekEnd': w_end,
+                    'weekType': w_type,
+                    'subgroup': extract_subgroup(sub_text)
+                })
+        else:
+            room = extract_room(sec_text)
+            bld = extract_building(sec_text)
+            w_start, w_end, w_type = extract_weeks(sec_text)
+            subgrp = extract_subgroup(sec_text)
+            l_type = extract_lesson_type(sec_text)
+            clean_s = clean_subject(first_line, common_raw_t, room)
+            if len(clean_s) < 2:
+                clean_s = clean_subject(sec_text, common_raw_t, room)
+            if elective_prefix and not clean_s.lower().startswith("курс по выбору"):
+                clean_s = elective_prefix + clean_s
+            if len(clean_s) >= 2:
+                results.append({
+                    'subject': clean_s,
+                    'rawText': sec_text,
+                    'teacher': ', '.join(common_teachers),
+                    'room': room,
+                    'building': bld,
+                    'type': l_type,
+                    'url': url,
+                    'isAdditional': is_additional,
+                    'weekStart': w_start,
+                    'weekEnd': w_end,
+                    'weekType': w_type,
+                    'subgroup': subgrp
+                })
+
+    # Inherit teacher and room for alternating even/odd paired lessons in cell (e.g. Demin)
+    if len(results) >= 2:
+        for i in range(len(results) - 1):
+            r1 = results[i]
+            r2 = results[i+1]
+            if not r1['teacher'] and r2['teacher']:
+                if (r1['weekType'] in ['even', 'odd'] and r2['weekType'] in ['even', 'odd']) or (r1['weekStart'] == 1 and r2['weekStart'] == 2):
+                    r1['teacher'] = r2['teacher']
+                    if not r1['room']:
+                        r1['room'] = r2['room']
+                        r1['building'] = r2['building']
+
+    return results
 
 def clean_major_and_note(raw: str) -> tuple:
     if not raw:
@@ -339,37 +642,35 @@ def parse_schedule_xlsx(file_path, source_url):
                 if not cell_text or cell_text.lower() in ["день", "время", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"]:
                     continue
 
-                chunks = split_cell_into_lesson_texts(cell_text)
-                for chunk in chunks:
-                    parsed_list = parse_lesson_text(chunk)
-                    if not parsed_list:
+                parsed_list = parse_physics_cell(cell_text)
+                if not parsed_list:
+                    continue
+
+                for p in parsed_list:
+                    key = f"{g['col']}_{cur_day_idx}_{cur_time}_{p['subject']}_{p['weekStart']}_{p['weekEnd']}_{p['weekType']}_{p['teacher']}_{p['room']}"
+                    if key in seen_keys:
                         continue
+                    seen_keys.add(key)
 
-                    for p in parsed_list:
-                        key = f"{g['col']}_{cur_day_idx}_{cur_time}_{p['subject']}_{p['weekStart']}_{p['weekEnd']}_{p['weekType']}_{p['teacher']}_{p['room']}"
-                        if key in seen_keys:
-                            continue
-                        seen_keys.add(key)
-
-                        lesson_counter += 1
-                        lesson = {
-                            "id": f"{g['id']}-{lesson_counter}",
-                            "subject": p["subject"],
-                            "rawText": p["clean"],
-                            "teacher": p["teacher"],
-                            "room": p["room"],
-                            "building": p["building"],
-                            "type": p["type"],
-                            "url": p["url"],
-                            "isAdditional": p["isAdditional"],
-                            "weekType": p["weekType"],
-                            "weekStart": p["weekStart"],
-                            "weekEnd": p["weekEnd"],
-                            "time": cur_time,
-                            "timeStart": cur_start,
-                            "timeEnd": cur_end
-                        }
-                        group_days_map[g["col"]][cur_day_idx]["lessons"].append(lesson)
+                    lesson_counter += 1
+                    lesson = {
+                        "id": f"{g['id']}-{lesson_counter}",
+                        "subject": p["subject"],
+                        "rawText": p.get("rawText", ""),
+                        "teacher": p["teacher"],
+                        "room": p["room"],
+                        "building": p["building"],
+                        "type": p["type"],
+                        "url": p["url"],
+                        "isAdditional": p["isAdditional"],
+                        "weekType": p["weekType"],
+                        "weekStart": p["weekStart"],
+                        "weekEnd": p["weekEnd"],
+                        "time": cur_time,
+                        "timeStart": cur_start,
+                        "timeEnd": cur_end
+                    }
+                    group_days_map[g["col"]][cur_day_idx]["lessons"].append(lesson)
 
         # Assemble groups for this sheet
         for g in groups:
