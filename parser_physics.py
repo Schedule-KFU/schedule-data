@@ -5,76 +5,20 @@ import json
 from datetime import datetime, timezone
 import openpyxl
 
-try:
-    import requests
-except ImportError:
-    requests = None
+from base_parser import (
+    HEADERS,
+    DAYS_ORDER,
+    get_latest_xlsx_url as base_get_latest_xlsx_url,
+    download_file,
+    compute_semester_string,
+    save_database_with_cache_check
+)
 
 PHYSICS_URL = "https://kpfu.ru/physics/raspisanie-zanyatij"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
-OUTPUT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "schedule_physics.json")
-
-DAYS_ORDER = [
-    ("понедельник", 1), ("вторник", 2), ("среда", 3),
-    ("четверг", 4), ("пятница", 5), ("суббота", 6)
-]
+OUTPUT_FILE = "schedule_physics.json"
 
 def get_latest_xlsx_url(retries=3):
-    html = ""
-    for attempt in range(retries):
-        try:
-            if requests is not None:
-                resp = requests.get(PHYSICS_URL, headers=HEADERS, timeout=35)
-                resp.encoding = resp.apparent_encoding
-                html = resp.text
-            else:
-                import urllib.request
-                req = urllib.request.Request(PHYSICS_URL, headers=HEADERS)
-                with urllib.request.urlopen(req, timeout=35) as resp:
-                    html = resp.read().decode("utf-8", errors="ignore")
-            if html:
-                break
-        except Exception as e:
-            print(f"[Warning] Attempt {attempt+1}/{retries} to fetch {PHYSICS_URL} failed: {e}", file=sys.stderr)
-            if attempt < retries - 1:
-                import time
-                time.sleep(2)
-
-    pattern = r'href=["\'](https?://kpfu\.ru/portal/docs/[^"\']*?\.xlsx)["\']'
-    matches = re.findall(pattern, html, flags=re.IGNORECASE)
-
-    exclude_keywords = ["peresdach", "sessii", "zachet", "komissij", "zachislenie", "praktik", "dop"]
-
-    for m in matches:
-        m_low = m.lower()
-        if "raspisanie" in m_low and any(k in m_low for k in ["semestr", "sem", "kurs", "zanyatij"]):
-            if not any(ex in m_low for ex in exclude_keywords):
-                return m
-
-    for m in matches:
-        m_low = m.lower()
-        if "raspisanie" in m_low and not any(ex in m_low for ex in exclude_keywords):
-            return m
-
-    for m in matches:
-        if "raspisanie" in m.lower():
-            return m
-
-    if matches:
-        return matches[0]
-    return None
-
-def compute_semester_string():
-    now = datetime.now()
-    month = now.month
-    year = now.year
-    is_autumn = month >= 9 or month <= 1
-    sem_num = 1 if is_autumn else 2
-    acad_start = year if month >= 9 else year - 1
-    acad_end = acad_start + 1
-    return f"{sem_num} семестр {acad_start}/{acad_end}"
+    return base_get_latest_xlsx_url(PHYSICS_URL, HEADERS, retries=retries)
 
 def split_cell_into_lesson_texts(text):
     trimmed = text.strip()
@@ -437,57 +381,13 @@ def main():
     print(f"Latest Physics XLSX URL: {latest_url}")
     local_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "physics_schedule_temp.xlsx")
     print("Downloading XLSX...")
-    downloaded = False
-    for attempt in range(3):
-        try:
-            if requests is not None:
-                r = requests.get(latest_url, headers=HEADERS, timeout=45)
-                r.raise_for_status()
-                with open(local_file, "wb") as f:
-                    f.write(r.content)
-            else:
-                import urllib.request
-                req = urllib.request.Request(latest_url, headers=HEADERS)
-                with urllib.request.urlopen(req, timeout=45) as resp:
-                    with open(local_file, "wb") as f:
-                        f.write(resp.read())
-            downloaded = True
-            break
-        except Exception as e:
-            print(f"[Warning] Download attempt {attempt+1}/3 failed: {e}", file=sys.stderr)
-            import time
-            time.sleep(2)
-
-    if not downloaded:
-        print("Failed to download XLSX after 3 attempts", file=sys.stderr)
+    if not download_file(latest_url, local_file, HEADERS):
+        print("Failed to download XLSX", file=sys.stderr)
         sys.exit(1)
 
     try:
         db = parse_schedule_xlsx(local_file, latest_url)
-
-        # Check if existing schedule_physics.json exists and if content is identical
-        if os.path.exists(OUTPUT_FILE):
-            try:
-                with open(OUTPUT_FILE, "r", encoding="utf-8") as existing_f:
-                    existing_db = json.load(existing_f)
-
-                if (existing_db.get("groups") == db.get("groups") and
-                    existing_db.get("semester") == db.get("semester") and
-                    existing_db.get("sourceUrl") == db.get("sourceUrl")):
-                    db["updatedAt"] = existing_db.get("updatedAt", db["updatedAt"])
-                    print("✅ Schedule content is identical to existing schedule_physics.json. Preserving updatedAt timestamp.")
-                else:
-                    print(f"🔄 Schedule changes detected! Updated timestamp: {db['updatedAt']}")
-            except Exception as e:
-                print(f"Warning: Failed to compare with existing schedule_physics.json: {e}")
-
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(db, f, ensure_ascii=False, indent=2)
-
-        print(f"Success! Saved to {OUTPUT_FILE}")
-        print(f"Groups parsed: {len(db['groups'])}")
-        total_lessons = sum(len(d['lessons']) for g in db['groups'] for d in g['days'])
-        print(f"Total lessons parsed: {total_lessons}")
+        save_database_with_cache_check(db, OUTPUT_FILE)
     finally:
         if os.path.exists(local_file):
             os.remove(local_file)

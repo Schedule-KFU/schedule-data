@@ -3,64 +3,22 @@ import os
 import re
 import json
 from datetime import datetime, timezone
-try:
-    import requests
-except ImportError:
-    requests = None
+import openpyxl
 
-try:
-    import openpyxl
-except ImportError:
-    openpyxl = None
+from base_parser import (
+    HEADERS,
+    DAYS_ORDER,
+    get_latest_xlsx_url as base_get_latest_xlsx_url,
+    download_file,
+    compute_semester_string,
+    save_database_with_cache_check
+)
 
 KFU_URL = "https://kpfu.ru/computing-technology/raspisanie"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-}
+OUTPUT_FILE = "schedule.json"
 
 def get_latest_xlsx_url():
-    if requests:
-        resp = requests.get(KFU_URL, headers=HEADERS, timeout=20)
-        resp.encoding = resp.apparent_encoding
-        html = resp.text
-    else:
-        import urllib.request
-        req = urllib.request.Request(KFU_URL, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            html = resp.read().decode("utf-8", errors="ignore")
-
-    pattern = r'href=["\'](https?://kpfu\.ru/portal/docs/[^"\']*?\.xlsx)["\']'
-    matches = re.findall(pattern, html, flags=re.IGNORECASE)
-    
-    exclude_keywords = ["peresdach", "sessii", "zachet", "komissij", "zachislenie", "dop"]
-
-    for m in matches:
-        m_low = m.lower()
-        if "raspisanie" in m_low and any(k in m_low for k in ["sem", "курс", "kurs"]):
-            if not any(ex in m_low for ex in exclude_keywords):
-                return m
-
-    for m in matches:
-        m_low = m.lower()
-        if "raspisanie" in m_low and not any(ex in m_low for ex in exclude_keywords):
-            return m
-
-    for m in matches:
-        if "raspisanie" in m.lower():
-            return m
-    if matches:
-        return matches[0]
-    return None
-
-def compute_semester_string():
-    now = datetime.now()
-    month = now.month
-    year = now.year
-    is_autumn = month >= 9 or month <= 1
-    sem_num = 1 if is_autumn else 2
-    acad_start = year if month >= 9 else year - 1
-    acad_end = acad_start + 1
-    return f"{sem_num} семестр {acad_start}/{acad_end}"
+    return base_get_latest_xlsx_url(KFU_URL, HEADERS)
 
 def split_cell_into_lesson_texts(text):
     trimmed = text.strip()
@@ -620,45 +578,13 @@ def main():
     print(f"Latest XLSX URL: {latest_url}")
     local_file = "schedule.xlsx"
     print("Downloading XLSX...")
-    if requests is not None:
-        r = requests.get(latest_url, headers=HEADERS, timeout=45)
-        r.raise_for_status()
-        with open(local_file, "wb") as f:
-            f.write(r.content)
-    else:
-        import urllib.request
-        req = urllib.request.Request(latest_url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=45) as resp:
-            with open(local_file, "wb") as f:
-                f.write(resp.read())
+    if not download_file(latest_url, local_file, HEADERS):
+        print("Failed to download XLSX", file=sys.stderr)
+        sys.exit(1)
     
     try:
         db = parse_schedule_xlsx(local_file, latest_url)
-        out_file = "schedule.json"
-
-        # Check if existing schedule.json exists and if content is identical
-        if os.path.exists(out_file):
-            try:
-                with open(out_file, "r", encoding="utf-8") as existing_f:
-                    existing_db = json.load(existing_f)
-                
-                if (existing_db.get("groups") == db.get("groups") and
-                    existing_db.get("semester") == db.get("semester") and
-                    existing_db.get("sourceUrl") == db.get("sourceUrl")):
-                    db["updatedAt"] = existing_db.get("updatedAt", db["updatedAt"])
-                    print("✅ Schedule content is identical to existing schedule.json. Preserving updatedAt timestamp.")
-                else:
-                    print(f"🔄 Schedule changes detected! Updated timestamp: {db['updatedAt']}")
-            except Exception as e:
-                print(f"Warning: Failed to compare with existing schedule.json: {e}")
-
-        with open(out_file, "w", encoding="utf-8") as f:
-            json.dump(db, f, ensure_ascii=False, indent=2)
-        
-        print(f"Success! Saved to {out_file}")
-        print(f"Groups parsed: {len(db['groups'])}")
-        total_lessons = sum(len(d['lessons']) for g in db['groups'] for d in g['days'])
-        print(f"Total lessons parsed: {total_lessons}")
+        save_database_with_cache_check(db, OUTPUT_FILE)
     finally:
         if os.path.exists(local_file):
             os.remove(local_file)
