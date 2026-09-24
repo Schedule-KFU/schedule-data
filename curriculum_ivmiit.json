@@ -2,7 +2,7 @@
   "version": 1,
   "facultyId": 9,
   "faculty": "Институт вычислительной математики и информационных технологий",
-  "updatedAt": "2026-09-24T08:12:32.420089+00:00",
+  "updatedAt": "2026-09-24T22:01:12.746634+00:00",
   "specialitiesCount": 14,
   "plansCount": 49,
   "plans": [
@@ -19411,9 +19411,9 @@
       ]
     },
     {
-      "id": "66852",
-      "name": "(Искусственный интеллект и суперкомпьютерные вычисления) очное 2025г.",
-      "profile": "Искусственный интеллект и суперкомпьютерные вычисления",
+      "id": "66853",
+      "name": "(Математические методы и информационные технологии в экономике и финансах) очное 2025г.",
+      "profile": "Математические методы и информационные технологии в экономике и финансах",
       "year": 2025,
       "form": "очное",
       "specialityId": "6632",
@@ -19421,114 +19421,18 @@
       "specialityName": "Прикладная математика и информатика",
       "degree": "магистратура",
       "totalCourses": 2,
-      "topLevelCount": 22,
+      "topLevelCount": 26,
       "disciplines": [
         {
-          "code": "Б1.О.05",
-          "name": "Промышленная разработка на языке javascript (продвинутый уровень)",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 468,
-          "auditoryHours": 144,
-          "lectures": 72,
-          "practices": 0,
-          "labs": 72,
-          "selfStudy": 288,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 36,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 36,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.04",
-          "name": "Введение в машинное обучение",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 252,
-          "auditoryHours": 42,
-          "lectures": 26,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 174,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 26,
-              "practices": 0,
-              "labs": 16,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.06",
-          "name": "Инженерные практики и инженерная культура",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 468,
-          "auditoryHours": 144,
-          "lectures": 72,
-          "practices": 0,
-          "labs": 72,
-          "selfStudy": 288,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 36,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 36,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
           "code": "Б1.О.02",
-          "name": "Иностранный язык в сфере профессиональных коммуникаций",
+          "name": "Академическая коммуникация",
           "section": "Дисциплины  (модули)",
-          "totalHours": 216,
+          "totalHours": 180,
           "auditoryHours": 34,
           "lectures": 0,
           "practices": 34,
           "labs": 0,
-          "selfStudy": 182,
+          "selfStudy": 146,
           "controlHours": 0,
           "semesters": [
             {
@@ -19546,23 +19450,145 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.02",
-          "name": "Программирование на С++",
+          "code": "Б1.О.03",
+          "name": "Программирование графических процессоров",
           "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 34,
-          "lectures": 0,
+          "totalHours": 252,
+          "auditoryHours": 32,
+          "lectures": 16,
           "practices": 0,
-          "labs": 34,
-          "selfStudy": 146,
+          "labs": 16,
+          "selfStudy": 166,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.04",
+          "name": "Введение в машинное обучение",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 42,
+          "lectures": 26,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 66,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 26,
+              "practices": 0,
+              "labs": 16,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.05",
+          "name": "Промышленная разработка на языке javascript (продвинутый уровень)",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 360,
+          "auditoryHours": 142,
+          "lectures": 72,
+          "practices": 0,
+          "labs": 70,
+          "selfStudy": 200,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 1,
-              "lectures": 0,
+              "lectures": 36,
               "practices": 0,
               "labs": 34,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 36,
+              "practices": 0,
+              "labs": 36,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.06",
+          "name": "Инженерные практики и инженерная культура",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 396,
+          "auditoryHours": 144,
+          "lectures": 72,
+          "practices": 0,
+          "labs": 72,
+          "selfStudy": 216,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 36,
+              "practices": 0,
+              "labs": 36,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 36,
+              "practices": 0,
+              "labs": 36,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.05",
+          "name": "Экономико-математическое моделирование",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 32,
+          "lectures": 16,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 40,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
               "exam": false,
               "credit": true
             }
@@ -19573,24 +19599,24 @@
         },
         {
           "code": "Б1.В.04",
-          "name": "Сегментация изображений",
+          "name": "Теория риска и моделирование рисковых ситуаций",
           "section": "Дисциплины  (модули)",
-          "totalHours": 216,
+          "totalHours": 108,
           "auditoryHours": 36,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 36,
-          "selfStudy": 180,
+          "lectures": 18,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 18,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 36,
-              "exam": false,
-              "credit": true
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": true,
+              "credit": false
             }
           ],
           "childDisciplines": [],
@@ -19598,48 +19624,205 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.ДВ.01",
-          "name": "Дисциплины по выбору Б1.В.ДВ.1",
+          "code": "Б1.В.03",
+          "name": "Статистический анализ данных",
           "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 18,
-          "lectures": 0,
+          "totalHours": 108,
+          "auditoryHours": 40,
+          "lectures": 16,
           "practices": 0,
-          "labs": 18,
-          "selfStudy": 162,
+          "labs": 24,
+          "selfStudy": 23,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 1,
-              "lectures": 0,
+              "lectures": 16,
               "practices": 0,
-              "labs": 18,
+              "labs": 24,
               "exam": true,
               "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.01",
+          "name": "Алгоритмы и структуры данных поиска",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 42,
+          "lectures": 28,
+          "practices": 0,
+          "labs": 14,
+          "selfStudy": 30,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 28,
+              "practices": 0,
+              "labs": 14,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.02",
+          "name": "Python и его библиотеки",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 56,
+          "lectures": 28,
+          "practices": 0,
+          "labs": 28,
+          "selfStudy": 16,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 28,
+              "practices": 0,
+              "labs": 28,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.02",
+          "name": "Дисциплины по выбору Б1.В.ДВ.2",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 32,
+          "lectures": 16,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 40,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.02.01",
+              "name": "Инструменты бизнес-аналитики",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 72,
+              "auditoryHours": 32,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "selfStudy": 40,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 16,
+                  "practices": 0,
+                  "labs": 16,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.02.02",
+              "name": "Имитационное моделирование",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 72,
+              "auditoryHours": 32,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "selfStudy": 40,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 16,
+                  "practices": 0,
+                  "labs": 16,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.01",
+          "name": "Дисциплины по выбору Б1.В.ДВ.1",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 32,
+          "lectures": 16,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 76,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "exam": false,
+              "credit": true
             }
           ],
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.01.01",
-              "name": "Вариационное исчисление и оптимальное управление",
+              "name": "Инвестиционный анализ на финансовых рынках",
               "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 18,
-              "lectures": 0,
+              "totalHours": 108,
+              "auditoryHours": 32,
+              "lectures": 16,
               "practices": 0,
-              "labs": 18,
-              "selfStudy": 162,
+              "labs": 16,
+              "selfStudy": 76,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 1,
                   "semester": 1,
-                  "lectures": 0,
+                  "lectures": 16,
                   "practices": 0,
-                  "labs": 18,
-                  "exam": true,
-                  "credit": false
+                  "labs": 16,
+                  "exam": false,
+                  "credit": true
                 }
               ],
               "childDisciplines": [],
@@ -19648,24 +19831,24 @@
             },
             {
               "code": "Б1.В.ДВ.01.02",
-              "name": "Дополнительные главы линейной алгебры",
+              "name": "Системы поддержки принятия решений",
               "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 18,
-              "lectures": 0,
+              "totalHours": 108,
+              "auditoryHours": 32,
+              "lectures": 16,
               "practices": 0,
-              "labs": 18,
-              "selfStudy": 162,
+              "labs": 16,
+              "selfStudy": 76,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 1,
                   "semester": 1,
-                  "lectures": 0,
+                  "lectures": 16,
                   "practices": 0,
-                  "labs": 18,
-                  "exam": true,
-                  "credit": false
+                  "labs": 16,
+                  "exam": false,
+                  "credit": true
                 }
               ],
               "childDisciplines": [],
@@ -19681,18 +19864,18 @@
           "name": "Научно-исследовательская работа",
           "section": "Практика",
           "totalHours": 72,
-          "auditoryHours": 18,
+          "auditoryHours": 8,
           "lectures": 0,
-          "practices": 18,
+          "practices": 8,
           "labs": 0,
-          "selfStudy": 54,
+          "selfStudy": 64,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
-              "semester": 1,
+              "semester": 2,
               "lectures": 0,
-              "practices": 18,
+              "practices": 8,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -19707,18 +19890,18 @@
           "name": "Технологическая (проектно-технологическая) практика",
           "section": "Практика",
           "totalHours": 72,
-          "auditoryHours": 18,
+          "auditoryHours": 10,
           "lectures": 0,
-          "practices": 18,
+          "practices": 10,
           "labs": 0,
-          "selfStudy": 54,
+          "selfStudy": 62,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
               "lectures": 0,
-              "practices": 18,
+              "practices": 10,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -19729,33 +19912,7 @@
           "isBlock": false
         },
         {
-          "code": "ФТД.N.01",
-          "name": "Академическая коммуникация",
-          "section": "Факультативные дисциплины",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 18,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 36,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "ФТД.N.03",
+          "code": "ФТД.N.02",
           "name": "Деловой иностранный язык",
           "section": "Факультативные дисциплины",
           "totalHours": 72,
@@ -19781,22 +19938,22 @@
           "isBlock": false
         },
         {
-          "code": "ФТД.N.02",
-          "name": "Вопросы интеллектуальной собственности и лицензирования программных продуктов",
+          "code": "ФТД.N.01",
+          "name": "Психология личной эффективности",
           "section": "Факультативные дисциплины",
-          "totalHours": 36,
-          "auditoryHours": 18,
+          "totalHours": 72,
+          "auditoryHours": 36,
           "lectures": 18,
-          "practices": 0,
+          "practices": 18,
           "labs": 0,
-          "selfStudy": 18,
+          "selfStudy": 36,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
               "lectures": 18,
-              "practices": 0,
+              "practices": 18,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -19810,12 +19967,12 @@
           "code": "Б1.О.01",
           "name": "Современная философия и методология науки",
           "section": "Дисциплины  (модули)",
-          "totalHours": 144,
+          "totalHours": 288,
           "auditoryHours": 28,
           "lectures": 28,
           "practices": 0,
           "labs": 0,
-          "selfStudy": 116,
+          "selfStudy": 260,
           "controlHours": 0,
           "semesters": [
             {
@@ -19833,21 +19990,99 @@
           "isBlock": false
         },
         {
-          "code": "Б1.О.03",
-          "name": "Программирование графических процессоров",
+          "code": "Б1.В.06",
+          "name": "Блокчейн и его приложения",
           "section": "Дисциплины  (модули)",
-          "totalHours": 252,
+          "totalHours": 108,
+          "auditoryHours": 34,
+          "lectures": 17,
+          "practices": 0,
+          "labs": 17,
+          "selfStudy": 74,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 17,
+              "practices": 0,
+              "labs": 17,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.09",
+          "name": "Методика преподавания математики и информатики",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 34,
+          "lectures": 17,
+          "practices": 0,
+          "labs": 17,
+          "selfStudy": 38,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 17,
+              "practices": 0,
+              "labs": 17,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.08",
+          "name": "Анализ интернет данных",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
           "auditoryHours": 32,
           "lectures": 16,
           "practices": 0,
           "labs": 16,
-          "selfStudy": 166,
+          "selfStudy": 40,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
               "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.07",
+          "name": "Дополнительные главы машинного обучения",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 42,
+          "lectures": 26,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 66,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 26,
               "practices": 0,
               "labs": 16,
               "exam": true,
@@ -19859,98 +20094,46 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.01",
-          "name": "Математические основы искусственных нейронных сетей",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 18,
-          "selfStudy": 36,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 18,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.03",
-          "name": "Распознавание образов и анализ изображений",
+          "code": "Б1.В.ДВ.04",
+          "name": "Дисциплины  по выбору Б1.В.ДВ.4",
           "section": "Дисциплины  (модули)",
           "totalHours": 108,
-          "auditoryHours": 18,
-          "lectures": 0,
+          "auditoryHours": 32,
+          "lectures": 16,
           "practices": 0,
-          "labs": 18,
-          "selfStudy": 90,
+          "labs": 16,
+          "selfStudy": 76,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
-              "lectures": 0,
+              "lectures": 16,
               "practices": 0,
-              "labs": 18,
+              "labs": 16,
               "exam": false,
               "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.04",
-          "name": "Дисциплины по выбору Б1.В.ДВ.4",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 38,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": false
             }
           ],
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.04.01",
-              "name": "Технология Open MP",
+              "name": "Машинное обучение в задачах прогнозирования",
               "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 34,
-              "lectures": 0,
+              "totalHours": 108,
+              "auditoryHours": 32,
+              "lectures": 16,
               "practices": 0,
-              "labs": 34,
-              "selfStudy": 38,
+              "labs": 16,
+              "selfStudy": 76,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 0,
+                  "lectures": 16,
                   "practices": 0,
-                  "labs": 34,
+                  "labs": 16,
                   "exam": false,
                   "credit": true
                 }
@@ -19961,22 +20144,22 @@
             },
             {
               "code": "Б1.В.ДВ.04.02",
-              "name": "Технология MPI",
+              "name": "Исследование операций в пакете Mathematica",
               "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 34,
-              "lectures": 0,
+              "totalHours": 108,
+              "auditoryHours": 32,
+              "lectures": 16,
               "practices": 0,
-              "labs": 34,
-              "selfStudy": 38,
+              "labs": 16,
+              "selfStudy": 76,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 0,
+                  "lectures": 16,
                   "practices": 0,
-                  "labs": 34,
+                  "labs": 16,
                   "exam": false,
                   "credit": true
                 }
@@ -19986,27 +20169,27 @@
               "isBlock": false
             }
           ],
-          "parentCode": null,
-          "isBlock": true
+          "isBlock": true,
+          "parentCode": null
         },
         {
           "code": "Б1.В.ДВ.03",
           "name": "Дисциплины по выбору Б1.В.ДВ.3",
           "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 74,
+          "totalHours": 72,
+          "auditoryHours": 32,
+          "lectures": 16,
+          "practices": 0,
+          "labs": 16,
+          "selfStudy": 40,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
               "exam": false,
               "credit": true
             }
@@ -20014,22 +20197,22 @@
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.03.01",
-              "name": "Многопроцессорные вычислительные комплексы",
+              "name": "Обработка естественного языка",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 74,
+              "totalHours": 72,
+              "auditoryHours": 32,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "selfStudy": 40,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 0,
-                  "practices": 34,
-                  "labs": 0,
+                  "lectures": 16,
+                  "practices": 0,
+                  "labs": 16,
                   "exam": false,
                   "credit": true
                 }
@@ -20040,107 +20223,28 @@
             },
             {
               "code": "Б1.В.ДВ.03.02",
-              "name": "Параллельное и последовательное программирование",
+              "name": "Введение в алгоритмический трейдинг",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 74,
+              "totalHours": 72,
+              "auditoryHours": 32,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 16,
+              "selfStudy": 40,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 0,
-                  "practices": 34,
-                  "labs": 0,
+                  "lectures": 16,
+                  "practices": 0,
+                  "labs": 16,
                   "exam": false,
                   "credit": true
                 }
               ],
               "childDisciplines": [],
               "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.02",
-          "name": "Дисциплины по выбору Б1.В.ДВ.2",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 18,
-          "selfStudy": 90,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 18,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.02.01",
-              "name": "Анализ данных на Python",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 18,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 18,
-              "selfStudy": 90,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 18,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.02.02",
-              "name": "Методы глубокого  обучения",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 18,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 18,
-              "selfStudy": 90,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 18,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
               "isBlock": false
             }
           ],
@@ -20182,7 +20286,7 @@
           "lectures": 0,
           "practices": 0,
           "labs": 0,
-          "selfStudy": 750,
+          "selfStudy": 744,
           "controlHours": 0,
           "semesters": [
             {
@@ -21070,9 +21174,9 @@
       ]
     },
     {
-      "id": "66853",
-      "name": "(Математические методы и информационные технологии в экономике и финансах) очное 2025г.",
-      "profile": "Математические методы и информационные технологии в экономике и финансах",
+      "id": "66852",
+      "name": "(Искусственный интеллект и суперкомпьютерные вычисления) очное 2025г.",
+      "profile": "Искусственный интеллект и суперкомпьютерные вычисления",
       "year": 2025,
       "form": "очное",
       "specialityId": "6632",
@@ -21080,52 +21184,35 @@
       "specialityName": "Прикладная математика и информатика",
       "degree": "магистратура",
       "totalCourses": 2,
-      "topLevelCount": 26,
+      "topLevelCount": 22,
       "disciplines": [
         {
-          "code": "Б1.О.02",
-          "name": "Академическая коммуникация",
+          "code": "Б1.О.05",
+          "name": "Промышленная разработка на языке javascript (продвинутый уровень)",
           "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 146,
+          "totalHours": 468,
+          "auditoryHours": 144,
+          "lectures": 72,
+          "practices": 0,
+          "labs": 72,
+          "selfStudy": 288,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 1,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
+              "lectures": 36,
+              "practices": 0,
+              "labs": 36,
               "exam": false,
               "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.03",
-          "name": "Программирование графических процессоров",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 252,
-          "auditoryHours": 32,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 166,
-          "controlHours": 0,
-          "semesters": [
+            },
             {
               "course": 1,
               "semester": 2,
-              "lectures": 16,
+              "lectures": 36,
               "practices": 0,
-              "labs": 16,
+              "labs": 36,
               "exam": true,
               "credit": false
             }
@@ -21138,12 +21225,12 @@
           "code": "Б1.О.04",
           "name": "Введение в машинное обучение",
           "section": "Дисциплины  (модули)",
-          "totalHours": 144,
+          "totalHours": 252,
           "auditoryHours": 42,
           "lectures": 26,
           "practices": 0,
           "labs": 16,
-          "selfStudy": 66,
+          "selfStudy": 174,
           "controlHours": 0,
           "semesters": [
             {
@@ -21161,50 +21248,15 @@
           "isBlock": false
         },
         {
-          "code": "Б1.О.05",
-          "name": "Промышленная разработка на языке javascript (продвинутый уровень)",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 360,
-          "auditoryHours": 142,
-          "lectures": 72,
-          "practices": 0,
-          "labs": 70,
-          "selfStudy": 200,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 36,
-              "practices": 0,
-              "labs": 36,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
           "code": "Б1.О.06",
           "name": "Инженерные практики и инженерная культура",
           "section": "Дисциплины  (модули)",
-          "totalHours": 396,
+          "totalHours": 468,
           "auditoryHours": 144,
           "lectures": 72,
           "practices": 0,
           "labs": 72,
-          "selfStudy": 216,
+          "selfStudy": 288,
           "controlHours": 0,
           "semesters": [
             {
@@ -21231,23 +21283,49 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.05",
-          "name": "Экономико-математическое моделирование",
+          "code": "Б1.О.02",
+          "name": "Иностранный язык в сфере профессиональных коммуникаций",
           "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 32,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 40,
+          "totalHours": 216,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 182,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
-              "semester": 2,
-              "lectures": 16,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.02",
+          "name": "Программирование на С++",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 146,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
+              "labs": 34,
               "exam": false,
               "credit": true
             }
@@ -21258,230 +21336,73 @@
         },
         {
           "code": "Б1.В.04",
-          "name": "Теория риска и моделирование рисковых ситуаций",
+          "name": "Сегментация изображений",
           "section": "Дисциплины  (модули)",
-          "totalHours": 108,
+          "totalHours": 216,
           "auditoryHours": 36,
-          "lectures": 18,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 18,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 36,
+          "selfStudy": 180,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.03",
-          "name": "Статистический анализ данных",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 40,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 24,
-          "selfStudy": 23,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 16,
+              "lectures": 0,
               "practices": 0,
-              "labs": 24,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.01",
-          "name": "Алгоритмы и структуры данных поиска",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 42,
-          "lectures": 28,
-          "practices": 0,
-          "labs": 14,
-          "selfStudy": 30,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 28,
-              "practices": 0,
-              "labs": 14,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.02",
-          "name": "Python и его библиотеки",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 56,
-          "lectures": 28,
-          "practices": 0,
-          "labs": 28,
-          "selfStudy": 16,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 28,
-              "practices": 0,
-              "labs": 28,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.02",
-          "name": "Дисциплины по выбору Б1.В.ДВ.2",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 32,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 40,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
+              "labs": 36,
               "exam": false,
               "credit": true
             }
           ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.02.01",
-              "name": "Инструменты бизнес-аналитики",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 32,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
-              "selfStudy": 40,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 16,
-                  "practices": 0,
-                  "labs": 16,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.02.02",
-              "name": "Имитационное моделирование",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 32,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
-              "selfStudy": 40,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 16,
-                  "practices": 0,
-                  "labs": 16,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
         },
         {
           "code": "Б1.В.ДВ.01",
           "name": "Дисциплины по выбору Б1.В.ДВ.1",
           "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 32,
-          "lectures": 16,
+          "totalHours": 216,
+          "auditoryHours": 18,
+          "lectures": 0,
           "practices": 0,
-          "labs": 16,
-          "selfStudy": 76,
+          "labs": 18,
+          "selfStudy": 162,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 1,
-              "lectures": 16,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
-              "exam": false,
-              "credit": true
+              "labs": 18,
+              "exam": true,
+              "credit": false
             }
           ],
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.01.01",
-              "name": "Инвестиционный анализ на финансовых рынках",
+              "name": "Вариационное исчисление и оптимальное управление",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 32,
-              "lectures": 16,
+              "totalHours": 216,
+              "auditoryHours": 18,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
-              "selfStudy": 76,
+              "labs": 18,
+              "selfStudy": 162,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 1,
                   "semester": 1,
-                  "lectures": 16,
+                  "lectures": 0,
                   "practices": 0,
-                  "labs": 16,
-                  "exam": false,
-                  "credit": true
+                  "labs": 18,
+                  "exam": true,
+                  "credit": false
                 }
               ],
               "childDisciplines": [],
@@ -21490,24 +21411,24 @@
             },
             {
               "code": "Б1.В.ДВ.01.02",
-              "name": "Системы поддержки принятия решений",
+              "name": "Дополнительные главы линейной алгебры",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 32,
-              "lectures": 16,
+              "totalHours": 216,
+              "auditoryHours": 18,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
-              "selfStudy": 76,
+              "labs": 18,
+              "selfStudy": 162,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 1,
                   "semester": 1,
-                  "lectures": 16,
+                  "lectures": 0,
                   "practices": 0,
-                  "labs": 16,
-                  "exam": false,
-                  "credit": true
+                  "labs": 18,
+                  "exam": true,
+                  "credit": false
                 }
               ],
               "childDisciplines": [],
@@ -21523,18 +21444,18 @@
           "name": "Научно-исследовательская работа",
           "section": "Практика",
           "totalHours": 72,
-          "auditoryHours": 8,
+          "auditoryHours": 18,
           "lectures": 0,
-          "practices": 8,
+          "practices": 18,
           "labs": 0,
-          "selfStudy": 64,
+          "selfStudy": 54,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
-              "semester": 2,
+              "semester": 1,
               "lectures": 0,
-              "practices": 8,
+              "practices": 18,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -21549,18 +21470,18 @@
           "name": "Технологическая (проектно-технологическая) практика",
           "section": "Практика",
           "totalHours": 72,
-          "auditoryHours": 10,
+          "auditoryHours": 18,
           "lectures": 0,
-          "practices": 10,
+          "practices": 18,
           "labs": 0,
-          "selfStudy": 62,
+          "selfStudy": 54,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
               "lectures": 0,
-              "practices": 10,
+              "practices": 18,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -21571,7 +21492,33 @@
           "isBlock": false
         },
         {
-          "code": "ФТД.N.02",
+          "code": "ФТД.N.01",
+          "name": "Академическая коммуникация",
+          "section": "Факультативные дисциплины",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 18,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 36,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "ФТД.N.03",
           "name": "Деловой иностранный язык",
           "section": "Факультативные дисциплины",
           "totalHours": 72,
@@ -21597,22 +21544,22 @@
           "isBlock": false
         },
         {
-          "code": "ФТД.N.01",
-          "name": "Психология личной эффективности",
+          "code": "ФТД.N.02",
+          "name": "Вопросы интеллектуальной собственности и лицензирования программных продуктов",
           "section": "Факультативные дисциплины",
-          "totalHours": 72,
-          "auditoryHours": 36,
+          "totalHours": 36,
+          "auditoryHours": 18,
           "lectures": 18,
-          "practices": 18,
+          "practices": 0,
           "labs": 0,
-          "selfStudy": 36,
+          "selfStudy": 18,
           "controlHours": 0,
           "semesters": [
             {
               "course": 1,
               "semester": 2,
               "lectures": 18,
-              "practices": 18,
+              "practices": 0,
               "labs": 0,
               "exam": false,
               "credit": true
@@ -21626,12 +21573,12 @@
           "code": "Б1.О.01",
           "name": "Современная философия и методология науки",
           "section": "Дисциплины  (модули)",
-          "totalHours": 288,
+          "totalHours": 144,
           "auditoryHours": 28,
           "lectures": 28,
           "practices": 0,
           "labs": 0,
-          "selfStudy": 260,
+          "selfStudy": 116,
           "controlHours": 0,
           "semesters": [
             {
@@ -21649,99 +21596,21 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.06",
-          "name": "Блокчейн и его приложения",
+          "code": "Б1.О.03",
+          "name": "Программирование графических процессоров",
           "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 34,
-          "lectures": 17,
-          "practices": 0,
-          "labs": 17,
-          "selfStudy": 74,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 17,
-              "practices": 0,
-              "labs": 17,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.09",
-          "name": "Методика преподавания математики и информатики",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 34,
-          "lectures": 17,
-          "practices": 0,
-          "labs": 17,
-          "selfStudy": 38,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 17,
-              "practices": 0,
-              "labs": 17,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.08",
-          "name": "Анализ интернет данных",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
+          "totalHours": 252,
           "auditoryHours": 32,
           "lectures": 16,
           "practices": 0,
           "labs": 16,
-          "selfStudy": 40,
+          "selfStudy": 166,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
               "lectures": 16,
-              "practices": 0,
-              "labs": 16,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.07",
-          "name": "Дополнительные главы машинного обучения",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 42,
-          "lectures": 26,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 66,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 26,
               "practices": 0,
               "labs": 16,
               "exam": true,
@@ -21753,46 +21622,98 @@
           "isBlock": false
         },
         {
-          "code": "Б1.В.ДВ.04",
-          "name": "Дисциплины  по выбору Б1.В.ДВ.4",
+          "code": "Б1.В.01",
+          "name": "Математические основы искусственных нейронных сетей",
           "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 32,
-          "lectures": 16,
+          "totalHours": 72,
+          "auditoryHours": 18,
+          "lectures": 0,
           "practices": 0,
-          "labs": 16,
-          "selfStudy": 76,
+          "labs": 18,
+          "selfStudy": 36,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
-              "lectures": 16,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
+              "labs": 18,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.03",
+          "name": "Распознавание образов и анализ изображений",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 18,
+          "selfStudy": 90,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 18,
               "exam": false,
               "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.04",
+          "name": "Дисциплины по выбору Б1.В.ДВ.4",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 38,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": false
             }
           ],
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.04.01",
-              "name": "Машинное обучение в задачах прогнозирования",
+              "name": "Технология Open MP",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 32,
-              "lectures": 16,
+              "totalHours": 72,
+              "auditoryHours": 34,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
-              "selfStudy": 76,
+              "labs": 34,
+              "selfStudy": 38,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 16,
+                  "lectures": 0,
                   "practices": 0,
-                  "labs": 16,
+                  "labs": 34,
                   "exam": false,
                   "credit": true
                 }
@@ -21803,22 +21724,22 @@
             },
             {
               "code": "Б1.В.ДВ.04.02",
-              "name": "Исследование операций в пакете Mathematica",
+              "name": "Технология MPI",
               "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 32,
-              "lectures": 16,
+              "totalHours": 72,
+              "auditoryHours": 34,
+              "lectures": 0,
               "practices": 0,
-              "labs": 16,
-              "selfStudy": 76,
+              "labs": 34,
+              "selfStudy": 38,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 16,
+                  "lectures": 0,
                   "practices": 0,
-                  "labs": 16,
+                  "labs": 34,
                   "exam": false,
                   "credit": true
                 }
@@ -21828,27 +21749,27 @@
               "isBlock": false
             }
           ],
-          "isBlock": true,
-          "parentCode": null
+          "parentCode": null,
+          "isBlock": true
         },
         {
           "code": "Б1.В.ДВ.03",
           "name": "Дисциплины по выбору Б1.В.ДВ.3",
           "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 32,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 16,
-          "selfStudy": 40,
+          "totalHours": 108,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 74,
           "controlHours": 0,
           "semesters": [
             {
               "course": 2,
               "semester": 3,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
               "exam": false,
               "credit": true
             }
@@ -21856,22 +21777,22 @@
           "childDisciplines": [
             {
               "code": "Б1.В.ДВ.03.01",
-              "name": "Обработка естественного языка",
+              "name": "Многопроцессорные вычислительные комплексы",
               "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 32,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
-              "selfStudy": 40,
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 74,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 16,
-                  "practices": 0,
-                  "labs": 16,
+                  "lectures": 0,
+                  "practices": 34,
+                  "labs": 0,
                   "exam": false,
                   "credit": true
                 }
@@ -21882,28 +21803,107 @@
             },
             {
               "code": "Б1.В.ДВ.03.02",
-              "name": "Введение в алгоритмический трейдинг",
+              "name": "Параллельное и последовательное программирование",
               "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 32,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 16,
-              "selfStudy": 40,
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 74,
               "controlHours": 0,
               "semesters": [
                 {
                   "course": 2,
                   "semester": 3,
-                  "lectures": 16,
-                  "practices": 0,
-                  "labs": 16,
+                  "lectures": 0,
+                  "practices": 34,
+                  "labs": 0,
                   "exam": false,
                   "credit": true
                 }
               ],
               "childDisciplines": [],
               "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.02",
+          "name": "Дисциплины по выбору Б1.В.ДВ.2",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 18,
+          "selfStudy": 90,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 18,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.02.01",
+              "name": "Анализ данных на Python",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 18,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 18,
+              "selfStudy": 90,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 18,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.02.02",
+              "name": "Методы глубокого  обучения",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 18,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 18,
+              "selfStudy": 90,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 18,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
               "isBlock": false
             }
           ],
@@ -21945,7 +21945,7 @@
           "lectures": 0,
           "practices": 0,
           "labs": 0,
-          "selfStudy": 744,
+          "selfStudy": 750,
           "controlHours": 0,
           "semesters": [
             {
@@ -23832,6 +23832,972 @@
       ]
     },
     {
+      "id": "66857",
+      "name": "(Методы математического моделирования) очное 2025г.",
+      "profile": "Методы математического моделирования",
+      "year": 2025,
+      "form": "очное",
+      "specialityId": "6640",
+      "specialityCode": "01.04.04",
+      "specialityName": "Прикладная математика",
+      "degree": "магистратура",
+      "totalCourses": 2,
+      "topLevelCount": 24,
+      "disciplines": [
+        {
+          "code": "Б1.О.01",
+          "name": "История и методология прикладной математики и информационных технологий",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 28,
+          "lectures": 28,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 44,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 28,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.03",
+          "name": "Технологии программирования",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 128,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.04",
+          "name": "Многопроцессорные вычислительные комплексы",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 288,
+          "auditoryHours": 28,
+          "lectures": 14,
+          "practices": 0,
+          "labs": 14,
+          "selfStudy": 206,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 14,
+              "practices": 0,
+              "labs": 14,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.05",
+          "name": "Иностранный язык в сфере профессиональной коммуникации",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 146,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.06",
+          "name": "Математическое моделирование на основе специализированных пакетов программ",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 288,
+          "auditoryHours": 68,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 68,
+          "selfStudy": 220,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.05",
+          "name": "Методы решения спектральных задач математической физики",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 28,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 28,
+          "selfStudy": 44,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 28,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.01",
+          "name": "Принципы построения математических моделей",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 28,
+          "lectures": 28,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 98,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 28,
+              "practices": 0,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.02",
+          "name": "Методы решения сверхбольших систем сеточных уравнений",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 28,
+          "lectures": 14,
+          "practices": 0,
+          "labs": 14,
+          "selfStudy": 80,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 14,
+              "practices": 0,
+              "labs": 14,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.04",
+          "name": "Дисциплины по выбору Б1.В.ДВ.4",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 34,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 56,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.04.01",
+              "name": "Математическое моделирование вибрации конструкций",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 56,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.04",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.04.02",
+              "name": "Численные методы решения прикладных задач",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 56,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.04",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.03",
+          "name": "Дисциплины по выбору Б1.В.ДВ.3",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 74,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.03.01",
+              "name": "Инженерное проектирование в Логос",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 74,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.03.02",
+              "name": "Дополнительные главы математической физики",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 74,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.01",
+          "name": "Дисциплины по выбору Б1.В.ДВ.1",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 34,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 110,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.01.01",
+              "name": "Издательские системы для оформления научных работ",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 180,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 110,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 1,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.01",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.01.02",
+              "name": "Актуальные вопросы математического моделирования",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 180,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 110,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 1,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.01",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.05",
+          "name": "Дисциплины по выбору Б1.В.ДВ.5",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 110,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.05.01",
+              "name": "Современные методы решения краевых задач",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 110,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 1,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.05",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.05.02",
+              "name": "Численные методы решения дифференциальных и интегральных уравнений",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 110,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 1,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.05",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б2.В.02(П)",
+          "name": "Научно-исследовательская работа",
+          "section": "Практика",
+          "totalHours": 72,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 54,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б2.В.01(П)",
+          "name": "Технологическая (проектно-технологическая) практика",
+          "section": "Практика",
+          "totalHours": 72,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 54,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "ФТД.N.02",
+          "name": "Академическая коммуникация",
+          "section": "Факультативные дисциплины",
+          "totalHours": 72,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 54,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "ФТД.N.01",
+          "name": "Вопросы интеллектуальной собственности и лицензирования программных средств",
+          "section": "Факультативные дисциплины",
+          "totalHours": 36,
+          "auditoryHours": 18,
+          "lectures": 18,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 18,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 18,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.02",
+          "name": "Современная философия и методология науки",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 28,
+          "lectures": 28,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 188,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 28,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.04",
+          "name": "Дополнительные главы прикладного функционального анализа",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 38,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.03",
+          "name": "Параллельные алгоритмы и программирование",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 28,
+          "lectures": 14,
+          "practices": 0,
+          "labs": 14,
+          "selfStudy": 80,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 14,
+              "practices": 0,
+              "labs": 14,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.06",
+          "name": "Дисциплины  по выбору Б1.В.ДВ.6",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 34,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 47,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.06.01",
+              "name": "Математическое моделирование в теории фильтрации",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 47,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.06",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.06.02",
+              "name": "Методы решения нелинейных задач",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 47,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 0,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.06",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.02",
+          "name": "Дисциплины по выбору Б1.В.ДВ.2",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 34,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 38,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.02.01",
+              "name": "Математические модели механики и физики",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 38,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.02.02",
+              "name": "Современные методы решения задач оптимизации",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 34,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "selfStudy": 38,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б3.Г.01(Д)",
+          "name": "Выполнение и защита выпускной квалификационной работы",
+          "section": "Государственная итоговая аттестация",
+          "totalHours": 324,
+          "auditoryHours": 0,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 309,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б2.О.02(П)",
+          "name": "Научно-исследовательская работа",
+          "section": "Практика",
+          "totalHours": 756,
+          "auditoryHours": 0,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 738,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б2.О.01(У)",
+          "name": "Технологическая (проектно-технологическая) практика",
+          "section": "Практика",
+          "totalHours": 432,
+          "auditoryHours": 18,
+          "lectures": 0,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 414,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        }
+      ]
+    },
+    {
       "id": "66856",
       "name": "(Классические и квантовые методы обработки информации) очное 2025г.",
       "profile": "Классические и квантовые методы обработки информации",
@@ -25476,972 +26442,6 @@
               "practices": 0,
               "labs": 0,
               "selfStudy": 74,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б3.Г.01(Д)",
-          "name": "Выполнение и защита выпускной квалификационной работы",
-          "section": "Государственная итоговая аттестация",
-          "totalHours": 324,
-          "auditoryHours": 0,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 309,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б2.О.02(П)",
-          "name": "Научно-исследовательская работа",
-          "section": "Практика",
-          "totalHours": 756,
-          "auditoryHours": 0,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 738,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б2.О.01(У)",
-          "name": "Технологическая (проектно-технологическая) практика",
-          "section": "Практика",
-          "totalHours": 432,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 414,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        }
-      ]
-    },
-    {
-      "id": "66857",
-      "name": "(Методы математического моделирования) очное 2025г.",
-      "profile": "Методы математического моделирования",
-      "year": 2025,
-      "form": "очное",
-      "specialityId": "6640",
-      "specialityCode": "01.04.04",
-      "specialityName": "Прикладная математика",
-      "degree": "магистратура",
-      "totalCourses": 2,
-      "topLevelCount": 24,
-      "disciplines": [
-        {
-          "code": "Б1.О.01",
-          "name": "История и методология прикладной математики и информационных технологий",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 28,
-          "lectures": 28,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 44,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 28,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.03",
-          "name": "Технологии программирования",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 128,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.04",
-          "name": "Многопроцессорные вычислительные комплексы",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 288,
-          "auditoryHours": 28,
-          "lectures": 14,
-          "practices": 0,
-          "labs": 14,
-          "selfStudy": 206,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 14,
-              "practices": 0,
-              "labs": 14,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.05",
-          "name": "Иностранный язык в сфере профессиональной коммуникации",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 146,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.06",
-          "name": "Математическое моделирование на основе специализированных пакетов программ",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 288,
-          "auditoryHours": 68,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 68,
-          "selfStudy": 220,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.05",
-          "name": "Методы решения спектральных задач математической физики",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 28,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 28,
-          "selfStudy": 44,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 28,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.01",
-          "name": "Принципы построения математических моделей",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 28,
-          "lectures": 28,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 98,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 28,
-              "practices": 0,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.02",
-          "name": "Методы решения сверхбольших систем сеточных уравнений",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 28,
-          "lectures": 14,
-          "practices": 0,
-          "labs": 14,
-          "selfStudy": 80,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 14,
-              "practices": 0,
-              "labs": 14,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.04",
-          "name": "Дисциплины по выбору Б1.В.ДВ.4",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 34,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 56,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.04.01",
-              "name": "Математическое моделирование вибрации конструкций",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 56,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.04",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.04.02",
-              "name": "Численные методы решения прикладных задач",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 56,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.04",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.03",
-          "name": "Дисциплины по выбору Б1.В.ДВ.3",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 74,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.03.01",
-              "name": "Инженерное проектирование в Логос",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 74,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.03.02",
-              "name": "Дополнительные главы математической физики",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 74,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.01",
-          "name": "Дисциплины по выбору Б1.В.ДВ.1",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 34,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 110,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.01.01",
-              "name": "Издательские системы для оформления научных работ",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 180,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 110,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 1,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.01",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.01.02",
-              "name": "Актуальные вопросы математического моделирования",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 180,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 110,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 1,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.01",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.05",
-          "name": "Дисциплины по выбору Б1.В.ДВ.5",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 110,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.05.01",
-              "name": "Современные методы решения краевых задач",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 110,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 1,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.05",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.05.02",
-              "name": "Численные методы решения дифференциальных и интегральных уравнений",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 110,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 1,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.05",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б2.В.02(П)",
-          "name": "Научно-исследовательская работа",
-          "section": "Практика",
-          "totalHours": 72,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 54,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б2.В.01(П)",
-          "name": "Технологическая (проектно-технологическая) практика",
-          "section": "Практика",
-          "totalHours": 72,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 54,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "ФТД.N.02",
-          "name": "Академическая коммуникация",
-          "section": "Факультативные дисциплины",
-          "totalHours": 72,
-          "auditoryHours": 18,
-          "lectures": 0,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 54,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "ФТД.N.01",
-          "name": "Вопросы интеллектуальной собственности и лицензирования программных средств",
-          "section": "Факультативные дисциплины",
-          "totalHours": 36,
-          "auditoryHours": 18,
-          "lectures": 18,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 18,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 18,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.02",
-          "name": "Современная философия и методология науки",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 28,
-          "lectures": 28,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 188,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 28,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.04",
-          "name": "Дополнительные главы прикладного функционального анализа",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 38,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.03",
-          "name": "Параллельные алгоритмы и программирование",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 28,
-          "lectures": 14,
-          "practices": 0,
-          "labs": 14,
-          "selfStudy": 80,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 14,
-              "practices": 0,
-              "labs": 14,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.06",
-          "name": "Дисциплины  по выбору Б1.В.ДВ.6",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 34,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 47,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.06.01",
-              "name": "Математическое моделирование в теории фильтрации",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 47,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.06",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.06.02",
-              "name": "Методы решения нелинейных задач",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 47,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 0,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.06",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.02",
-          "name": "Дисциплины по выбору Б1.В.ДВ.2",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 34,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 38,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.02.01",
-              "name": "Математические модели механики и физики",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 38,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.02.02",
-              "name": "Современные методы решения задач оптимизации",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 34,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "selfStudy": 38,
               "controlHours": 0,
               "semesters": [
                 {
