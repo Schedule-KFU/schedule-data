@@ -162,14 +162,10 @@ def extract_subgroup(text):
         return int(m.group(1))
     return None
 
-def extract_lesson_type(text):
+def extract_lesson_type(text, room=""):
     low = text.lower()
     if "(лаб" in low or "лаб." in low or "лаборат" in low or re.search(r'\b-\s*лаб\b', low):
         return "lab"
-    elif "(пр" in low or "пр." in low or "практ" in low or re.search(r'\b-\s*пр\b', low):
-        return "practice"
-    elif "(л)" in low or "(л+" in low or "лек." in low or "лекция" in low or re.search(r'\b-\s*(?:лек|л\b)', low):
-        return "lecture"
     elif "дистанцион" in low or "онлайн" in low:
         return "distance"
     elif "эор" in low:
@@ -178,6 +174,21 @@ def extract_lesson_type(text):
         return "cor"
     elif "физическая культура" in low or "спорт" in low:
         return "practice"
+    
+    # Classify by auditorium/room, not by words in subject title
+    r_target = room or extract_room(text)
+    if "конф" in r_target.lower():
+        return "lecture"
+    
+    m_num = re.search(r"\d+", r_target)
+    if m_num:
+        r_num = int(m_num.group(0))
+        # 100-299 are large lecture halls (108, 109, 110, 112, 216, 218)
+        if 100 <= r_num < 300:
+            return "lecture"
+        else:
+            return "practice"
+
     return "other"
 
 def clean_subject(raw_text, raw_teachers, room):
@@ -404,13 +415,14 @@ def parse_physics_cell(cell_text):
             t_names = ', '.join(common_teachers)
             for _, tl in type_lines:
                 w_start, w_end, w_type = extract_weeks(tl)
+                tl_room = extract_room(tl) or extract_room(sec_text)
                 results.append({
                     'subject': base_subj,
                     'rawText': f'{base_subj}\n{tl}',
                     'teacher': t_names,
-                    'room': extract_room(tl) or extract_room(sec_text),
+                    'room': tl_room,
                     'building': extract_building(tl) or extract_building(sec_text),
-                    'type': extract_lesson_type(tl),
+                    'type': extract_lesson_type(tl, tl_room),
                     'url': url,
                     'isAdditional': is_additional,
                     'weekStart': w_start,
@@ -419,19 +431,21 @@ def parse_physics_cell(cell_text):
                     'subgroup': extract_subgroup(tl)
                 })
         elif len(teacher_lines) >= 2 and any(extract_subgroup(l) or extract_room(l) for _, l, _, _ in teacher_lines):
-            subj_type = extract_lesson_type(sec_text)
+            sec_room = extract_room(sec_text)
+            subj_type = extract_lesson_type(sec_text, sec_room)
             for idx_t, (line_idx, l_str, t_list, r_list) in enumerate(teacher_lines):
                 next_idx = teacher_lines[idx_t+1][0] if idx_t+1 < len(teacher_lines) else len(sec)
                 sub_lines = sec[line_idx:next_idx]
                 sub_text = '\n'.join(sub_lines)
                 w_start, w_end, w_type = extract_weeks(sub_text)
+                sub_room = extract_room(sub_text) or sec_room
                 results.append({
                     'subject': base_subj,
                     'rawText': f'{base_subj}\n{sub_text}',
                     'teacher': ', '.join(t_list),
-                    'room': extract_room(sub_text) or extract_room(sec_text),
+                    'room': sub_room,
                     'building': extract_building(sub_text) or extract_building(sec_text),
-                    'type': subj_type,
+                    'type': extract_lesson_type(sub_text, sub_room) if sub_room else subj_type,
                     'url': url,
                     'isAdditional': is_additional,
                     'weekStart': w_start,
@@ -444,7 +458,7 @@ def parse_physics_cell(cell_text):
             bld = extract_building(sec_text)
             w_start, w_end, w_type = extract_weeks(sec_text)
             subgrp = extract_subgroup(sec_text)
-            l_type = extract_lesson_type(sec_text)
+            l_type = extract_lesson_type(sec_text, room)
             clean_s = clean_subject(first_line, common_raw_t, room)
             if len(clean_s) < 2:
                 clean_s = clean_subject(sec_text, common_raw_t, room)

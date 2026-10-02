@@ -184,10 +184,6 @@ def parse_lesson_text(txt):
         l_type = "eor"
     elif "цор" in clean_low:
         l_type = "cor"
-    elif "практи" in clean_low or "пр." in clean_low:
-        l_type = "practice"
-    elif "лек." in clean_low or "лекция" in clean_low:
-        l_type = "lecture"
     else:
         l_type = "other"
 
