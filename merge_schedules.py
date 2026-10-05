@@ -28,19 +28,32 @@ def merge_schedules():
     # Sort groups by group display name
     all_groups.sort(key=lambda g: g.get("group", ""))
 
+    semester = ivmiit_data.get("semester") or physics_data.get("semester") or "1 семестр 2026/2027"
     iso_now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
     combined_data = {
         "version": 4,
-        "semester": ivmiit_data.get("semester") or physics_data.get("semester") or "1 семестр 2026/2027",
+        "semester": semester,
         "updatedAt": iso_now,
         "sourceUrl": "https://kpfu.ru",
         "groups": all_groups
     }
 
+    if combined_path.exists():
+        try:
+            with open(combined_path, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+            if (existing_data.get("groups") == all_groups and
+                existing_data.get("semester") == semester):
+                combined_data["updatedAt"] = existing_data.get("updatedAt", iso_now)
+                print(f"✅ Combined schedule content is identical. Preserving updatedAt timestamp ({combined_data['updatedAt']}).")
+        except Exception as e:
+            print(f"Warning: Failed to compare with existing {combined_path}: {e}")
+
     with open(combined_path, "w", encoding="utf-8") as f:
         json.dump(combined_data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Generated schedule_combined.json: {len(all_groups)} groups ({len(ivmiit_groups)} IVMIIT + {len(physics_groups)} Physics)")
+    print(f"✅ Saved schedule_combined.json: {len(all_groups)} groups ({len(ivmiit_groups)} IVMIIT + {len(physics_groups)} Physics)")
     return True
 
 if __name__ == "__main__":

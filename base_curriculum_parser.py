@@ -345,6 +345,16 @@ def run_curriculum_crawler(faculty_id, faculty_name, output_filename):
     }
 
     output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_filename)
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as existing_f:
+                existing_data = json.load(existing_f)
+            if existing_data.get("plans") == parsed_plans:
+                result_data["updatedAt"] = existing_data.get("updatedAt", result_data["updatedAt"])
+                print(f"✅ Curriculum content is identical to existing {output_filename}. Preserving updatedAt.")
+        except Exception as e:
+            print(f"Warning: Failed to compare curriculum {output_filename}: {e}")
+
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result_data, f, ensure_ascii=False, indent=2)
 
