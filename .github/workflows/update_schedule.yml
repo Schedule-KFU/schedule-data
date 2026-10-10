@@ -41,6 +41,19 @@ jobs:
       - name: Merge schedules (IVMIIT + Physics)
         run: python merge_schedules.py
 
+      - name: Validate merged schedule sanity
+        run: |
+          python -c "
+          import json, sys
+          with open('schedule_combined.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+          groups = data.get('groups', [])
+          print(f'Total groups parsed: {len(groups)}')
+          if len(groups) < 100:
+              print(f'Error: Group count ({len(groups)}) is suspiciously low (< 100). Aborting to prevent committing corrupted schedule.', file=sys.stderr)
+              sys.exit(1)
+          "
+
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
