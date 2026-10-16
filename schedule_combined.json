@@ -2,9 +2,6 @@
   "version": 4,
   "schemaVersion": "1.0",
   "semester": "1 семестр 2026/2027",
-<<<<<<< Updated upstream
-  "updatedAt": "2026-10-13T23:15:48Z",
-=======
   "semesterMeta": {
     "semesterNumber": 1,
     "academicYear": "2026/2027",
@@ -13,8 +10,7 @@
     "academicWeeksCount": 18,
     "weekParityRule": "odd_first"
   },
-  "updatedAt": "2026-10-16T08:07:04Z",
->>>>>>> Stashed changes
+  "updatedAt": "2026-10-16T08:48:45Z",
   "sourceUrl": "https://kpfu.ru",
   "groups": [
     {
@@ -52586,11 +52582,7 @@
             },
             {
               "id": "09-453 (1)-2749",
-<<<<<<< Updated upstream
-              "subject": "Инфоромационная безопасность. Аль-А",
-=======
               "subject": "Инфоромационная безопасность. А",
->>>>>>> Stashed changes
               "rawText": "Инфоромационная безопасность. Аль-Халиди А.М.А. ,  ауд. 809 (Кремл. 35)",
               "teacher": "Аль-Халиди А.М.",
               "room": "809",
@@ -52902,11 +52894,7 @@
             },
             {
               "id": "09-453 (2)-2765",
-<<<<<<< Updated upstream
-              "subject": "Инфоромационная безопасность. Аль-А",
-=======
               "subject": "Инфоромационная безопасность. А",
->>>>>>> Stashed changes
               "rawText": "Инфоромационная безопасность. Аль-Халиди А.М.А. ,  ауд. 809 (Кремл. 35)",
               "teacher": "Аль-Халиди А.М.",
               "room": "809",
