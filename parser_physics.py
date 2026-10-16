@@ -11,6 +11,7 @@ from base_parser import (
     get_latest_xlsx_url as base_get_latest_xlsx_url,
     download_file,
     compute_semester_string,
+    compute_semester_meta,
     save_database_with_cache_check
 )
 
@@ -712,7 +713,9 @@ def parse_schedule_xlsx(file_path, source_url):
     iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return {
         "version": 4,
+        "schemaVersion": "1.0",
         "semester": compute_semester_string(),
+        "semesterMeta": compute_semester_meta(),
         "updatedAt": iso_date,
         "sourceUrl": source_url,
         "groups": result_groups

@@ -1,7 +1,20 @@
 {
   "version": 4,
+  "schemaVersion": "1.0",
   "semester": "1 семестр 2026/2027",
+<<<<<<< Updated upstream
   "updatedAt": "2026-10-13T23:13:23Z",
+=======
+  "semesterMeta": {
+    "semesterNumber": 1,
+    "academicYear": "2026/2027",
+    "startDate": "2026-08-31",
+    "endDate": "2027-01-25",
+    "academicWeeksCount": 18,
+    "weekParityRule": "odd_first"
+  },
+  "updatedAt": "2026-10-16T08:07:04Z",
+>>>>>>> Stashed changes
   "sourceUrl": "https://kpfu.ru/portal/docs/F560856137/Raspisanie.zanyatij_13.10.2026.xlsx",
   "groups": [
     {

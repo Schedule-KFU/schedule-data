@@ -2,7 +2,7 @@ import sys
 import os
 import re
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 try:
     import requests
@@ -22,7 +22,7 @@ DAYS_ORDER = [
     ("суббота", 6)
 ]
 
-TEACHER_PATTERN = r"[А-ЯЁ][а-яё]+\s+[А-ЯЁ]\.\s*[А-ЯЁ]\.?"
+TEACHER_PATTERN = r"[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.?)?"
 
 def compute_semester_string():
     now = datetime.now()
@@ -33,6 +33,36 @@ def compute_semester_string():
     acad_start = year if month >= 9 else year - 1
     acad_end = acad_start + 1
     return f"{sem_num} семестр {acad_start}/{acad_end}"
+
+def compute_semester_meta(ref_date=None):
+    now = ref_date or datetime.now()
+    month = now.month
+    year = now.year
+    is_autumn = month >= 9 or month <= 1
+    sem_num = 1 if is_autumn else 2
+    acad_start = year if month >= 9 else year - 1
+    acad_end = acad_start + 1
+
+    if is_autumn:
+        # Autumn starts week of Sept 1
+        sept1 = datetime(acad_start, 9, 1)
+        start_monday = sept1 - timedelta(days=sept1.weekday())
+        end_date = datetime(acad_end, 1, 25)
+    else:
+        # Spring starts first Monday of February
+        feb1 = datetime(acad_end, 2, 1)
+        days_to_monday = (7 - feb1.weekday()) % 7 if feb1.weekday() != 0 else 0
+        start_monday = feb1 + timedelta(days=days_to_monday)
+        end_date = datetime(acad_end, 6, 30)
+
+    return {
+        "semesterNumber": sem_num,
+        "academicYear": f"{acad_start}/{acad_end}",
+        "startDate": start_monday.strftime("%Y-%m-%d"),
+        "endDate": end_date.strftime("%Y-%m-%d"),
+        "academicWeeksCount": 18,
+        "weekParityRule": "odd_first"
+    }
 
 def get_latest_xlsx_url(web_url, headers=HEADERS, exclude_keywords=None, retries=3):
     if exclude_keywords is None:

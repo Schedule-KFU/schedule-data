@@ -1,6 +1,7 @@
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from base_parser import compute_semester_meta
 
 def merge_schedules():
     base_dir = Path(__file__).parent
@@ -33,7 +34,9 @@ def merge_schedules():
 
     combined_data = {
         "version": 4,
+        "schemaVersion": "1.0",
         "semester": semester,
+        "semesterMeta": compute_semester_meta(),
         "updatedAt": iso_now,
         "sourceUrl": "https://kpfu.ru",
         "groups": all_groups
