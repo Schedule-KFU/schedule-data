@@ -2,2584 +2,10 @@
   "version": 1,
   "facultyId": 6,
   "faculty": "Институт физики",
-  "updatedAt": "2026-10-21T22:11:47.399197+00:00",
+  "updatedAt": "2026-10-22T22:10:57.908873+00:00",
   "specialitiesCount": 16,
   "plansCount": 72,
   "plans": [
-    {
-      "id": "71291",
-      "name": "(Физика живых систем) очное 2026г.",
-      "profile": "Физика живых систем",
-      "year": 2026,
-      "form": "очное",
-      "specialityId": "6537",
-      "specialityCode": "03.03.02",
-      "specialityName": "Физика",
-      "degree": "бакалавриат",
-      "totalCourses": 4,
-      "topLevelCount": 61,
-      "disciplines": [
-        {
-          "code": "Б1.О.11",
-          "name": "Теория вероятностей и математическая статистика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 86,
-          "lectures": 34,
-          "practices": 52,
-          "labs": 0,
-          "selfStudy": 21,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 34,
-              "practices": 52,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.34",
-          "name": "Элективные курсы по физической культуре и спорту",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 328,
-          "auditoryHours": 328,
-          "lectures": 0,
-          "practices": 328,
-          "labs": 0,
-          "selfStudy": 0,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 64,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 68,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 0,
-              "practices": 64,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 0,
-              "practices": 68,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 0,
-              "practices": 64,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.01",
-          "name": "Иностранный язык",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 94,
-          "lectures": 0,
-          "practices": 94,
-          "labs": 0,
-          "selfStudy": 38,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 24,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 34,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 0,
-              "practices": 36,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.02",
-          "name": "История России",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 116,
-          "lectures": 70,
-          "practices": 46,
-          "labs": 0,
-          "selfStudy": 17,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 36,
-              "practices": 22,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 34,
-              "practices": 24,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.04",
-          "name": "Безопасность жизнедеятельности",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 8,
-          "practices": 10,
-          "labs": 18,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 8,
-              "practices": 10,
-              "labs": 18,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.05",
-          "name": "Физическая культура и спорт",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 72,
-          "lectures": 36,
-          "practices": 36,
-          "labs": 0,
-          "selfStudy": 0,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 36,
-              "practices": 36,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.06",
-          "name": "Математический анализ",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 468,
-          "auditoryHours": 282,
-          "lectures": 120,
-          "practices": 162,
-          "labs": 0,
-          "selfStudy": 75,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 34,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 52,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 34,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.07",
-          "name": "Аналитическая геометрия",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 76,
-          "lectures": 24,
-          "practices": 52,
-          "labs": 0,
-          "selfStudy": 13,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 24,
-              "practices": 52,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.08",
-          "name": "Линейная алгебра",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 78,
-          "lectures": 24,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 11,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 24,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.35",
-          "name": "Основы российской государственности",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 54,
-          "lectures": 18,
-          "practices": 36,
-          "labs": 0,
-          "selfStudy": 17,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 18,
-              "practices": 36,
-              "labs": 0,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.12",
-          "name": "Информатика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 288,
-          "auditoryHours": 186,
-          "lectures": 68,
-          "practices": 0,
-          "labs": 118,
-          "selfStudy": 99,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 24,
-              "practices": 0,
-              "labs": 34,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 20,
-              "practices": 0,
-              "labs": 42,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 24,
-              "practices": 0,
-              "labs": 42,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.О.12.01",
-              "name": "Информационные технологии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 58,
-              "lectures": 24,
-              "practices": 0,
-              "labs": 34,
-              "selfStudy": 13,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 1,
-                  "lectures": 24,
-                  "practices": 0,
-                  "labs": 34,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.О.12",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.О.12.02",
-              "name": "Программирование",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 62,
-              "lectures": 20,
-              "practices": 0,
-              "labs": 42,
-              "selfStudy": 45,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 20,
-                  "practices": 0,
-                  "labs": 42,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.О.12",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.О.12.03",
-              "name": "Численные методы и математическое моделирование",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 66,
-              "lectures": 24,
-              "practices": 0,
-              "labs": 42,
-              "selfStudy": 41,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 24,
-                  "practices": 0,
-                  "labs": 42,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.О.12",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.О.13",
-          "name": "Механика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 108,
-          "lectures": 48,
-          "practices": 60,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 48,
-              "practices": 60,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.14",
-          "name": "Молекулярная физика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 108,
-          "lectures": 48,
-          "practices": 60,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 48,
-              "practices": 60,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.19",
-          "name": "Общий физический практикум",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 432,
-          "auditoryHours": 254,
-          "lectures": 0,
-          "practices": 94,
-          "labs": 160,
-          "selfStudy": 172,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 22,
-              "labs": 24,
-              "exam": false,
-              "credit": false
-            },
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 24,
-              "labs": 24,
-              "exam": false,
-              "credit": false
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 0,
-              "practices": 24,
-              "labs": 24,
-              "exam": false,
-              "credit": false
-            },
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 0,
-              "practices": 24,
-              "labs": 24,
-              "exam": false,
-              "credit": false
-            },
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 32,
-              "exam": false,
-              "credit": false
-            },
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 32,
-              "exam": false,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.26",
-          "name": "Русский язык и культура речи",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 12,
-          "practices": 24,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 12,
-              "practices": 24,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.28",
-          "name": "Химия",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 66,
-          "lectures": 32,
-          "practices": 0,
-          "labs": 34,
-          "selfStudy": 41,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 32,
-              "practices": 0,
-              "labs": 34,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.05",
-          "name": "Психология и педагогика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 68,
-          "lectures": 34,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 74,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 16,
-              "practices": 16,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.05.01",
-              "name": "Психология",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 36,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "selfStudy": 35,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 1,
-                  "semester": 2,
-                  "lectures": 18,
-                  "practices": 18,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.05",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.05.02",
-              "name": "Педагогика",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 72,
-              "auditoryHours": 32,
-              "lectures": 16,
-              "practices": 16,
-              "labs": 0,
-              "selfStudy": 39,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 2,
-                  "semester": 3,
-                  "lectures": 16,
-                  "practices": 16,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.05",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б2.О.01(У)",
-          "name": "Ознакомительная практика",
-          "section": "Практика",
-          "totalHours": 108,
-          "auditoryHours": 60,
-          "lectures": 0,
-          "practices": 60,
-          "labs": 0,
-          "selfStudy": 47,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 2,
-              "lectures": 0,
-              "practices": 60,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "ФТД.N.01",
-          "name": "Введение в математику",
-          "section": "Факультативные дисциплины",
-          "totalHours": 36,
-          "auditoryHours": 16,
-          "lectures": 0,
-          "practices": 16,
-          "labs": 0,
-          "selfStudy": 19,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 1,
-              "semester": 1,
-              "lectures": 0,
-              "practices": 16,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.33",
-          "name": "Вычислительная физика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 64,
-          "lectures": 24,
-          "practices": 0,
-          "labs": 40,
-          "selfStudy": 43,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 24,
-              "practices": 0,
-              "labs": 40,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.32",
-          "name": "Векторный и тензорный анализ",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 42,
-          "lectures": 18,
-          "practices": 24,
-          "labs": 0,
-          "selfStudy": 29,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 18,
-              "practices": 24,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.30",
-          "name": "Радиофизика и радиоэлектроника",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 70,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 36,
-          "selfStudy": 37,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 36,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.03",
-          "name": "Философия",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 18,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.09",
-          "name": "Теория функции комплексного переменного",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 60,
-          "lectures": 24,
-          "practices": 36,
-          "labs": 0,
-          "selfStudy": 11,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 24,
-              "practices": 36,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.10",
-          "name": "Дифференциальные и интегральные уравнения",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 116,
-          "lectures": 48,
-          "practices": 68,
-          "labs": 0,
-          "selfStudy": 26,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 24,
-              "practices": 34,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            },
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 24,
-              "practices": 34,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.15",
-          "name": "Электричество и магнетизм",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 108,
-          "lectures": 48,
-          "practices": 60,
-          "labs": 0,
-          "selfStudy": 17,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 48,
-              "practices": 60,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.16",
-          "name": "Оптика, колебания и волны",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 108,
-          "lectures": 48,
-          "practices": 60,
-          "labs": 0,
-          "selfStudy": 26,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 48,
-              "practices": 60,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.20",
-          "name": "Теоретическая механика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 180,
-          "auditoryHours": 108,
-          "lectures": 54,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 54,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.25",
-          "name": "Основы правоведения и противодействия коррупции",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 18,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.29",
-          "name": "Астрофизика и космология",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 34,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 37,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.04",
-          "name": "Физика жидкости",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 68,
-          "lectures": 34,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 39,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 4,
-              "lectures": 34,
-              "practices": 34,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.01",
-          "name": "Введение в специальность",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 34,
-          "lectures": 34,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 37,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 2,
-              "semester": 3,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.36",
-          "name": "Основы профилактики и противодействия терроризму и экстремизму",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 18,
-          "lectures": 18,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 53,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 18,
-              "practices": 0,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.31",
-          "name": "Специализированный физический практикум",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 36,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 36,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.27",
-          "name": "Линейные и нелинейные уравнения физики",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 88,
-          "lectures": 34,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 19,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 34,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.24",
-          "name": "Физика конденсированного состояния",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 124,
-          "lectures": 52,
-          "practices": 36,
-          "labs": 36,
-          "selfStudy": 55,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 52,
-              "practices": 36,
-              "labs": 36,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.22",
-          "name": "Квантовая теория",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 124,
-          "lectures": 52,
-          "practices": 72,
-          "labs": 0,
-          "selfStudy": 55,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 52,
-              "practices": 72,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.21",
-          "name": "Электродинамика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 106,
-          "lectures": 52,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 55,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 52,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.18",
-          "name": "Физика атомного ядра и элементарных частиц",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 88,
-          "lectures": 34,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 19,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 34,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.17",
-          "name": "Атомная физика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 52,
-          "lectures": 34,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 19,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 34,
-              "practices": 18,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.37",
-          "name": "Инновационная экономика и технологическое предпринимательство",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 36,
-          "lectures": 18,
-          "practices": 18,
-          "labs": 0,
-          "selfStudy": 35,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 18,
-              "practices": 18,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.02",
-          "name": "Теория симметрии",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 72,
-          "auditoryHours": 56,
-          "lectures": 28,
-          "practices": 28,
-          "labs": 0,
-          "selfStudy": 15,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 28,
-              "practices": 28,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.05",
-          "name": "Дисциплины по выбору Б1.В.ДВ.5",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 124,
-          "lectures": 52,
-          "practices": 72,
-          "labs": 0,
-          "selfStudy": 55,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 6,
-              "lectures": 52,
-              "practices": 72,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.05.01",
-              "name": "Теория магнитного резонанса",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 124,
-              "lectures": 52,
-              "practices": 72,
-              "labs": 0,
-              "selfStudy": 55,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 6,
-                  "lectures": 52,
-                  "practices": 72,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.05",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.05.02",
-              "name": "Введение в физику плазмы",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 124,
-              "lectures": 52,
-              "practices": 72,
-              "labs": 0,
-              "selfStudy": 55,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 6,
-                  "lectures": 52,
-                  "practices": 72,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.05",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.05.03",
-              "name": "Теория поля",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 124,
-              "lectures": 52,
-              "practices": 72,
-              "labs": 0,
-              "selfStudy": 55,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 6,
-                  "lectures": 52,
-                  "practices": 72,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.05",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.04",
-          "name": "Дисциплины по выбору Б1.В.ДВ.4",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 86,
-          "lectures": 34,
-          "practices": 52,
-          "labs": 0,
-          "selfStudy": 21,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 34,
-              "practices": 52,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.04.01",
-              "name": "Основы магнитно-резонансной спектроскопии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 86,
-              "lectures": 34,
-              "practices": 52,
-              "labs": 0,
-              "selfStudy": 21,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 34,
-                  "practices": 52,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.04",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.04.02",
-              "name": "Введение в физику ускорителей",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 86,
-              "lectures": 34,
-              "practices": 52,
-              "labs": 0,
-              "selfStudy": 21,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 34,
-                  "practices": 52,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.04",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.02",
-          "name": "Дисциплины по выбору Б1.В.ДВ.2",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 64,
-          "lectures": 30,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 43,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.02.01",
-              "name": "Биофизика диагностики заболеваний",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.02.02",
-              "name": "Планирование и обработка эксперимента",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.02",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б1.В.ДВ.01",
-          "name": "Общекультурные",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 60,
-          "lectures": 32,
-          "practices": 28,
-          "labs": 0,
-          "selfStudy": 47,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 3,
-              "semester": 5,
-              "lectures": 32,
-              "practices": 28,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.01.01",
-              "name": "Введение в физиологию",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 60,
-              "lectures": 32,
-              "practices": 28,
-              "labs": 0,
-              "selfStudy": 47,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 32,
-                  "practices": 28,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.01",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.01.02",
-              "name": "Основы анатомо-гистологических знаний и физиологии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 60,
-              "lectures": 32,
-              "practices": 28,
-              "labs": 0,
-              "selfStudy": 47,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 3,
-                  "semester": 5,
-                  "lectures": 32,
-                  "practices": 28,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.01",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б2.В.01(П)",
-          "name": "Научно-исследовательская работа",
-          "section": "Практика",
-          "totalHours": 108,
-          "auditoryHours": 0,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 100,
-          "controlHours": 0,
-          "semesters": [],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.О.23",
-          "name": "Термодинамика и статистическая физика",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 106,
-          "lectures": 52,
-          "practices": 54,
-          "labs": 0,
-          "selfStudy": 73,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 52,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.03",
-          "name": "Физика лазеров",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 60,
-          "lectures": 16,
-          "practices": 0,
-          "labs": 44,
-          "selfStudy": 47,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 16,
-              "practices": 0,
-              "labs": 44,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б1.В.ДВ.06",
-          "name": "Дисциплины по выбору Б1.В.ДВ.6",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 64,
-          "lectures": 34,
-          "practices": 12,
-          "labs": 18,
-          "selfStudy": 43,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 34,
-              "practices": 12,
-              "labs": 18,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.06.01",
-              "name": "Химические основы биофизики",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 64,
-              "lectures": 34,
-              "practices": 12,
-              "labs": 18,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 12,
-                  "labs": 18,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.06",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.06.02",
-              "name": "Новые источники энергии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 64,
-              "lectures": 34,
-              "practices": 12,
-              "labs": 18,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 12,
-                  "labs": 18,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.06",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.07",
-          "name": "Дисциплины по выбору Б1.В.ДВ.7",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 288,
-          "auditoryHours": 172,
-          "lectures": 64,
-          "practices": 108,
-          "labs": 0,
-          "selfStudy": 78,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 34,
-              "practices": 54,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 30,
-              "practices": 54,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.07.01",
-              "name": "Компьютерное моделирование молекулярных систем",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 288,
-              "auditoryHours": 172,
-              "lectures": 64,
-              "practices": 108,
-              "labs": 0,
-              "selfStudy": 78,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 54,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                },
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 54,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.07",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.07.02",
-              "name": "Квантовая теория твердых тел",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 288,
-              "auditoryHours": 172,
-              "lectures": 64,
-              "practices": 108,
-              "labs": 0,
-              "selfStudy": 78,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 54,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                },
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 54,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.07",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.08",
-          "name": "Дисциплины по выбору Б1.В.ДВ.8",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 288,
-          "auditoryHours": 170,
-          "lectures": 64,
-          "practices": 0,
-          "labs": 106,
-          "selfStudy": 80,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 34,
-              "practices": 0,
-              "labs": 54,
-              "exam": false,
-              "credit": true
-            },
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 30,
-              "practices": 0,
-              "labs": 52,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.08.01",
-              "name": "Физические методы исследования в биофизики и биомедицине",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 288,
-              "auditoryHours": 170,
-              "lectures": 64,
-              "practices": 0,
-              "labs": 106,
-              "selfStudy": 80,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 54,
-                  "exam": false,
-                  "credit": true
-                },
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 0,
-                  "labs": 52,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.08",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.08.02",
-              "name": "Физические методы исследования конденсированных сред",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 288,
-              "auditoryHours": 170,
-              "lectures": 64,
-              "practices": 0,
-              "labs": 106,
-              "selfStudy": 80,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 0,
-                  "labs": 54,
-                  "exam": false,
-                  "credit": true
-                },
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 0,
-                  "labs": 52,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.08",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.09",
-          "name": "Дисциплины по выбору Б1.В.ДВ.9",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 64,
-          "lectures": 30,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 43,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.09.01",
-              "name": "Физика фазовых переходов",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.09",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.09.02",
-              "name": "Биофизика",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 8,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.09",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.10",
-          "name": "Дисциплины по выбору Б1.В.ДВ.10",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 108,
-          "auditoryHours": 64,
-          "lectures": 30,
-          "practices": 34,
-          "labs": 0,
-          "selfStudy": 43,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.10.01",
-              "name": "Современная акустика и ультразвук",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.10",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.10.02",
-              "name": "Основы кристаллографии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 108,
-              "auditoryHours": 64,
-              "lectures": 30,
-              "practices": 34,
-              "labs": 0,
-              "selfStudy": 43,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 30,
-                  "practices": 34,
-                  "labs": 0,
-                  "exam": false,
-                  "credit": true
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.10",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.11",
-          "name": "Дисциплины по выбору Б1.В.ДВ.11",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 216,
-          "auditoryHours": 138,
-          "lectures": 48,
-          "practices": 90,
-          "labs": 0,
-          "selfStudy": 23,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 48,
-              "practices": 90,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.11.01",
-              "name": "Физические основы медицинских технологий",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 138,
-              "lectures": 48,
-              "practices": 90,
-              "labs": 0,
-              "selfStudy": 23,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 48,
-                  "practices": 90,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.11",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.11.02",
-              "name": "Основы квантовых технологий",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 216,
-              "auditoryHours": 138,
-              "lectures": 48,
-              "practices": 90,
-              "labs": 0,
-              "selfStudy": 23,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 48,
-                  "practices": 90,
-                  "labs": 0,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.11",
-              "isBlock": false
-            }
-          ],
-          "parentCode": null,
-          "isBlock": true
-        },
-        {
-          "code": "Б1.В.ДВ.03",
-          "name": "Дисциплины по выбору Б1.В.ДВ.3",
-          "section": "Дисциплины  (модули)",
-          "totalHours": 144,
-          "auditoryHours": 82,
-          "lectures": 34,
-          "practices": 14,
-          "labs": 34,
-          "selfStudy": 25,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 34,
-              "practices": 14,
-              "labs": 34,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [
-            {
-              "code": "Б1.В.ДВ.03.01",
-              "name": "Моделирование и визуализация  в физике",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 82,
-              "lectures": 34,
-              "practices": 14,
-              "labs": 34,
-              "selfStudy": 25,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 14,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.03.02",
-              "name": "Введение в нанотехнологии",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 82,
-              "lectures": 34,
-              "practices": 14,
-              "labs": 34,
-              "selfStudy": 25,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 14,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            },
-            {
-              "code": "Б1.В.ДВ.03.03",
-              "name": "Машинное обучение и анализ данных",
-              "section": "Дисциплины  (модули)",
-              "totalHours": 144,
-              "auditoryHours": 82,
-              "lectures": 34,
-              "practices": 14,
-              "labs": 34,
-              "selfStudy": 25,
-              "controlHours": 0,
-              "semesters": [
-                {
-                  "course": 4,
-                  "semester": 7,
-                  "lectures": 34,
-                  "practices": 14,
-                  "labs": 34,
-                  "exam": true,
-                  "credit": false
-                }
-              ],
-              "childDisciplines": [],
-              "parentCode": "Б1.В.ДВ.03",
-              "isBlock": false
-            }
-          ],
-          "isBlock": true,
-          "parentCode": null
-        },
-        {
-          "code": "Б3.Г.02(Г)",
-          "name": "Подготовка к сдаче и сдача государственного экзамена",
-          "section": "Государственная итоговая аттестация",
-          "totalHours": 108,
-          "auditoryHours": 20,
-          "lectures": 20,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 78,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 20,
-              "practices": 0,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б3.Г.01(Д)",
-          "name": "Подготовка к процедуре защиты и защита выпускной квалификационной работы",
-          "section": "Государственная итоговая аттестация",
-          "totalHours": 108,
-          "auditoryHours": 0,
-          "lectures": 0,
-          "practices": 0,
-          "labs": 0,
-          "selfStudy": 93,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 0,
-              "practices": 0,
-              "labs": 0,
-              "exam": true,
-              "credit": false
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б2.О.02(П)",
-          "name": "Научно-исследовательская работа",
-          "section": "Практика",
-          "totalHours": 108,
-          "auditoryHours": 62,
-          "lectures": 0,
-          "practices": 62,
-          "labs": 0,
-          "selfStudy": 45,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 0,
-              "practices": 62,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "Б2.В.02(П)",
-          "name": "Преддипломная практика",
-          "section": "Практика",
-          "totalHours": 216,
-          "auditoryHours": 24,
-          "lectures": 0,
-          "practices": 24,
-          "labs": 0,
-          "selfStudy": 191,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 8,
-              "lectures": 0,
-              "practices": 24,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        },
-        {
-          "code": "ФТД.N.02",
-          "name": "Оформление научной работы",
-          "section": "Факультативные дисциплины",
-          "totalHours": 72,
-          "auditoryHours": 32,
-          "lectures": 16,
-          "practices": 16,
-          "labs": 0,
-          "selfStudy": 39,
-          "controlHours": 0,
-          "semesters": [
-            {
-              "course": 4,
-              "semester": 7,
-              "lectures": 16,
-              "practices": 16,
-              "labs": 0,
-              "exam": false,
-              "credit": true
-            }
-          ],
-          "childDisciplines": [],
-          "parentCode": null,
-          "isBlock": false
-        }
-      ]
-    },
     {
       "id": "71292",
       "name": "(Физика квантовых систем и квантовые технологии) очное 2026г.",
@@ -4968,6 +2394,2580 @@
             {
               "code": "Б1.В.ДВ.11.01",
               "name": "Магнитные материалы",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 216,
+              "auditoryHours": 138,
+              "lectures": 48,
+              "practices": 90,
+              "labs": 0,
+              "selfStudy": 23,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 48,
+                  "practices": 90,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.11",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.11.02",
+              "name": "Основы квантовых технологий",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 216,
+              "auditoryHours": 138,
+              "lectures": 48,
+              "practices": 90,
+              "labs": 0,
+              "selfStudy": 23,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 48,
+                  "practices": 90,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.11",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.03",
+          "name": "Дисциплины по выбору Б1.В.ДВ.3",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 82,
+          "lectures": 34,
+          "practices": 14,
+          "labs": 34,
+          "selfStudy": 25,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 34,
+              "practices": 14,
+              "labs": 34,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.03.01",
+              "name": "Моделирование и визуализация  в физике",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 82,
+              "lectures": 34,
+              "practices": 14,
+              "labs": 34,
+              "selfStudy": 25,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 14,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.03.02",
+              "name": "Введение в нанотехнологии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 82,
+              "lectures": 34,
+              "practices": 14,
+              "labs": 34,
+              "selfStudy": 25,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 14,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.03.03",
+              "name": "Машинное обучение и анализ данных",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 82,
+              "lectures": 34,
+              "practices": 14,
+              "labs": 34,
+              "selfStudy": 25,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 14,
+                  "labs": 34,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.03",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б3.Г.02(Г)",
+          "name": "Подготовка к сдаче и сдача государственного экзамена",
+          "section": "Государственная итоговая аттестация",
+          "totalHours": 108,
+          "auditoryHours": 20,
+          "lectures": 20,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 78,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 20,
+              "practices": 0,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б3.Г.01(Д)",
+          "name": "Подготовка к процедуре защиты и защита выпускной квалификационной работы",
+          "section": "Государственная итоговая аттестация",
+          "totalHours": 108,
+          "auditoryHours": 0,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 93,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б2.О.02(П)",
+          "name": "Научно-исследовательская работа",
+          "section": "Практика",
+          "totalHours": 108,
+          "auditoryHours": 62,
+          "lectures": 0,
+          "practices": 62,
+          "labs": 0,
+          "selfStudy": 45,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 0,
+              "practices": 62,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б2.В.02(П)",
+          "name": "Преддипломная практика",
+          "section": "Практика",
+          "totalHours": 216,
+          "auditoryHours": 24,
+          "lectures": 0,
+          "practices": 24,
+          "labs": 0,
+          "selfStudy": 191,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 0,
+              "practices": 24,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "ФТД.N.02",
+          "name": "Оформление научной работы",
+          "section": "Факультативные дисциплины",
+          "totalHours": 72,
+          "auditoryHours": 32,
+          "lectures": 16,
+          "practices": 16,
+          "labs": 0,
+          "selfStudy": 39,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 16,
+              "practices": 16,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        }
+      ]
+    },
+    {
+      "id": "71291",
+      "name": "(Физика живых систем) очное 2026г.",
+      "profile": "Физика живых систем",
+      "year": 2026,
+      "form": "очное",
+      "specialityId": "6537",
+      "specialityCode": "03.03.02",
+      "specialityName": "Физика",
+      "degree": "бакалавриат",
+      "totalCourses": 4,
+      "topLevelCount": 61,
+      "disciplines": [
+        {
+          "code": "Б1.О.11",
+          "name": "Теория вероятностей и математическая статистика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 86,
+          "lectures": 34,
+          "practices": 52,
+          "labs": 0,
+          "selfStudy": 21,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 34,
+              "practices": 52,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.34",
+          "name": "Элективные курсы по физической культуре и спорту",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 328,
+          "auditoryHours": 328,
+          "lectures": 0,
+          "practices": 328,
+          "labs": 0,
+          "selfStudy": 0,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 64,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 68,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 0,
+              "practices": 64,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 0,
+              "practices": 68,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 0,
+              "practices": 64,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.01",
+          "name": "Иностранный язык",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 94,
+          "lectures": 0,
+          "practices": 94,
+          "labs": 0,
+          "selfStudy": 38,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 24,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 0,
+              "practices": 36,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.02",
+          "name": "История России",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 116,
+          "lectures": 70,
+          "practices": 46,
+          "labs": 0,
+          "selfStudy": 17,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 36,
+              "practices": 22,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 34,
+              "practices": 24,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.04",
+          "name": "Безопасность жизнедеятельности",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 8,
+          "practices": 10,
+          "labs": 18,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 8,
+              "practices": 10,
+              "labs": 18,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.05",
+          "name": "Физическая культура и спорт",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 72,
+          "lectures": 36,
+          "practices": 36,
+          "labs": 0,
+          "selfStudy": 0,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 36,
+              "practices": 36,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.06",
+          "name": "Математический анализ",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 468,
+          "auditoryHours": 282,
+          "lectures": 120,
+          "practices": 162,
+          "labs": 0,
+          "selfStudy": 75,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 34,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 52,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 34,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.07",
+          "name": "Аналитическая геометрия",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 76,
+          "lectures": 24,
+          "practices": 52,
+          "labs": 0,
+          "selfStudy": 13,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 24,
+              "practices": 52,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.08",
+          "name": "Линейная алгебра",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 78,
+          "lectures": 24,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 11,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 24,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.35",
+          "name": "Основы российской государственности",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 54,
+          "lectures": 18,
+          "practices": 36,
+          "labs": 0,
+          "selfStudy": 17,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 18,
+              "practices": 36,
+              "labs": 0,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.12",
+          "name": "Информатика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 288,
+          "auditoryHours": 186,
+          "lectures": 68,
+          "practices": 0,
+          "labs": 118,
+          "selfStudy": 99,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 24,
+              "practices": 0,
+              "labs": 34,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 20,
+              "practices": 0,
+              "labs": 42,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 24,
+              "practices": 0,
+              "labs": 42,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.О.12.01",
+              "name": "Информационные технологии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 72,
+              "auditoryHours": 58,
+              "lectures": 24,
+              "practices": 0,
+              "labs": 34,
+              "selfStudy": 13,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 1,
+                  "lectures": 24,
+                  "practices": 0,
+                  "labs": 34,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.О.12",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.О.12.02",
+              "name": "Программирование",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 62,
+              "lectures": 20,
+              "practices": 0,
+              "labs": 42,
+              "selfStudy": 45,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 20,
+                  "practices": 0,
+                  "labs": 42,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.О.12",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.О.12.03",
+              "name": "Численные методы и математическое моделирование",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 66,
+              "lectures": 24,
+              "practices": 0,
+              "labs": 42,
+              "selfStudy": 41,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 24,
+                  "practices": 0,
+                  "labs": 42,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.О.12",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.О.13",
+          "name": "Механика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 108,
+          "lectures": 48,
+          "practices": 60,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 48,
+              "practices": 60,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.14",
+          "name": "Молекулярная физика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 108,
+          "lectures": 48,
+          "practices": 60,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 48,
+              "practices": 60,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.19",
+          "name": "Общий физический практикум",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 432,
+          "auditoryHours": 254,
+          "lectures": 0,
+          "practices": 94,
+          "labs": 160,
+          "selfStudy": 172,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 22,
+              "labs": 24,
+              "exam": false,
+              "credit": false
+            },
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 24,
+              "labs": 24,
+              "exam": false,
+              "credit": false
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 0,
+              "practices": 24,
+              "labs": 24,
+              "exam": false,
+              "credit": false
+            },
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 0,
+              "practices": 24,
+              "labs": 24,
+              "exam": false,
+              "credit": false
+            },
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 32,
+              "exam": false,
+              "credit": false
+            },
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 32,
+              "exam": false,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.26",
+          "name": "Русский язык и культура речи",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 12,
+          "practices": 24,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 12,
+              "practices": 24,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.28",
+          "name": "Химия",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 66,
+          "lectures": 32,
+          "practices": 0,
+          "labs": 34,
+          "selfStudy": 41,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 32,
+              "practices": 0,
+              "labs": 34,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.05",
+          "name": "Психология и педагогика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 68,
+          "lectures": 34,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 74,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 16,
+              "practices": 16,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.05.01",
+              "name": "Психология",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 72,
+              "auditoryHours": 36,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "selfStudy": 35,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 1,
+                  "semester": 2,
+                  "lectures": 18,
+                  "practices": 18,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.05",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.05.02",
+              "name": "Педагогика",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 72,
+              "auditoryHours": 32,
+              "lectures": 16,
+              "practices": 16,
+              "labs": 0,
+              "selfStudy": 39,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 2,
+                  "semester": 3,
+                  "lectures": 16,
+                  "practices": 16,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.05",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б2.О.01(У)",
+          "name": "Ознакомительная практика",
+          "section": "Практика",
+          "totalHours": 108,
+          "auditoryHours": 60,
+          "lectures": 0,
+          "practices": 60,
+          "labs": 0,
+          "selfStudy": 47,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 2,
+              "lectures": 0,
+              "practices": 60,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "ФТД.N.01",
+          "name": "Введение в математику",
+          "section": "Факультативные дисциплины",
+          "totalHours": 36,
+          "auditoryHours": 16,
+          "lectures": 0,
+          "practices": 16,
+          "labs": 0,
+          "selfStudy": 19,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 1,
+              "semester": 1,
+              "lectures": 0,
+              "practices": 16,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.33",
+          "name": "Вычислительная физика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 64,
+          "lectures": 24,
+          "practices": 0,
+          "labs": 40,
+          "selfStudy": 43,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 24,
+              "practices": 0,
+              "labs": 40,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.32",
+          "name": "Векторный и тензорный анализ",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 42,
+          "lectures": 18,
+          "practices": 24,
+          "labs": 0,
+          "selfStudy": 29,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 18,
+              "practices": 24,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.30",
+          "name": "Радиофизика и радиоэлектроника",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 70,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 36,
+          "selfStudy": 37,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 36,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.03",
+          "name": "Философия",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 18,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.09",
+          "name": "Теория функции комплексного переменного",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 60,
+          "lectures": 24,
+          "practices": 36,
+          "labs": 0,
+          "selfStudy": 11,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 24,
+              "practices": 36,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.10",
+          "name": "Дифференциальные и интегральные уравнения",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 116,
+          "lectures": 48,
+          "practices": 68,
+          "labs": 0,
+          "selfStudy": 26,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 24,
+              "practices": 34,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            },
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 24,
+              "practices": 34,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.15",
+          "name": "Электричество и магнетизм",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 108,
+          "lectures": 48,
+          "practices": 60,
+          "labs": 0,
+          "selfStudy": 17,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 48,
+              "practices": 60,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.16",
+          "name": "Оптика, колебания и волны",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 108,
+          "lectures": 48,
+          "practices": 60,
+          "labs": 0,
+          "selfStudy": 26,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 48,
+              "practices": 60,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.20",
+          "name": "Теоретическая механика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 180,
+          "auditoryHours": 108,
+          "lectures": 54,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 54,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.25",
+          "name": "Основы правоведения и противодействия коррупции",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 18,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.29",
+          "name": "Астрофизика и космология",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 34,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 37,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.04",
+          "name": "Физика жидкости",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 68,
+          "lectures": 34,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 39,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 4,
+              "lectures": 34,
+              "practices": 34,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.01",
+          "name": "Введение в специальность",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 34,
+          "lectures": 34,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 37,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 2,
+              "semester": 3,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.36",
+          "name": "Основы профилактики и противодействия терроризму и экстремизму",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 18,
+          "lectures": 18,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 53,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 18,
+              "practices": 0,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.31",
+          "name": "Специализированный физический практикум",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 36,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 0,
+              "practices": 0,
+              "labs": 36,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.27",
+          "name": "Линейные и нелинейные уравнения физики",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 88,
+          "lectures": 34,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 19,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 34,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.24",
+          "name": "Физика конденсированного состояния",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 124,
+          "lectures": 52,
+          "practices": 36,
+          "labs": 36,
+          "selfStudy": 55,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 52,
+              "practices": 36,
+              "labs": 36,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.22",
+          "name": "Квантовая теория",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 124,
+          "lectures": 52,
+          "practices": 72,
+          "labs": 0,
+          "selfStudy": 55,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 52,
+              "practices": 72,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.21",
+          "name": "Электродинамика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 106,
+          "lectures": 52,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 55,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 52,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.18",
+          "name": "Физика атомного ядра и элементарных частиц",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 88,
+          "lectures": 34,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 19,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 34,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.17",
+          "name": "Атомная физика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 52,
+          "lectures": 34,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 19,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 34,
+              "practices": 18,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.37",
+          "name": "Инновационная экономика и технологическое предпринимательство",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 36,
+          "lectures": 18,
+          "practices": 18,
+          "labs": 0,
+          "selfStudy": 35,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 18,
+              "practices": 18,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.02",
+          "name": "Теория симметрии",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 72,
+          "auditoryHours": 56,
+          "lectures": 28,
+          "practices": 28,
+          "labs": 0,
+          "selfStudy": 15,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 28,
+              "practices": 28,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.05",
+          "name": "Дисциплины по выбору Б1.В.ДВ.5",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 124,
+          "lectures": 52,
+          "practices": 72,
+          "labs": 0,
+          "selfStudy": 55,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 6,
+              "lectures": 52,
+              "practices": 72,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.05.01",
+              "name": "Теория магнитного резонанса",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 216,
+              "auditoryHours": 124,
+              "lectures": 52,
+              "practices": 72,
+              "labs": 0,
+              "selfStudy": 55,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 6,
+                  "lectures": 52,
+                  "practices": 72,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.05",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.05.02",
+              "name": "Введение в физику плазмы",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 216,
+              "auditoryHours": 124,
+              "lectures": 52,
+              "practices": 72,
+              "labs": 0,
+              "selfStudy": 55,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 6,
+                  "lectures": 52,
+                  "practices": 72,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.05",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.05.03",
+              "name": "Теория поля",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 216,
+              "auditoryHours": 124,
+              "lectures": 52,
+              "practices": 72,
+              "labs": 0,
+              "selfStudy": 55,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 6,
+                  "lectures": 52,
+                  "practices": 72,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.05",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.04",
+          "name": "Дисциплины по выбору Б1.В.ДВ.4",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 86,
+          "lectures": 34,
+          "practices": 52,
+          "labs": 0,
+          "selfStudy": 21,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 34,
+              "practices": 52,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.04.01",
+              "name": "Основы магнитно-резонансной спектроскопии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 86,
+              "lectures": 34,
+              "practices": 52,
+              "labs": 0,
+              "selfStudy": 21,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 34,
+                  "practices": 52,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.04",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.04.02",
+              "name": "Введение в физику ускорителей",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 86,
+              "lectures": 34,
+              "practices": 52,
+              "labs": 0,
+              "selfStudy": 21,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 34,
+                  "practices": 52,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.04",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.02",
+          "name": "Дисциплины по выбору Б1.В.ДВ.2",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 64,
+          "lectures": 30,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 43,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.02.01",
+              "name": "Биофизика диагностики заболеваний",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.02.02",
+              "name": "Планирование и обработка эксперимента",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.02",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б1.В.ДВ.01",
+          "name": "Общекультурные",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 60,
+          "lectures": 32,
+          "practices": 28,
+          "labs": 0,
+          "selfStudy": 47,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 3,
+              "semester": 5,
+              "lectures": 32,
+              "practices": 28,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.01.01",
+              "name": "Введение в физиологию",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 60,
+              "lectures": 32,
+              "practices": 28,
+              "labs": 0,
+              "selfStudy": 47,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 32,
+                  "practices": 28,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.01",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.01.02",
+              "name": "Основы анатомо-гистологических знаний и физиологии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 60,
+              "lectures": 32,
+              "practices": 28,
+              "labs": 0,
+              "selfStudy": 47,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 3,
+                  "semester": 5,
+                  "lectures": 32,
+                  "practices": 28,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.01",
+              "isBlock": false
+            }
+          ],
+          "isBlock": true,
+          "parentCode": null
+        },
+        {
+          "code": "Б2.В.01(П)",
+          "name": "Научно-исследовательская работа",
+          "section": "Практика",
+          "totalHours": 108,
+          "auditoryHours": 0,
+          "lectures": 0,
+          "practices": 0,
+          "labs": 0,
+          "selfStudy": 100,
+          "controlHours": 0,
+          "semesters": [],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.О.23",
+          "name": "Термодинамика и статистическая физика",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 106,
+          "lectures": 52,
+          "practices": 54,
+          "labs": 0,
+          "selfStudy": 73,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 52,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.03",
+          "name": "Физика лазеров",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 60,
+          "lectures": 16,
+          "practices": 0,
+          "labs": 44,
+          "selfStudy": 47,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 16,
+              "practices": 0,
+              "labs": 44,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [],
+          "parentCode": null,
+          "isBlock": false
+        },
+        {
+          "code": "Б1.В.ДВ.06",
+          "name": "Дисциплины по выбору Б1.В.ДВ.6",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 144,
+          "auditoryHours": 64,
+          "lectures": 34,
+          "practices": 12,
+          "labs": 18,
+          "selfStudy": 43,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 34,
+              "practices": 12,
+              "labs": 18,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.06.01",
+              "name": "Химические основы биофизики",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 64,
+              "lectures": 34,
+              "practices": 12,
+              "labs": 18,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 12,
+                  "labs": 18,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.06",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.06.02",
+              "name": "Новые источники энергии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 144,
+              "auditoryHours": 64,
+              "lectures": 34,
+              "practices": 12,
+              "labs": 18,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 12,
+                  "labs": 18,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.06",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.07",
+          "name": "Дисциплины по выбору Б1.В.ДВ.7",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 288,
+          "auditoryHours": 172,
+          "lectures": 64,
+          "practices": 108,
+          "labs": 0,
+          "selfStudy": 78,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 34,
+              "practices": 54,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 30,
+              "practices": 54,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.07.01",
+              "name": "Компьютерное моделирование молекулярных систем",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 288,
+              "auditoryHours": 172,
+              "lectures": 64,
+              "practices": 108,
+              "labs": 0,
+              "selfStudy": 78,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 54,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                },
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 54,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.07",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.07.02",
+              "name": "Квантовая теория твердых тел",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 288,
+              "auditoryHours": 172,
+              "lectures": 64,
+              "practices": 108,
+              "labs": 0,
+              "selfStudy": 78,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 54,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                },
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 54,
+                  "labs": 0,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.07",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.08",
+          "name": "Дисциплины по выбору Б1.В.ДВ.8",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 288,
+          "auditoryHours": 170,
+          "lectures": 64,
+          "practices": 0,
+          "labs": 106,
+          "selfStudy": 80,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 34,
+              "practices": 0,
+              "labs": 54,
+              "exam": false,
+              "credit": true
+            },
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 30,
+              "practices": 0,
+              "labs": 52,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.08.01",
+              "name": "Физические методы исследования в биофизики и биомедицине",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 288,
+              "auditoryHours": 170,
+              "lectures": 64,
+              "practices": 0,
+              "labs": 106,
+              "selfStudy": 80,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 54,
+                  "exam": false,
+                  "credit": true
+                },
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 0,
+                  "labs": 52,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.08",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.08.02",
+              "name": "Физические методы исследования конденсированных сред",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 288,
+              "auditoryHours": 170,
+              "lectures": 64,
+              "practices": 0,
+              "labs": 106,
+              "selfStudy": 80,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 34,
+                  "practices": 0,
+                  "labs": 54,
+                  "exam": false,
+                  "credit": true
+                },
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 0,
+                  "labs": 52,
+                  "exam": true,
+                  "credit": false
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.08",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.09",
+          "name": "Дисциплины по выбору Б1.В.ДВ.9",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 64,
+          "lectures": 30,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 43,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 8,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.09.01",
+              "name": "Физика фазовых переходов",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.09",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.09.02",
+              "name": "Биофизика",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 8,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.09",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.10",
+          "name": "Дисциплины по выбору Б1.В.ДВ.10",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 108,
+          "auditoryHours": 64,
+          "lectures": 30,
+          "practices": 34,
+          "labs": 0,
+          "selfStudy": 43,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "exam": false,
+              "credit": true
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.10.01",
+              "name": "Современная акустика и ультразвук",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.10",
+              "isBlock": false
+            },
+            {
+              "code": "Б1.В.ДВ.10.02",
+              "name": "Основы кристаллографии",
+              "section": "Дисциплины  (модули)",
+              "totalHours": 108,
+              "auditoryHours": 64,
+              "lectures": 30,
+              "practices": 34,
+              "labs": 0,
+              "selfStudy": 43,
+              "controlHours": 0,
+              "semesters": [
+                {
+                  "course": 4,
+                  "semester": 7,
+                  "lectures": 30,
+                  "practices": 34,
+                  "labs": 0,
+                  "exam": false,
+                  "credit": true
+                }
+              ],
+              "childDisciplines": [],
+              "parentCode": "Б1.В.ДВ.10",
+              "isBlock": false
+            }
+          ],
+          "parentCode": null,
+          "isBlock": true
+        },
+        {
+          "code": "Б1.В.ДВ.11",
+          "name": "Дисциплины по выбору Б1.В.ДВ.11",
+          "section": "Дисциплины  (модули)",
+          "totalHours": 216,
+          "auditoryHours": 138,
+          "lectures": 48,
+          "practices": 90,
+          "labs": 0,
+          "selfStudy": 23,
+          "controlHours": 0,
+          "semesters": [
+            {
+              "course": 4,
+              "semester": 7,
+              "lectures": 48,
+              "practices": 90,
+              "labs": 0,
+              "exam": true,
+              "credit": false
+            }
+          ],
+          "childDisciplines": [
+            {
+              "code": "Б1.В.ДВ.11.01",
+              "name": "Физические основы медицинских технологий",
               "section": "Дисциплины  (модули)",
               "totalHours": 216,
               "auditoryHours": 138,
