@@ -10,8 +10,8 @@
     "academicWeeksCount": 18,
     "weekParityRule": "odd_first"
   },
-  "updatedAt": "2026-10-26T08:36:18Z",
-  "sourceUrl": "http://kpfu.ru/portal/docs/F_1722590054/Raspisanie.zanyatij.na.osennij.semestr_2026_2027.xlsx",
+  "updatedAt": "2026-10-26T23:03:16Z",
+  "sourceUrl": "http://kpfu.ru/portal/docs/F_344681622/Raspisanie.zanyatij.na.osennij.semestr_2026_2027.xlsx",
   "groups": [
     {
       "id": "06-601",
@@ -15994,9 +15994,9 @@
             {
               "id": "06-461-694",
               "subject": "Курс по выбору: Техника ядерного магнитного резонанса",
-              "rawText": "Техника ядерного магнитного резонанса (пр)\nСкирда В.Д.\n13-18н, 112",
+              "rawText": "Техника ядерного магнитного резонанса (пр)\nСкирда В.Д.\n13-18н, 208",
               "teacher": "Скирда В.Д.",
-              "room": "112",
+              "room": "208",
               "building": "Кремлевская, 16А (Институт физики)",
               "type": "lecture",
               "url": "",
