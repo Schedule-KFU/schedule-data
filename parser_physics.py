@@ -2,6 +2,8 @@ import sys
 import os
 import re
 import json
+import tempfile
+from collections import defaultdict, deque
 from datetime import datetime, timezone
 import openpyxl
 
@@ -11,12 +13,78 @@ from base_parser import (
     get_latest_xlsx_url as base_get_latest_xlsx_url,
     download_file,
     compute_semester_string,
-    compute_semester_meta,
-    save_database_with_cache_check
+    compute_semester_meta
 )
 
 PHYSICS_URL = "https://kpfu.ru/physics/raspisanie-zanyatij"
 OUTPUT_FILE = "schedule_physics.json"
+
+def preserve_physics_lesson_ids(database, previous):
+    """Keep IDs for unchanged lessons when newly parsed rows alter their order."""
+    def entries(data):
+        for group in data.get("groups", []):
+            for day in group.get("days", []):
+                for lesson in day.get("lessons", []):
+                    yield group, day, lesson
+
+    def key(group, day, lesson):
+        return (group.get("id", group.get("group")), day.get("dayIndex"),
+                lesson.get("timeStart"), lesson.get("timeEnd"), lesson.get("subject"),
+                lesson.get("teacher"), lesson.get("room"))
+
+    old_ids = defaultdict(deque)
+    used = set()
+    max_number = 0
+    for group, day, lesson in entries(previous):
+        identifier = str(lesson.get("id", ""))
+        if identifier:
+            old_ids[key(group, day, lesson)].append(identifier)
+            used.add(identifier)
+            match = re.search(r'-(\d+)$', identifier)
+            if match:
+                max_number = max(max_number, int(match.group(1)))
+    for group, day, lesson in entries(database):
+        candidates = old_ids[key(group, day, lesson)]
+        if candidates:
+            lesson["id"] = candidates.popleft()
+        else:
+            while True:
+                max_number += 1
+                identifier = f"{group.get('id', group.get('group', 'physics'))}-{max_number}"
+                if identifier not in used:
+                    used.add(identifier)
+                    lesson["id"] = identifier
+                    break
+
+def save_physics_database(database, output_path):
+    """Validate and atomically publish physics data without replacing a healthy file with a partial result."""
+    output_path = os.fspath(output_path)
+    groups = database.get("groups", [])
+    lessons = sum(len(day.get("lessons", [])) for group in groups for day in group.get("days", []))
+    if not groups or not lessons:
+        raise ValueError("Physics schedule is empty; previous output was preserved")
+    if os.path.exists(output_path):
+        with open(output_path, encoding="utf-8") as stream:
+            previous = json.load(stream)
+        preserve_physics_lesson_ids(database, previous)
+        old_groups = previous.get("groups", [])
+        old_lessons = sum(len(day.get("lessons", [])) for group in old_groups for day in group.get("days", []))
+        if len(groups) < len(old_groups) * 0.7 or lessons < old_lessons * 0.7:
+            raise ValueError(f"Physics schedule shrank: groups {len(old_groups)} -> {len(groups)}, lessons {old_lessons} -> {lessons}")
+        if {k: v for k, v in previous.items() if k != "updatedAt"} == {k: v for k, v in database.items() if k != "updatedAt"}:
+            database["updatedAt"] = previous.get("updatedAt", database.get("updatedAt"))
+    directory = os.path.dirname(os.path.abspath(output_path))
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=directory, delete=False) as stream:
+            temporary_path = stream.name
+            json.dump(database, stream, ensure_ascii=False, indent=2)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary_path, output_path)
+    finally:
+        if temporary_path and os.path.exists(temporary_path):
+            os.unlink(temporary_path)
 
 def get_latest_xlsx_url(retries=3):
     return base_get_latest_xlsx_url(PHYSICS_URL, HEADERS, retries=retries)
@@ -117,15 +185,34 @@ def extract_room(text):
         return lyaf_room
     return ""
 
+def extract_explicit_weeks(text):
+    """Return an exact list only when the source specifies a discontinuous set."""
+    found = set()
+    pattern = r'(?<![\d/])(\d{1,2}(?:\s*[-–]\s*\d{1,2})?(?:\s*,\s*\d{1,2}(?:\s*[-–]\s*\d{1,2})?)*)\s*н(?:ед(?:ел[яьиь]*)?)?\.?(?![а-яё])'
+    for match in re.finditer(pattern, text, re.I):
+        for part in match.group(1).split(','):
+            bounds = re.split(r'\s*[-–]\s*', part.strip())
+            start = int(bounds[0])
+            end = int(bounds[-1])
+            if not (1 <= start <= end <= 53):
+                return None
+            found.update(range(start, end + 1))
+    if not found:
+        return None
+    weeks = sorted(found)
+    return weeks if weeks != list(range(weeks[0], weeks[-1] + 1)) else None
+
 def extract_weeks(text):
     week_start = 1
     week_end = 18
     week_type = "all"
     low = text.lower()
     
-    if "ч.н" in low or "ч/н" in low or "ч\\н" in low or "четн" in low:
+    has_even = "ч.н" in low or "ч/н" in low or "ч\\н" in low or bool(re.search(r'(?<!не)четн', low))
+    has_odd = "н.н" in text or "н/н" in text or "н\\н" in text or "нечет" in low
+    if has_even and not has_odd:
         week_type = "even"
-    elif "н.н" in low or "н/н" in low or "н\\н" in low or "нечет" in low:
+    elif has_odd and not has_even:
         week_type = "odd"
 
     all_nums = []
@@ -146,6 +233,9 @@ def extract_weeks(text):
     if s_match:
         all_nums.extend([int(s_match.group(1)), 18])
 
+    exact_weeks = extract_explicit_weeks(text)
+    if exact_weeks:
+        all_nums.extend(exact_weeks)
     if all_nums:
         week_start = min(all_nums)
         week_end = max(all_nums)
@@ -267,14 +357,14 @@ def is_building_or_room_line(l):
 
 def is_subject_header_line(l):
     low = l.strip().lower()
+    if re.search(r'[А-ЯЁа-яё]{3,}.*?\((?:л|пр|лаб|л\+пр|лек|практ)\)', l):
+        return True
     if is_building_or_room_line(l):
         return False
     if is_pure_elective_header(l):
         return False
     if re.match(r'^\((?:л|пр|лаб|л\+пр|лек|практ)\)', low):
         return False
-    if re.search(r'[А-ЯЁа-яё]{3,}.*?\((?:л|пр|лаб|л\+пр|лек|практ)\)', l):
-        return True
     if any(low.startswith(p) for p in ["курс по выбору", "крс по выбору", "дисциплина по выбору", "физическая культура", "элективные курсы"]):
         return True
     if re.match(r'^\d{1,2}(?:-\d{1,2})?\s*н\.?\s+[А-ЯЁ]', l):
@@ -332,7 +422,7 @@ def parse_physics_cell(cell_text):
         return []
     
     lower = trimmed.lower()
-    if "____" in trimmed or "департамент образования" in lower or "турилова" in lower or "поминов" in lower:
+    if "____" in trimmed or "департамент образования" in lower:
         return []
 
     # 1. Expand colons if present
@@ -429,6 +519,7 @@ def parse_physics_cell(cell_text):
                     'weekStart': w_start,
                     'weekEnd': w_end,
                     'weekType': w_type,
+                    'weeks': extract_explicit_weeks(tl),
                     'subgroup': extract_subgroup(tl)
                 })
         elif len(teacher_lines) >= 2 and any(extract_subgroup(l) or extract_room(l) for _, l, _, _ in teacher_lines):
@@ -452,6 +543,7 @@ def parse_physics_cell(cell_text):
                     'weekStart': w_start,
                     'weekEnd': w_end,
                     'weekType': w_type,
+                    'weeks': extract_explicit_weeks(sub_text),
                     'subgroup': extract_subgroup(sub_text)
                 })
         else:
@@ -478,6 +570,7 @@ def parse_physics_cell(cell_text):
                     'weekStart': w_start,
                     'weekEnd': w_end,
                     'weekType': w_type,
+                    'weeks': extract_explicit_weeks(sec_text),
                     'subgroup': subgrp
                 })
 
@@ -519,6 +612,7 @@ def parse_schedule_xlsx(file_path, source_url):
     wb = openpyxl.load_workbook(file_path, data_only=True)
     result_groups = []
     lesson_counter = 0
+    skipped_cells = 0
 
     print(f"Loaded workbook. Sheets: {wb.sheetnames}")
 
@@ -659,6 +753,8 @@ def parse_schedule_xlsx(file_path, source_url):
 
                 parsed_list = parse_physics_cell(cell_text)
                 if not parsed_list:
+                    skipped_cells += 1
+                    print(f"Unparsed physics cell: sheet={sheet_name!r}, row={r}, column={g['col']}, raw={cell_text!r}", file=sys.stderr)
                     continue
 
                 for p in parsed_list:
@@ -685,6 +781,8 @@ def parse_schedule_xlsx(file_path, source_url):
                         "timeStart": cur_start,
                         "timeEnd": cur_end
                     }
+                    if p.get("weeks") is not None:
+                        lesson["weeks"] = p["weeks"]
                     group_days_map[g["col"]][cur_day_idx]["lessons"].append(lesson)
 
         # Assemble groups for this sheet
@@ -710,6 +808,7 @@ def parse_schedule_xlsx(file_path, source_url):
                 "practiceNote": g.get("practiceNote") or ""
             })
 
+    print(f"Physics parser: {len(result_groups)} groups, {lesson_counter} lessons, {skipped_cells} unparsed cells")
     iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return {
         "version": 4,
@@ -736,7 +835,7 @@ def main():
 
     try:
         db = parse_schedule_xlsx(local_file, latest_url)
-        save_database_with_cache_check(db, OUTPUT_FILE)
+        save_physics_database(db, os.path.join(os.path.dirname(os.path.abspath(__file__)), OUTPUT_FILE))
     finally:
         if os.path.exists(local_file):
             os.remove(local_file)

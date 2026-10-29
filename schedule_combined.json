@@ -10,7 +10,7 @@
     "academicWeeksCount": 18,
     "weekParityRule": "odd_first"
   },
-  "updatedAt": "2026-10-26T23:05:54Z",
+  "updatedAt": "2026-10-29T21:02:31Z",
   "sourceUrl": "https://kpfu.ru",
   "groups": [
     {
@@ -55,7 +55,18 @@
               "weekEnd": 21,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                21
+              ]
             },
             {
               "id": "06-101-1270",
@@ -72,7 +83,18 @@
               "weekEnd": 21,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                21
+              ]
             },
             {
               "id": "06-101-1271",
@@ -89,7 +111,18 @@
               "weekEnd": 21,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                21
+              ]
             }
           ]
         },
@@ -112,7 +145,16 @@
               "weekEnd": 20,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1273",
@@ -249,7 +291,16 @@
               "weekEnd": 20,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1280",
@@ -266,7 +317,16 @@
               "weekEnd": 20,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1281",
@@ -283,7 +343,16 @@
               "weekEnd": 20,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1282",
@@ -300,7 +369,16 @@
               "weekEnd": 20,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1284",
@@ -374,7 +452,13 @@
               "weekEnd": 20,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1288",
@@ -391,7 +475,13 @@
               "weekEnd": 20,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                15,
+                16,
+                17,
+                20
+              ]
             },
             {
               "id": "06-101-1289",
@@ -579,7 +669,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 5,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -596,7 +686,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 9,
               "weekEnd": 13,
               "time": "15:50-17:20",
@@ -1204,7 +1294,20 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1215",
@@ -1221,7 +1324,20 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1217",
@@ -1238,7 +1354,20 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                2,
+                3,
+                4,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1219",
@@ -1255,7 +1384,19 @@
               "weekEnd": 17,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                3,
+                4,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-291-1222",
@@ -1272,7 +1413,19 @@
               "weekEnd": 17,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                2,
+                3,
+                4,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -1295,7 +1448,20 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-291-1229",
@@ -1312,7 +1478,21 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1232",
@@ -1329,7 +1509,21 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             }
           ]
         },
@@ -1352,7 +1546,21 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1240",
@@ -1369,7 +1577,19 @@
               "weekEnd": 16,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
             }
           ]
         },
@@ -1409,7 +1629,21 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1250",
@@ -1426,7 +1660,13 @@
               "weekEnd": 10,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10
+              ]
             },
             {
               "id": "06-291-1251",
@@ -1460,7 +1700,21 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-291-1253",
@@ -1500,7 +1754,19 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-291-1257",
@@ -1517,7 +1783,20 @@
               "weekEnd": 17,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         }
@@ -1779,7 +2058,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 3,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -1813,7 +2092,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 6,
               "time": "15:50-17:20",
@@ -1830,7 +2109,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 7,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -1892,7 +2171,17 @@
               "weekEnd": 17,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-301-1116",
@@ -1909,7 +2198,17 @@
               "weekEnd": 17,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -2176,7 +2475,19 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                17,
+                18
+              ]
             },
             {
               "id": "06-302-943",
@@ -2228,7 +2539,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -2358,7 +2669,20 @@
               "weekEnd": 17,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                4,
+                5,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -2427,7 +2751,7 @@
               "type": "distance",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -2444,7 +2768,7 @@
               "type": "distance",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -2467,7 +2791,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -2484,7 +2808,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 17,
               "time": "17:30-19:00",
@@ -2694,7 +3018,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -3215,7 +3539,7 @@
             {
               "id": "06-311-1161",
               "subject": "Основы квантовых технологий",
-              "rawText": "Основы квантовых технологий\nДуглав А.В.  1-11н, 172 гл.зд.",
+              "rawText": "Основы квантовых технологий  (пр)\nДуглав А.В.  1-11н, 172 гл.зд.",
               "teacher": "Дуглав А.В.",
               "room": "172",
               "building": "Главное здание",
@@ -3231,8 +3555,8 @@
             },
             {
               "id": "06-311-1162",
-              "subject": "Основы квантовых технологий",
-              "rawText": "Основы квантовых технологий\nКурс по выбору (Б1.В.ДВ.11): Физические основы медицинских технологий  (пр) Пудовкин М.С.  1-11н, 251 гл.з.",
+              "subject": "Физические основы медицинских технологий",
+              "rawText": "Курс по выбору (Б1.В.ДВ.11): Физические основы медицинских технологий  (пр) Пудовкин М.С.  1-11н, 251 гл.з.",
               "teacher": "Пудовкин М.С.",
               "room": "251",
               "building": "Главное здание",
@@ -3248,8 +3572,8 @@
             },
             {
               "id": "06-311-1163",
-              "subject": "Основы квантовых технологий",
-              "rawText": "Основы квантовых технологий\nМагнитные материалы (пр) Вагизов Ф.Г. 14-16н, ЛЯФ, к.8",
+              "subject": "Магнитные материалы",
+              "rawText": "Магнитные материалы (пр) Вагизов Ф.Г. 14-16н, ЛЯФ, к.8",
               "teacher": "Вагизов Ф.Г.",
               "room": "к. 8",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -3295,7 +3619,17 @@
               "weekEnd": 16,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                14,
+                15,
+                16
+              ]
             },
             {
               "id": "06-311-1172",
@@ -3750,7 +4084,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -3767,7 +4101,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "10:10-11:40",
@@ -3777,14 +4111,14 @@
             {
               "id": "06-321-1026",
               "subject": "Статистическая радиофизика",
-              "rawText": "Статистическая радиофизика\nСтатистическая радиофизика (лаб) Коротышкин Д.В.\n1-17н, 1/2гр. ч.н, 1/2гр. н.н, 1203",
+              "rawText": "Статистическая радиофизика (лаб) Коротышкин Д.В.\n1-17н, 1/2гр. ч.н, 1/2гр. н.н, 1203",
               "teacher": "Коротышкин Д.В.",
               "room": "1203",
               "building": "Кремлевская, 16А (Институт физики)",
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -3793,15 +4127,15 @@
             },
             {
               "id": "06-321-1027",
-              "subject": "Статистическая радиофизика",
-              "rawText": "Статистическая радиофизика\nЭлектродинамика сверхвысоких частот  (лаб) Дуглав А.В. 1-18н, 1/2гр. ч.н, 1/2гр. н.н, 251 гл.зд.",
+              "subject": "Электродинамика сверхвысоких частот",
+              "rawText": "Электродинамика сверхвысоких частот  (лаб) Дуглав А.В. 1-18н, 1/2гр. ч.н, 1/2гр. н.н, 251 гл.зд.",
               "teacher": "Дуглав А.В.",
               "room": "251",
               "building": "Главное здание",
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -3835,7 +4169,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 15,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -3851,7 +4185,7 @@
             {
               "id": "06-321-1083",
               "subject": "Курс по выбору: ВЧ для приборов магнитного резонанса",
-              "rawText": "Курс по выбору: ВЧ для приборов магнитного резонанса\nТехника СВЧ для приборов магнитного резонанса  (л+пр) Дуглав А.В. 1-16н, 252 гл.зд",
+              "rawText": "Техника СВЧ для приборов магнитного резонанса  (л+пр) Дуглав А.В. 1-16н, 252 гл.зд",
               "teacher": "Дуглав А.В.",
               "room": "252",
               "building": "Главное здание",
@@ -3867,8 +4201,8 @@
             },
             {
               "id": "06-321-1084",
-              "subject": "Курс по выбору: ВЧ для приборов магнитного резонанса",
-              "rawText": "Курс по выбору: ВЧ для приборов магнитного резонанса\nТеория и применение сигнальных процессоров  (л) Гумеров Р.И. 1-9н, 20,016,007  (пр) Галиуллин А.А., 10-16н, 254 гл.зд",
+              "subject": "Курс по выбору: Теория и применение сигнальных процессоров 20",
+              "rawText": "Теория и применение сигнальных процессоров  (л) Гумеров Р.И. 1-9н, 20,016,007  (пр) Галиуллин А.А., 10-16н, 254 гл.зд",
               "teacher": "Гумеров Р.И., Галиуллин А.А.",
               "room": "016, 007, 254",
               "building": "Главное здание",
@@ -4198,7 +4532,25 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-331-927",
@@ -4240,6 +4592,31 @@
           "dayName": "вторник",
           "dayIndex": 2,
           "lessons": [
+            {
+              "id": "06-331-1574",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(л)\nПоминов А.И.\n1,2,5-8н,  2 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "2 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 8,
+              "time": "10:10-11:40",
+              "timeStart": "10:10",
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
             {
               "id": "06-331-968",
               "subject": "Информационные технологии в инновациях",
@@ -4423,6 +4800,70 @@
           "dayIndex": 4,
           "lessons": [
             {
+              "id": "06-331-1575",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(пр)\nПоминов А.И.\n1,2,6-16н,  2 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "2 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 16,
+              "time": "10:10-11:40",
+              "timeStart": "10:10",
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            },
+            {
+              "id": "06-331-1576",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(пр)\nПоминов А.И.\n1,2,6-16н,  2 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "2 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 16,
+              "time": "12:10-13:40",
+              "timeStart": "12:10",
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            },
+            {
               "id": "06-331-1111",
               "subject": "Управление инновационными проектами",
               "rawText": "Управление инновационными проектами (лаб)\nНизамутдинов И.К.\n1-17н, 1/2 гр, ч.н., 1/2 гр, н.н., 504",
@@ -4432,7 +4873,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -4449,7 +4890,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -4579,7 +5020,25 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-332-928",
@@ -4621,6 +5080,31 @@
           "dayName": "вторник",
           "dayIndex": 2,
           "lessons": [
+            {
+              "id": "06-332-1577",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(л)\nПоминов А.И.\n1,2,5-8н,  2 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "2 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 8,
+              "time": "10:10-11:40",
+              "timeStart": "10:10",
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
             {
               "id": "06-332-969",
               "subject": "Информационные технологии в инновациях",
@@ -4813,7 +5297,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -4830,7 +5314,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -4893,6 +5377,70 @@
               "time": "12:10-13:40",
               "timeStart": "12:10",
               "timeEnd": "13:40"
+            },
+            {
+              "id": "06-332-1578",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(пр)\nПоминов А.И.\n1,2,6-16н,  1 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "1 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 16,
+              "time": "13:50-15:20",
+              "timeStart": "13:50",
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
+            },
+            {
+              "id": "06-332-1579",
+              "subject": "Курс по выбору: Основы лидерства",
+              "rawText": "Основы лидерства\n(пр)\nПоминов А.И.\n1,2,6-16н,  1 конференц-зал",
+              "teacher": "Поминов А.И.",
+              "room": "1 конф.-зал",
+              "building": "Конференц-зал",
+              "type": "lecture",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 16,
+              "time": "15:50-17:20",
+              "timeStart": "15:50",
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+              ]
             }
           ]
         }
@@ -4955,7 +5503,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -5046,7 +5594,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 8,
               "time": "13:50-15:20",
@@ -5063,7 +5611,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 8,
               "time": "15:50-17:20",
@@ -5295,7 +5843,7 @@
             {
               "id": "06-345-1142",
               "subject": "Физические основы микро- и наносистемной техники",
-              "rawText": "Физические основы микро- и наносистемной техники\nФизические основы микро- и наносистемной техники (пр) Шарафетдинов Д.И.\n1-9н, ЛЯФ 10",
+              "rawText": "Физические основы микро- и наносистемной техники (пр) Шарафетдинов Д.И.\n1-9н, ЛЯФ 10",
               "teacher": "Шарафетдинов Д.И.",
               "room": "к. 10",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -5311,8 +5859,8 @@
             },
             {
               "id": "06-345-1143",
-              "subject": "Физические основы микро- и наносистемной техники",
-              "rawText": "Физические основы микро- и наносистемной техники\nФакультатив: Инновационные технологии (л+пр) Алакшин Е.М. 10-18н, 251 гл зд",
+              "subject": "Факультатив Инновационные технологии",
+              "rawText": "Факультатив: Инновационные технологии (л+пр) Алакшин Е.М. 10-18н, 251 гл зд",
               "teacher": "Алакшин Е.М.",
               "room": "251",
               "building": "Главное здание",
@@ -5427,7 +5975,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -5444,7 +5992,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -5501,7 +6049,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -5518,7 +6066,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "13:50-15:20",
@@ -5535,7 +6083,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -5552,7 +6100,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "15:50-17:20",
@@ -5615,7 +6163,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -5632,7 +6180,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -5717,7 +6265,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "17:30-19:00",
@@ -5734,7 +6282,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "17:30-19:00",
@@ -5791,7 +6339,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -5808,7 +6356,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -5825,7 +6373,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "17:30-19:00",
@@ -5842,7 +6390,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "19:10-20:40",
@@ -5865,7 +6413,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "08:30-10:00",
@@ -5882,7 +6430,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "10:10-11:40",
@@ -5950,7 +6498,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -5967,7 +6515,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -6024,7 +6572,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -6041,7 +6589,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "17:30-19:00",
@@ -6058,7 +6606,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "19:10-20:40",
@@ -6115,7 +6663,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "15:50-17:20",
@@ -6132,7 +6680,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "15:50-17:20",
@@ -6149,7 +6697,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "17:30-19:00",
@@ -6166,7 +6714,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "17:30-19:00",
@@ -6257,7 +6805,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "17:30-19:00",
@@ -6274,7 +6822,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "17:30-19:00",
@@ -6331,7 +6879,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "12:10-13:40",
@@ -6348,7 +6896,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "13:50-15:20",
@@ -6365,7 +6913,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -6382,7 +6930,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "17:30-19:00",
@@ -6422,7 +6970,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "13:50-15:20",
@@ -6439,7 +6987,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "15:50-17:20",
@@ -6916,7 +7464,20 @@
               "weekEnd": 16,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                16
+              ]
             },
             {
               "id": "06-391-922",
@@ -6950,7 +7511,13 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                11,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-391-933",
@@ -6967,7 +7534,19 @@
               "weekEnd": 16,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                16
+              ]
             },
             {
               "id": "06-391-934",
@@ -6984,7 +7563,20 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                17,
+                18
+              ]
             }
           ]
         },
@@ -7075,7 +7667,22 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-391-989",
@@ -7092,19 +7699,34 @@
               "weekEnd": 17,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-391-1000",
               "subject": "Методика обучения и воспитания в области физики",
-              "rawText": "Методика обучения и воспитания в области физики\nМетодика обучения и воспитания в области физики (лаб) Шигапова Э.Д. 1-6н, 1/2 гр. ч.н, 1/2 гр, н.н, Межлаука, 1, 231",
+              "rawText": "Методика обучения и воспитания в области физики (лаб) Шигапова Э.Д. 1-6н, 1/2 гр. ч.н, 1/2 гр, н.н, Межлаука, 1, 231",
               "teacher": "Шигапова Э.Д.",
               "room": "231",
               "building": "Межлаука, 1",
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 6,
               "time": "15:50-17:20",
@@ -7114,7 +7736,7 @@
             {
               "id": "06-391-1001",
               "subject": "Методика обучения и воспитания в области физики",
-              "rawText": "Методика обучения и воспитания в области физики\nМетодика обучения и воспитания в области физики (пр) Шигапова Э.Д. 8-10н, Межлаука, 1, 233",
+              "rawText": "Методика обучения и воспитания в области физики (пр) Шигапова Э.Д. 8-10н, Межлаука, 1, 233",
               "teacher": "Шигапова Э.Д.",
               "room": "233",
               "building": "Межлаука, 1",
@@ -7138,7 +7760,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 7,
               "time": "19:10-20:40",
@@ -7183,7 +7805,22 @@
               "weekEnd": 17,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-391-1033",
@@ -7200,7 +7837,22 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -7223,7 +7875,22 @@
               "weekEnd": 17,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-391-1079",
@@ -7257,7 +7924,23 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-391-1104",
@@ -7274,7 +7957,23 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-391-1115",
@@ -7291,7 +7990,23 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-391-1124",
@@ -7308,7 +8023,23 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-391-1131",
@@ -7348,7 +8079,22 @@
               "weekEnd": 17,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-391-1193",
@@ -7365,7 +8111,22 @@
               "weekEnd": 17,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                15,
+                16,
+                17
+              ]
             }
           ]
         }
@@ -7934,7 +8695,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 10,
               "time": "12:10-13:40",
@@ -7951,7 +8712,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 10,
               "time": "13:50-15:20",
@@ -7996,7 +8757,26 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-402-684",
@@ -8065,7 +8845,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 12,
               "time": "08:30-10:00",
@@ -8082,7 +8862,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 12,
               "time": "10:10-11:40",
@@ -8121,7 +8901,17 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-402-743",
@@ -9172,7 +9962,13 @@
               "weekEnd": 14,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                10,
+                11,
+                13,
+                14
+              ]
             },
             {
               "id": "06-421-627",
@@ -9716,8 +10512,8 @@
             },
             {
               "id": "06-421-881",
-              "subject": "Общий физический практикум (Механика Молекулярная физика Электричество и магнетизм Колебания и волны оптика Атомная и ядерная физика",
-              "rawText": "Общий физический практикум (Механика Молекулярная физика Электричество и магнетизм Колебания и волны оптика Атомная и ядерная физика\nАтомная физика  (пр) Вагизов Ф.Г. 15,16н,  ЛЯФ, к.7,8",
+              "subject": "Атомная физика",
+              "rawText": "Атомная физика  (пр) Вагизов Ф.Г. 15,16н,  ЛЯФ, к.7,8",
               "teacher": "Вагизов Ф.Г.",
               "room": "к. 7, 8",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -9797,7 +10593,21 @@
               "weekEnd": 14,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-431-628",
@@ -9814,7 +10624,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-431-641",
@@ -10570,7 +11394,21 @@
               "weekEnd": 13,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
             },
             {
               "id": "06-445-748",
@@ -10604,7 +11442,20 @@
               "weekEnd": 12,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
             },
             {
               "id": "06-445-757",
@@ -10690,7 +11541,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -10712,7 +11563,20 @@
               "weekEnd": 12,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
             },
             {
               "id": "06-445-800",
@@ -10746,7 +11610,19 @@
               "weekEnd": 11,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ]
             },
             {
               "id": "06-445-812",
@@ -10917,7 +11793,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -10934,7 +11810,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -10951,7 +11827,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -10968,7 +11844,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -11099,7 +11975,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "10:10-11:40",
@@ -11116,7 +11992,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -11241,7 +12117,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -11258,7 +12134,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -11355,7 +12231,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 10,
               "time": "10:10-11:40",
@@ -11372,7 +12248,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 10,
               "time": "12:10-13:40",
@@ -11497,7 +12373,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "08:30-10:00",
@@ -11514,7 +12390,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "08:30-10:00",
@@ -11531,7 +12407,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "10:10-11:40",
@@ -11548,7 +12424,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "10:10-11:40",
@@ -11639,7 +12515,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -11656,7 +12532,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -11844,7 +12720,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "10:10-11:40",
@@ -11861,7 +12737,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -11878,7 +12754,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 10,
               "time": "13:50-15:20",
@@ -11895,7 +12771,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 10,
               "time": "15:50-17:20",
@@ -11980,12 +12856,24 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 12,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
             },
             {
               "id": "06-461-654",
@@ -12014,12 +12902,22 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 10,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                2,
+                3,
+                4,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             }
           ]
         },
@@ -12236,7 +13134,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "08:30-10:00",
@@ -12253,7 +13151,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -12485,7 +13383,24 @@
               "weekEnd": 17,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -12673,7 +13588,24 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-491-814",
@@ -12690,7 +13622,11 @@
               "weekEnd": 3,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                3
+              ]
             },
             {
               "id": "06-491-815",
@@ -12935,7 +13871,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -12952,7 +13888,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -12997,7 +13933,24 @@
               "weekEnd": 17,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-501-369",
@@ -13014,7 +13967,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-501-383",
@@ -13105,7 +14072,26 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-501-438",
@@ -13253,7 +14239,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-501-547",
@@ -13270,7 +14270,21 @@
               "weekEnd": 14,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-501-559",
@@ -13305,7 +14319,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "08:30-10:00",
@@ -13322,7 +14336,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -13344,7 +14358,18 @@
               "weekEnd": 10,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
               "id": "06-501-592",
@@ -13441,7 +14466,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "10:10-11:40",
@@ -13492,7 +14517,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -13549,7 +14574,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -13606,7 +14631,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -13748,7 +14773,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -13805,7 +14830,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "odd",
+              "weekType": "all",
               "weekStart": 10,
               "weekEnd": 17,
               "time": "08:30-10:00",
@@ -13856,7 +14881,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -13873,7 +14898,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -13991,7 +15016,7 @@
             {
               "id": "06-509-1445",
               "subject": "Трехмерное моделирование объектов в геоинформационных системах",
-              "rawText": "Трехмерное моделирование объектов в геоинформационных системах\n6-12 н. Трехмерное моделирование объектов в геоинформационных системах (л) Загретдинов А.А., ауд. 2а",
+              "rawText": "6-12 н. Трехмерное моделирование объектов в геоинформационных системах (л) Загретдинов А.А., ауд. 2а",
               "teacher": "Загретдинов А.А.",
               "room": "2а",
               "building": "Кремлевская, 16А (Институт физики)",
@@ -14007,8 +15032,8 @@
             },
             {
               "id": "06-509-1446",
-              "subject": "Трехмерное моделирование объектов в геоинформационных системах",
-              "rawText": "Трехмерное моделирование объектов в геоинформационных системах\n13-18 н. Космическая фотограмметрия (л+пр) Безменов В.М., ауд. 1а",
+              "subject": "Космическая фотограмметрия",
+              "rawText": "13-18 н. Космическая фотограмметрия (л+пр) Безменов В.М., ауд. 1а",
               "teacher": "Безменов В.М.",
               "room": "1а",
               "building": "Кремлевская, 16А (Институт физики)",
@@ -14418,7 +15443,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-511-385",
@@ -14435,7 +15474,24 @@
               "weekEnd": 17,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -14674,7 +15730,24 @@
               "weekEnd": 17,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-511-535",
@@ -14691,7 +15764,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-511-549",
@@ -15356,7 +16443,7 @@
             {
               "id": "06-519 (Физика перспективных материалов)-1441",
               "subject": "Курс по выбору: Нанотехнологии и перспективные материалы",
-              "rawText": "Курс по выбору: Нанотехнологии и перспективные материалы\nНанотехнологии и перспективные материалы (л+пр) Воронина Е.В. 8-14н, ЛЯФ, к.8",
+              "rawText": "Нанотехнологии и перспективные материалы (л+пр) Воронина Е.В. 8-14н, ЛЯФ, к.8",
               "teacher": "Воронина Е.В.",
               "room": "к. 8",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -15372,8 +16459,8 @@
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1442",
-              "subject": "Курс по выбору: Нанотехнологии и перспективные материалы",
-              "rawText": "Курс по выбору: Нанотехнологии и перспективные материалы\nЛазерные методы исследования функциональных материалов (л+пр) Никитин С.И. 2-7н, ЛЯФ, к.8",
+              "subject": "Курс по выбору: Лазерные методы исследования функциональных материалов",
+              "rawText": "Лазерные методы исследования функциональных материалов (л+пр) Никитин С.И. 2-7н, ЛЯФ, к.8",
               "teacher": "Никитин С.И.",
               "room": "к. 8",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -15476,7 +16563,23 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1474",
@@ -15493,7 +16596,23 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1479",
@@ -15527,7 +16646,15 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1483",
@@ -15544,7 +16671,17 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1484",
@@ -15561,7 +16698,16 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1485",
@@ -15578,7 +16724,23 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1491",
@@ -15595,7 +16757,23 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1496",
@@ -15612,7 +16790,23 @@
               "weekEnd": 18,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             }
           ]
         },
@@ -15635,7 +16829,23 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1505",
@@ -15732,7 +16942,23 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-519 (Физика перспективных материалов)-1540",
@@ -15993,7 +17219,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-521-386",
@@ -16249,7 +17489,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-521-550",
@@ -16875,7 +18129,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -16892,7 +18146,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -16966,7 +18220,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -17347,7 +18601,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -17364,7 +18618,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 2,
               "weekEnd": 18,
               "time": "15:50-17:20",
@@ -17421,7 +18675,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -17813,7 +19067,20 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                18
+              ]
             },
             {
               "id": "06-539-1495",
@@ -17853,7 +19120,20 @@
               "weekEnd": 17,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17
+              ]
             },
             {
               "id": "06-539-1519",
@@ -17870,7 +19150,20 @@
               "weekEnd": 17,
               "time": "19:10-20:40",
               "timeStart": "19:10",
-              "timeEnd": "20:40"
+              "timeEnd": "20:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17
+              ]
             }
           ]
         },
@@ -17893,7 +19186,20 @@
               "weekEnd": 17,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17
+              ]
             }
           ]
         },
@@ -17933,7 +19239,15 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                18
+              ]
             },
             {
               "id": "06-539-1550",
@@ -18024,7 +19338,21 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17,
+                18
+              ]
             },
             {
               "id": "06-539-1570",
@@ -18218,7 +19546,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "10:10-11:40",
@@ -18235,7 +19563,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "12:10-13:40",
@@ -18565,7 +19893,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "08:30-10:00",
@@ -18582,7 +19910,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 14,
               "time": "08:30-10:00",
@@ -18599,7 +19927,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "10:10-11:40",
@@ -18616,7 +19944,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 14,
               "time": "10:10-11:40",
@@ -18789,6 +20117,23 @@
           "dayIndex": 4,
           "lessons": [
             {
+              "id": "06-551-1572",
+              "subject": "Математический анализ",
+              "rawText": "Математический анализ (л)\nТурилова Е.А.\n1-18н, 806",
+              "teacher": "Турилова Е.А.",
+              "room": "806",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 18,
+              "time": "08:30-10:00",
+              "timeStart": "08:30",
+              "timeEnd": "10:00"
+            },
+            {
               "id": "06-551-477",
               "subject": "Математический анализ",
               "rawText": "Математический анализ (пр)\nБилалова Н.Ф.\n1-18н, 505",
@@ -18889,7 +20234,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "10:10-11:40",
@@ -18997,7 +20342,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "08:30-10:00",
@@ -19207,7 +20552,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "13:50-15:20",
@@ -19224,7 +20569,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 14,
               "time": "13:50-15:20",
@@ -19241,7 +20586,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "15:50-17:20",
@@ -19258,7 +20603,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 14,
               "time": "15:50-17:20",
@@ -19396,6 +20741,23 @@
           "dayName": "четверг",
           "dayIndex": 4,
           "lessons": [
+            {
+              "id": "06-552-1573",
+              "subject": "Математический анализ",
+              "rawText": "Математический анализ (л)\nТурилова Е.А.\n1-18н, 806",
+              "teacher": "Турилова Е.А.",
+              "room": "806",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 1,
+              "weekEnd": 18,
+              "time": "08:30-10:00",
+              "timeStart": "08:30",
+              "timeEnd": "10:00"
+            },
             {
               "id": "06-552-478",
               "subject": "Математический анализ",
@@ -19588,7 +20950,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "12:10-13:40",
@@ -20197,7 +21559,7 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "10:10-11:40",
@@ -20316,7 +21678,17 @@
               "weekEnd": 17,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-561-590",
@@ -20401,7 +21773,11 @@
               "weekEnd": 18,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                16,
+                18
+              ]
             },
             {
               "id": "06-591-301",
@@ -20418,7 +21794,21 @@
               "weekEnd": 14,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-591-311",
@@ -20543,7 +21933,25 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-591-394",
@@ -20782,7 +22190,11 @@
               "weekEnd": 18,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                16,
+                18
+              ]
             },
             {
               "id": "06-592-302",
@@ -20924,7 +22336,25 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-592-395",
@@ -21003,7 +22433,7 @@
             {
               "id": "06-592-459",
               "subject": "Технологии психолого-педагогической диагностики",
-              "rawText": "Технологии психолого-педагогической диагностики\nТехнологии психолого-педагогической диагностики (пр) Ганиева А.М. 2-3н, 2 конференц-зал\nЦОР: https://edu.kpfu.ru/course/view.php?id=4255",
+              "rawText": "Технологии психолого-педагогической диагностики (пр) Ганиева А.М. 2-3н, 2 конференц-зал\nЦОР: https://edu.kpfu.ru/course/view.php?id=4255",
               "teacher": "Ганиева А.М.",
               "room": "2 конф.-зал",
               "building": "Конференц-зал",
@@ -21019,20 +22449,26 @@
             },
             {
               "id": "06-592-460",
-              "subject": "Технологии психолого-педагогической диагностики",
-              "rawText": "Технологии психолого-педагогической диагностики\nПедагогическая психология (пр) Ганиева А.М.  4,6,7,8н, 2 конференц-зал\nЦОР: https://edu.kpfu.ru/course/view.php?id=2717",
+              "subject": "Педагогическая психология",
+              "rawText": "Педагогическая психология (пр) Ганиева А.М.  4,6,7,8н, 2 конференц-зал\nЦОР: https://edu.kpfu.ru/course/view.php?id=2717",
               "teacher": "Ганиева А.М.",
               "room": "2 конф.-зал",
               "building": "Конференц-зал",
               "type": "cor",
-              "url": "https://edu.kpfu.ru/course/view.php?id=4255",
+              "url": "https://edu.kpfu.ru/course/view.php?id=2717",
               "isAdditional": false,
               "weekType": "all",
               "weekStart": 4,
               "weekEnd": 8,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                4,
+                6,
+                7,
+                8
+              ]
             }
           ]
         },
@@ -21180,7 +22616,20 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-599-1467",
@@ -21197,7 +22646,13 @@
               "weekEnd": 11,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                3,
+                10,
+                11
+              ]
             }
           ]
         },
@@ -21220,7 +22675,22 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-599-1482",
@@ -21237,7 +22707,11 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                9,
+                18
+              ]
             },
             {
               "id": "06-599-1487",
@@ -21271,7 +22745,13 @@
               "weekEnd": 12,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                3,
+                10,
+                11,
+                12
+              ]
             },
             {
               "id": "06-599-1489",
@@ -21305,7 +22785,21 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             }
           ]
         },
@@ -21328,7 +22822,21 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-599-1516",
@@ -21345,7 +22853,21 @@
               "weekEnd": 18,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-599-1518",
@@ -21362,7 +22884,21 @@
               "weekEnd": 18,
               "time": "17:30-19:00",
               "timeStart": "17:30",
-              "timeEnd": "19:00"
+              "timeEnd": "19:00",
+              "weeks": [
+                1,
+                2,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             }
           ]
         }
@@ -21413,7 +22949,21 @@
               "weekEnd": 14,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-601-18",
@@ -21555,7 +23105,16 @@
               "weekEnd": 9,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             }
           ]
         },
@@ -21629,7 +23188,26 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-601-148",
@@ -21794,7 +23372,17 @@
               "weekEnd": 9,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             },
             {
               "id": "06-601-217",
@@ -21919,7 +23507,16 @@
               "weekEnd": 8,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
             },
             {
               "id": "06-601-269",
@@ -21987,7 +23584,21 @@
               "weekEnd": 14,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-602-8",
@@ -22437,7 +24048,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "13:50-15:20",
@@ -22454,7 +24065,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "15:50-17:20",
@@ -22687,7 +24298,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 12,
               "time": "10:10-11:40",
@@ -22704,7 +24315,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 4,
               "weekEnd": 12,
               "time": "12:10-13:40",
@@ -22919,7 +24530,16 @@
               "weekEnd": 9,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             }
           ]
         },
@@ -22959,7 +24579,26 @@
               "weekEnd": 18,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-611-129",
@@ -23107,7 +24746,18 @@
               "weekEnd": 10,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ]
             },
             {
               "id": "06-611-235",
@@ -23164,7 +24814,16 @@
               "weekEnd": 8,
               "time": "08:30-10:00",
               "timeStart": "08:30",
-              "timeEnd": "10:00"
+              "timeEnd": "10:00",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
             },
             {
               "id": "06-611-263",
@@ -23261,12 +24920,22 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "10:10-11:40",
               "timeStart": "10:10",
-              "timeEnd": "11:40"
+              "timeEnd": "11:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             },
             {
               "id": "06-619 (Медицинская физика)-1317",
@@ -23295,12 +24964,22 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "first_half",
               "weekStart": 1,
               "weekEnd": 9,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             },
             {
               "id": "06-619 (Медицинская физика)-1322",
@@ -23317,7 +24996,14 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-619 (Медицинская физика)-1328",
@@ -23329,12 +25015,26 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 13,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
             },
             {
               "id": "06-619 (Медицинская физика)-1337",
@@ -23346,12 +25046,26 @@
               "type": "lab",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 13,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ]
             },
             {
               "id": "06-619 (Медицинская физика)-1345",
@@ -23692,7 +25406,14 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                10,
+                11,
+                12,
+                13,
+                18
+              ]
             },
             {
               "id": "06-619 (Прикладная и фундаментальная физика)-1329",
@@ -23748,7 +25469,7 @@
             {
               "id": "06-619 (Прикладная и фундаментальная физика)-1347",
               "subject": "Курс по выбору: Приборы и методы экспериментальной физики",
-              "rawText": "Курс по выбору: Приборы и методы экспериментальной физики\nПриборы и методы экспериментальной физики (пр) Белушкин А.В. 3,4н, 1306",
+              "rawText": "Приборы и методы экспериментальной физики (пр) Белушкин А.В. 3,4н, 1306",
               "teacher": "Белушкин А.В.",
               "room": "1306",
               "building": "Кремлевская, 16А (Институт физики)",
@@ -23764,8 +25485,8 @@
             },
             {
               "id": "06-619 (Прикладная и фундаментальная физика)-1348",
-              "subject": "Курс по выбору: Приборы и методы экспериментальной физики",
-              "rawText": "Курс по выбору: Приборы и методы экспериментальной физики\nМатериаловедение и технологии материалов (л+пр) Воронина 6-13н, ЛЯФ 8",
+              "subject": "Курс по выбору: Материаловедение и технологии материалов",
+              "rawText": "Материаловедение и технологии материалов (л+пр) Воронина 6-13н, ЛЯФ 8",
               "teacher": "Воронина Е.В.",
               "room": "к. 8",
               "building": "Лаборатория ядерной физики (ЛЯФ)",
@@ -23885,7 +25606,24 @@
               "weekEnd": 17,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             },
             {
               "id": "06-619 (Прикладная и фундаментальная физика)-1363",
@@ -24345,7 +26083,16 @@
               "weekEnd": 9,
               "time": "15:50-17:20",
               "timeStart": "15:50",
-              "timeEnd": "17:20"
+              "timeEnd": "17:20",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
             }
           ]
         },
@@ -24453,7 +26200,18 @@
               "weekEnd": 18,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                9,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             }
           ]
         },
@@ -25705,7 +27463,21 @@
               "weekEnd": 14,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             },
             {
               "id": "06-632-34",
@@ -27030,7 +28802,21 @@
               "weekEnd": 14,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ]
             }
           ]
         },
@@ -27065,7 +28851,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 16,
               "time": "10:10-11:40",
@@ -27412,7 +29198,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "08:30-10:00",
@@ -27429,7 +29215,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "10:10-11:40",
@@ -27571,7 +29357,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 18,
               "time": "13:50-15:20",
@@ -27952,7 +29738,7 @@
               "type": "practice",
               "url": "",
               "isAdditional": false,
-              "weekType": "even",
+              "weekType": "all",
               "weekStart": 1,
               "weekEnd": 17,
               "time": "12:10-13:40",
@@ -28958,7 +30744,25 @@
               "weekEnd": 17,
               "time": "13:50-15:20",
               "timeStart": "13:50",
-              "timeEnd": "15:20"
+              "timeEnd": "15:20",
+              "weeks": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ]
             }
           ]
         },
@@ -29083,7 +30887,25 @@
               "weekEnd": 18,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                1,
+                2,
+                3,
+                4,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
             },
             {
               "id": "06-691-147",
@@ -29231,7 +31053,13 @@
               "weekEnd": 10,
               "time": "12:10-13:40",
               "timeStart": "12:10",
-              "timeEnd": "13:40"
+              "timeEnd": "13:40",
+              "weeks": [
+                5,
+                8,
+                9,
+                10
+              ]
             },
             {
               "id": "06-691-254",
