@@ -4,7 +4,20 @@ on:
   schedule:
     # 06:00 and 22:00 Moscow / Kazan time (UTC+3) -> 03:00 and 19:00 UTC
     - cron: '0 3,19 * * *'
-  workflow_dispatch:        # Allows manual run from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Which parser(s) to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - ivmiit
+          - physics
+          - ifmib
+          - curriculum_ivmiit
+          - curriculum_physics
 
 permissions:
   contents: write
@@ -27,21 +40,34 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run schedule parser (IVMIIT)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'ivmiit'
         run: python parser.py
 
       - name: Run curriculum parser (IVMIIT)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'curriculum_ivmiit'
         run: python curriculum_parser.py
 
       - name: Run schedule parser (Physics)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'physics'
         run: python parser_physics.py
 
       - name: Run curriculum parser (Physics)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'curriculum_physics'
         run: python curriculum_parser_physics.py
 
-      - name: Merge schedules (IVMIIT + Physics)
+      - name: Run schedule parser (IFMiB)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'ifmib'
+        run: python parser_ifmib.py
+
+      - name: Run unit tests
+        run: python -m unittest discover tests
+
+      - name: Merge schedules (IVMIIT + Physics + IFMiB)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'ivmiit' || inputs.target == 'physics' || inputs.target == 'ifmib'
         run: python merge_schedules.py
 
       - name: Validate merged schedule sanity
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'ivmiit' || inputs.target == 'physics' || inputs.target == 'ifmib'
         run: |
           python -c "
           import json, sys
@@ -49,8 +75,8 @@ jobs:
               data = json.load(f)
           groups = data.get('groups', [])
           print(f'Total groups parsed: {len(groups)}')
-          if len(groups) < 100:
-              print(f'Error: Group count ({len(groups)}) is suspiciously low (< 100). Aborting to prevent committing corrupted schedule.', file=sys.stderr)
+          if len(groups) < 150:
+              print(f'Error: Group count ({len(groups)}) is suspiciously low (< 150). Aborting to prevent committing corrupted schedule.', file=sys.stderr)
               sys.exit(1)
           "
 
@@ -58,10 +84,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json schedule_combined.json
+          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json schedule_ifmib.json schedule_combined.json
           if git diff --staged --quiet; then
             echo "No changes in schedule or curriculum."
           else
-            git commit -m "Automated data update (IVMIIT & Physics) [skip ci]"
+            git commit -m "Automated data update (target: ${{ github.event_name == 'schedule' && 'all' || inputs.target }}) [skip ci]"
             git push
           fi

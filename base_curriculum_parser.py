@@ -3,6 +3,7 @@ import os
 import re
 import json
 import time
+import tempfile
 from datetime import datetime, timezone
 
 try:
@@ -344,19 +345,37 @@ def run_curriculum_crawler(faculty_id, faculty_name, output_filename):
         "plans": parsed_plans
     }
 
-    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_filename)
+    if not parsed_plans:
+        raise ValueError(f"Curriculum {output_filename} is empty; previous output was preserved")
+
+    output_path = os.fspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), output_filename))
     if os.path.exists(output_path):
         try:
             with open(output_path, "r", encoding="utf-8") as existing_f:
                 existing_data = json.load(existing_f)
+            old_plans = existing_data.get("plans", [])
+            if old_plans and len(parsed_plans) < len(old_plans) * 0.7:
+                raise ValueError(f"Curriculum shrank suspiciously: plans {len(old_plans)} -> {len(parsed_plans)}")
             if existing_data.get("plans") == parsed_plans:
                 result_data["updatedAt"] = existing_data.get("updatedAt", result_data["updatedAt"])
                 print(f"✅ Curriculum content is identical to existing {output_filename}. Preserving updatedAt.")
         except Exception as e:
+            if isinstance(e, ValueError):
+                raise
             print(f"Warning: Failed to compare curriculum {output_filename}: {e}")
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(result_data, f, ensure_ascii=False, indent=2)
+    directory = os.path.dirname(os.path.abspath(output_path))
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=directory, delete=False) as stream:
+            temporary_path = stream.name
+            json.dump(result_data, stream, ensure_ascii=False, indent=2)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary_path, output_path)
+    finally:
+        if temporary_path and os.path.exists(temporary_path):
+            os.unlink(temporary_path)
 
     elapsed = time.time() - start_time
     file_size_kb = os.path.getsize(output_path) / 1024

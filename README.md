@@ -3,11 +3,18 @@
 Automated schedule provider and curriculum parser for:
 - **Institute of Computational Mathematics and Information Technologies (IVMIIT)**
 - **Institute of Physics**
+- **Institute of Fundamental Medicine and Biology (IFMiB)**
 at Kazan Federal University (KFU).
 
 ## API Endpoints
 
 ### 📅 Schedule Endpoints
+
+#### Combined Schedule (All Institutes):
+- **Full Combined Schedule (GitHub Pages):**  
+  `https://schedule-kfu.github.io/schedule-data/schedule_combined.json`
+- **Raw GitHub Endpoint:**  
+  `https://raw.githubusercontent.com/Schedule-KFU/schedule-data/main/schedule_combined.json`
 
 #### IVMIIT (Institute of Computational Mathematics and Information Technologies):
 - **Full Schedule (GitHub Pages):**  
@@ -20,6 +27,12 @@ at Kazan Federal University (KFU).
   `https://schedule-kfu.github.io/schedule-data/schedule_physics.json`
 - **Raw GitHub Endpoint:**  
   `https://raw.githubusercontent.com/Schedule-KFU/schedule-data/main/schedule_physics.json`
+
+#### Institute of Fundamental Medicine and Biology (IFMiB):
+- **Full Schedule (GitHub Pages):**  
+  `https://schedule-kfu.github.io/schedule-data/schedule_ifmib.json`
+- **Raw GitHub Endpoint:**  
+  `https://raw.githubusercontent.com/Schedule-KFU/schedule-data/main/schedule_ifmib.json`
 
 ### 📚 Curriculum Endpoints (Study Plans)
 

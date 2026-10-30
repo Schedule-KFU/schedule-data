@@ -2,6 +2,8 @@ import sys
 import os
 import re
 import json
+import tempfile
+from collections import defaultdict, deque
 from datetime import datetime, timezone, timedelta
 
 try:
@@ -143,26 +145,96 @@ def extract_url(text):
         return "https://edu.kpfu.ru"
     return ""
 
+def preserve_lesson_ids(database, previous):
+    """Preserve existing lesson IDs across runs based on group, day, time, subject, teacher, room."""
+    if not previous or not isinstance(previous, dict):
+        return
+
+    def entries(data):
+        for group in data.get("groups", []):
+            for day in group.get("days", []):
+                for lesson in day.get("lessons", []):
+                    yield group, day, lesson
+
+    def key(group, day, lesson):
+        return (
+            group.get("id", group.get("group")),
+            day.get("dayIndex"),
+            lesson.get("timeStart"),
+            lesson.get("timeEnd"),
+            lesson.get("subject"),
+            lesson.get("teacher"),
+            lesson.get("room")
+        )
+
+    old_ids = defaultdict(deque)
+    used = set()
+    max_number = 0
+    for group, day, lesson in entries(previous):
+        identifier = str(lesson.get("id", ""))
+        if identifier:
+            old_ids[key(group, day, lesson)].append(identifier)
+            used.add(identifier)
+            match = re.search(r'-(\d+)$', identifier)
+            if match:
+                max_number = max(max_number, int(match.group(1)))
+
+    for group, day, lesson in entries(database):
+        candidates = old_ids[key(group, day, lesson)]
+        if candidates:
+            lesson["id"] = candidates.popleft()
+        else:
+            while True:
+                max_number += 1
+                identifier = f"{group.get('id', group.get('group', 'lesson'))}-{max_number}"
+                if identifier not in used:
+                    used.add(identifier)
+                    lesson["id"] = identifier
+                    break
+
 def save_database_with_cache_check(db, output_file):
-    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_file)
+    output_path = os.fspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), output_file))
+    groups = db.get("groups", [])
+    lessons = sum(len(d.get("lessons", [])) for g in groups for d in g.get("days", []))
+    if not groups or not lessons:
+        raise ValueError(f"Schedule {output_file} is empty; previous output was preserved")
 
     if os.path.exists(output_path):
         try:
             with open(output_path, "r", encoding="utf-8") as existing_f:
                 existing_db = json.load(existing_f)
 
-            if (existing_db.get("groups") == db.get("groups") and
-                existing_db.get("semester") == db.get("semester") and
-                existing_db.get("sourceUrl") == db.get("sourceUrl")):
-                db["updatedAt"] = existing_db.get("updatedAt", db["updatedAt"])
+            preserve_lesson_ids(db, existing_db)
+
+            old_groups = existing_db.get("groups", [])
+            old_lessons = sum(len(d.get("lessons", [])) for g in old_groups for d in g.get("days", []))
+            if old_groups and len(groups) < len(old_groups) * 0.7:
+                raise ValueError(f"Schedule shrank suspiciously: groups {len(old_groups)} -> {len(groups)}")
+            if old_lessons and lessons < old_lessons * 0.7:
+                raise ValueError(f"Schedule shrank suspiciously: lessons {old_lessons} -> {lessons}")
+
+            if {k: v for k, v in existing_db.items() if k != "updatedAt"} == {k: v for k, v in db.items() if k != "updatedAt"}:
+                db["updatedAt"] = existing_db.get("updatedAt", db.get("updatedAt"))
                 print(f"✅ Schedule content is identical to existing {output_file}. Preserving updatedAt timestamp.")
             else:
                 print(f"🔄 Schedule changes detected! Updated timestamp: {db['updatedAt']}")
         except Exception as e:
+            if isinstance(e, ValueError):
+                raise
             print(f"Warning: Failed to compare with existing {output_file}: {e}")
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(db, f, ensure_ascii=False, indent=2)
+    directory = os.path.dirname(os.path.abspath(output_path))
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=directory, delete=False) as stream:
+            temporary_path = stream.name
+            json.dump(db, stream, ensure_ascii=False, indent=2)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary_path, output_path)
+    finally:
+        if temporary_path and os.path.exists(temporary_path):
+            os.unlink(temporary_path)
 
     total_lessons = sum(len(d['lessons']) for g in db['groups'] for d in g['days'])
     print(f"Success! Saved {len(db['groups'])} groups and {total_lessons} lessons to {output_file}")
