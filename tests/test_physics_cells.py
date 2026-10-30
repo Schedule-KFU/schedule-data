@@ -7,6 +7,11 @@ from parser_physics import extract_weeks, extract_explicit_weeks, parse_physics_
 
 
 class PhysicsCellTests(unittest.TestCase):
+    def test_subject_with_capitalized_second_word_is_not_mistaken_for_teacher(self):
+        lessons = parse_physics_cell("История России (пр)\nИбрагимов Р.Р.\n5-15н, 809")
+        self.assertEqual(lessons[0]["subject"], "История России")
+        self.assertEqual(lessons[0]["teacher"], "Ибрагимов Р.Р.")
+
     def test_discontinuous_week_list_is_parsed_without_room_numbers(self):
         self.assertEqual(extract_explicit_weeks("Поминов А.И.\n1,2,6-16н, 2 конференц-зал"), [1, 2, *range(6, 17)])
         self.assertEqual(extract_explicit_weeks("2, 4-14н, 117"), [2, *range(4, 15)])
