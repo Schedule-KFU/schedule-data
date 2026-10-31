@@ -18,6 +18,7 @@ on:
           - ifmib
           - curriculum_ivmiit
           - curriculum_physics
+          - curriculum_ifmib
 
 permissions:
   contents: write
@@ -59,6 +60,10 @@ jobs:
         if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'ifmib'
         run: python parser_ifmib.py
 
+      - name: Run curriculum parser (IFMiB)
+        if: github.event_name == 'schedule' || inputs.target == 'all' || inputs.target == 'curriculum_ifmib'
+        run: python curriculum_parser_ifmib.py
+
       - name: Run unit tests
         run: python -m unittest discover tests
 
@@ -84,7 +89,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json schedule_ifmib.json schedule_combined.json
+          git add schedule.json curriculum_ivmiit.json schedule_physics.json curriculum_physics.json schedule_ifmib.json curriculum_ifmib.json schedule_combined.json
           if git diff --staged --quiet; then
             echo "No changes in schedule or curriculum."
           else
