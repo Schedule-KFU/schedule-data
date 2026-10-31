@@ -23,6 +23,114 @@ IFMIB_SCHEDULE_URL = "https://kpfu.ru/biology-medicine/uchebnyj-process/raspisan
 OUTPUT_FILE = "schedule_ifmib.json"
 
 TEACHER_PATTERN = r"[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.?)?"
+WEEK_ITEM = r'(?:\b(?:[1-9]|1[0-9]|2[0-4])(?:\s*-\s*(?:[1-9]|1[0-9]|2[0-4]))?\b)'
+WEEK_LIST = rf'(?:{WEEK_ITEM}(?:\s*,\s*{WEEK_ITEM})*)'
+WEEK_PREFIX = r'(?:(?<=[\(\),])|(?<=\))\s*|(?<=\bлекций\b)\s*|(?<=\bлекции\b)\s*|(?<=\bлекция\b)\s*|\A\s*)'
+WEEK_SEG_PATTERN = rf'{WEEK_PREFIX}\s*({WEEK_LIST}\s*нед\.?)\s*({TEACHER_PATTERN})'
+
+
+def extract_ifmib_room_building(text):
+    """Extract room and building identifiers from text."""
+    building = ''
+    room = ''
+
+    if re.search(r'к\.?\s*маркса\s*,?\s*74а|км\s*,?\s*74а|сим\.?\s*центр', text, re.I):
+        building = 'К.Маркса 74а (сим.центр)'
+    elif re.search(r'к\.?\s*маркса\s*,?\s*76|км\s*,?\s*76', text, re.I):
+        building = 'К.Маркса 76 корп. 2'
+    elif re.search(r'к\.?\s*маркса\s*,?\s*74|км\s*,?\s*74', text, re.I):
+        building = 'К.Маркса 74'
+    elif re.search(r'лобачевского\s*1\s*/\s*29', text, re.I):
+        building = 'Лобачевского 1/29'
+    elif re.search(r'оренб[а-я\.]*\s*тракт\s*,?\s*10', text, re.I):
+        building = 'Оренб. тракт 10'
+    elif re.search(r'шмидта\s*,?\s*31', text, re.I):
+        building = 'Шмидта 31'
+    elif re.search(r'ершова\s*,?\s*2', text, re.I):
+        building = 'Ершова 2'
+    elif re.search(r'дркб', text, re.I):
+        building = 'ДРКБ (терминал 10)'
+    elif re.search(r'ркод|сибирск[а-я\.]*\s*тракт\s*,?\s*31', text, re.I):
+        building = 'РКОД (Сибирский тракт 31)'
+    elif re.search(r'здоровье\s*семьи|2-?я\s*юго-?западная', text, re.I):
+        building = 'Здоровье семьи (2-я Юго-Западная 35)'
+    elif re.search(r'гб\s*№?\s*7', text, re.I):
+        building = 'ГБ № 7'
+    elif re.search(r'бустан', text, re.I):
+        building = 'СК Бустан'
+    elif re.search(r'уникс', text, re.I):
+        building = 'УНИКС'
+    elif re.search(r'кремл[а-я\.]*\s*,?\s*16а', text, re.I):
+        building = 'Кремл. 16А'
+    elif re.search(r'кремл[а-я\.]*\s*,?\s*18', text, re.I):
+        building = 'Кремл. 18'
+    elif re.search(r'кремл[а-я\.]*\s*,?\s*35', text, re.I):
+        building = 'Кремл. 35'
+
+    r_m = re.search(r'\b(?:ауд\.?)\s*([0-9A-Za-zА-Яа-я\/\-]+)', text, re.I)
+    if r_m:
+        room = r_m.group(1).strip(' ,.-;')
+    elif re.search(r'учеб\.?\s*ком\.?\s*(\d+)', text, re.I):
+        m_uk = re.search(r'учеб\.?\s*ком\.?\s*(\d+)', text, re.I)
+        room = f'учеб. комната {m_uk.group(1)}'
+    elif 'учеб.ком' in text.lower() or 'учеб. ком' in text.lower():
+        room = 'учеб. комната'
+    elif 'бустан' in text.lower():
+        room = 'спорткомплекс'
+
+    return room, building
+
+
+def split_multiteacher_chunk(chunk):
+    """Split a single chunk if it defines multiple sequential or alternating teacher segments with week lists."""
+    matches = list(re.finditer(WEEK_SEG_PATTERN, chunk))
+    if len(matches) < 2:
+        return [chunk]
+
+    first_m = matches[0]
+    head = chunk[:first_m.start()].strip()
+
+    l_type_str = ''
+    if re.search(r'лекци|лек\.', chunk, re.I):
+        l_type_str = '(лекция)'
+    elif re.search(r'лаб', chunk, re.I):
+        l_type_str = '(лаб.)'
+
+    head_clean = re.sub(r'\(\s*\d+\s*лекци[йия][\)]?', ' ', head, flags=re.I)
+    head_clean = re.sub(r'\(\s*лекци[йия]\s*\)', ' ', head_clean, flags=re.I)
+    head_clean = re.sub(r'\(\s*лаб\.?\s*\)', ' ', head_clean, flags=re.I)
+    head_clean = re.sub(r'\b(?:лекция|лекций|практика|лаб\.?)\b', ' ', head_clean, flags=re.I)
+    head_clean = head_clean.strip(' ,.-;:()')
+
+    g_room, g_building = extract_ifmib_room_building(chunk)
+    g_room_str = f"ауд. {g_room}" if g_room else ""
+    g_loc_str = f"{g_room_str} {g_building}".strip()
+
+    sub_chunks = []
+    for i, m in enumerate(matches):
+        next_start = matches[i+1].start() if i + 1 < len(matches) else len(chunk)
+        tail = chunk[m.end():next_start]
+        r, b = extract_ifmib_room_building(tail)
+        if r or b:
+            r_str = f"ауд. {r}" if r else ""
+            loc_str = f"{r_str} {b}".strip()
+        else:
+            loc_str = g_loc_str
+
+        week_str = f"({m.group(1).strip()})"
+        teacher_str = m.group(2).strip()
+
+        parts = [head_clean]
+        if l_type_str:
+            parts.append(l_type_str)
+        parts.append(week_str)
+        parts.append(teacher_str)
+        if loc_str:
+            parts.append(loc_str)
+        sub_chunk = " ".join(parts)
+        sub_chunks.append(sub_chunk)
+
+    return sub_chunks
 
 
 def get_ifmib_xlsx_urls(retries=3):
@@ -101,7 +209,12 @@ def split_ifmib_cell_into_lessons(text):
         comma_splits = re.split(r',\s*(?=[А-ЯЁ][а-яё\s]+(?:\([0-9\s,-]+нед))', sp)
         sub_parts.extend(comma_splits)
 
-    results = [p.strip() for p in sub_parts if p.strip()]
+    results = []
+    for p in sub_parts:
+        p_str = p.strip()
+        if not p_str:
+            continue
+        results.extend(split_multiteacher_chunk(p_str))
 
     # If first sublesson lacks room/building but a trailing sublesson has it, share it
     if len(results) > 1:
@@ -146,10 +259,25 @@ def parse_ifmib_lesson_item(raw_text):
     week_type = 'all'
     explicit_weeks = None
 
-    week_m = re.search(r'\((?:[^)]*?(?:лекци[йия]|заняти[йия]|нед|недел)[^)]*?)\)', text, re.IGNORECASE)
+    # 2.1 First look for parenthesis containing 'нед'
+    week_m = re.search(r'\((?:[^)]*?(?:нед|недел)[^)]*?)\)', text, re.IGNORECASE)
     week_info_str = ''
     if week_m:
         week_info_str = week_m.group(0)
+
+    # 2.2 If not found in parens, search for "X, Y, Z нед." in text
+    if not week_info_str:
+        ext_m = re.search(rf'({WEEK_LIST}\s*нед\.?)', text, re.IGNORECASE)
+        if ext_m:
+            week_info_str = ext_m.group(0)
+
+    # 2.3 If still not found, check if there's any parenthesis with numbers/range (e.g. "(1-9)")
+    if not week_info_str:
+        num_m = re.search(r'\((?:[^)]*?\b\d+\s*-\s*\d+\b[^)]*?)\)', text)
+        if num_m and 'лекци' not in num_m.group(0).lower():
+            week_info_str = num_m.group(0)
+
+    if week_info_str:
         nums = [int(n) for n in re.findall(r'\b([1-9]|1[0-9]|2[0-5])\b', week_info_str)]
         ranges = re.findall(r'\b([1-9]|1[0-9])\s*-\s*([1-9]|1[0-9])\b', week_info_str)
         all_nums = set(nums)
@@ -196,53 +324,7 @@ def parse_ifmib_lesson_item(raw_text):
     teacher_str = ', '.join(teachers)
 
     # 5. Building & Room
-    building = ''
-    room = ''
-
-    if re.search(r'к\.?\s*маркса\s*,?\s*74а|км\s*,?\s*74а|сим\.?\s*центр', text, re.I):
-        building = 'К.Маркса 74а (сим.центр)'
-    elif re.search(r'к\.?\s*маркса\s*,?\s*76|км\s*,?\s*76', text, re.I):
-        building = 'К.Маркса 76 корп. 2'
-    elif re.search(r'к\.?\s*маркса\s*,?\s*74|км\s*,?\s*74', text, re.I):
-        building = 'К.Маркса 74'
-    elif re.search(r'лобачевского\s*1\s*/\s*29', text, re.I):
-        building = 'Лобачевского 1/29'
-    elif re.search(r'оренб[а-я\.]*\s*тракт\s*,?\s*10', text, re.I):
-        building = 'Оренб. тракт 10'
-    elif re.search(r'шмидта\s*,?\s*31', text, re.I):
-        building = 'Шмидта 31'
-    elif re.search(r'ершова\s*,?\s*2', text, re.I):
-        building = 'Ершова 2'
-    elif re.search(r'дркб', text, re.I):
-        building = 'ДРКБ (терминал 10)'
-    elif re.search(r'ркод|сибирск[а-я\.]*\s*тракт\s*,?\s*31', text, re.I):
-        building = 'РКОД (Сибирский тракт 31)'
-    elif re.search(r'здоровье\s*семьи|2-?я\s*юго-?западная', text, re.I):
-        building = 'Здоровье семьи (2-я Юго-Западная 35)'
-    elif re.search(r'гб\s*№?\s*7', text, re.I):
-        building = 'ГБ № 7'
-    elif re.search(r'бустан', text, re.I):
-        building = 'СК Бустан'
-    elif re.search(r'уникс', text, re.I):
-        building = 'УНИКС'
-    elif re.search(r'кремл[а-я\.]*\s*,?\s*16а', text, re.I):
-        building = 'Кремл. 16А'
-    elif re.search(r'кремл[а-я\.]*\s*,?\s*18', text, re.I):
-        building = 'Кремл. 18'
-    elif re.search(r'кремл[а-я\.]*\s*,?\s*35', text, re.I):
-        building = 'Кремл. 35'
-
-    # Room
-    r_m = re.search(r'\b(?:ауд\.?)\s*([0-9A-Za-zА-Яа-я\/\-]+)', text, re.I)
-    if r_m:
-        room = r_m.group(1).strip(' ,.-;')
-    elif re.search(r'учеб\.?\s*ком\.?\s*(\d+)', text, re.I):
-        m_uk = re.search(r'учеб\.?\s*ком\.?\s*(\d+)', text, re.I)
-        room = f'учеб. комната {m_uk.group(1)}'
-    elif 'учеб.ком' in text.lower() or 'учеб. ком' in text.lower():
-        room = 'учеб. комната'
-    elif 'бустан' in text.lower():
-        room = 'спорткомплекс'
+    room, building = extract_ifmib_room_building(text)
 
     # 6. Extract clean subject
     subject = text
@@ -282,6 +364,7 @@ def parse_ifmib_lesson_item(raw_text):
         subject = re.sub(b_pat, ' ', subject, flags=re.I)
 
     subject = re.sub(r'\(кор\.?2\)|\(сим\.центр\)', ' ', subject, flags=re.I)
+    subject = re.sub(r'\(\s*\d+\s*лекци[йия][\)]?', ' ', subject, flags=re.I)
     subject = re.sub(r'\b(?:лекция|лекций|практика|лаб\.?)\b', ' ', subject, flags=re.I)
     subject = re.sub(r'\(?\s*[0-9\s,-]+нед\.?\s*\)?', ' ', subject, flags=re.I)
     subject = re.sub(r'\s+', ' ', subject).strip(' ,.-;:()')
@@ -434,7 +517,8 @@ def parse_schedule_sheet(wb, course_name, is_angl):
                     parsed['teacher'].lower(),
                     parsed['weekStart'],
                     parsed['weekEnd'],
-                    parsed['weekType']
+                    parsed['weekType'],
+                    tuple(parsed.get('weeks') or [])
                 )
                 if dedup_key in seen:
                     continue

@@ -96,6 +96,90 @@ class IFMiBCellTests(unittest.TestCase):
                 save_ifmib_database({"groups": old_db["groups"][:2]}, path)
             self.assertEqual(path.read_bytes(), prev_content)
 
+    def test_multi_teacher_alternating_weeks_split(self):
+        raw = ('Статистические методы анализа в биологии и медицине (6 лекций 2, 4, 6, 8, 12, 14 нед.) Бурыкин И.М. ауд. 204А К.Маркса, 74 /'
+               'Гигиена (7 лекций) 3, 7, 11, 15 нед. Валеева Э.Р.,  5, 9, 13 нед. Степанова Н.В.  ауд.204А К.Маркса, 74')
+        parts = split_ifmib_cell_into_lessons(raw)
+        self.assertEqual(len(parts), 3)
+
+        p1 = parse_ifmib_lesson_item(parts[0])
+        self.assertEqual(p1['subject'], 'Статистические методы анализа в биологии и медицине')
+        self.assertEqual(p1['teacher'], 'Бурыкин И.М.')
+        self.assertEqual(p1['type'], 'lecture')
+        self.assertEqual(p1['weekType'], 'even')
+        self.assertEqual(p1['weeks'], [2, 4, 6, 8, 12, 14])
+        self.assertEqual(p1['room'], '204А')
+        self.assertEqual(p1['building'], 'К.Маркса 74')
+
+        p2 = parse_ifmib_lesson_item(parts[1])
+        self.assertEqual(p2['subject'], 'Гигиена')
+        self.assertEqual(p2['teacher'], 'Валеева Э.Р.')
+        self.assertEqual(p2['type'], 'lecture')
+        self.assertEqual(p2['weekType'], 'odd')
+        self.assertEqual(p2['weeks'], [3, 7, 11, 15])
+        self.assertEqual(p2['room'], '204А')
+        self.assertEqual(p2['building'], 'К.Маркса 74')
+
+        p3 = parse_ifmib_lesson_item(parts[2])
+        self.assertEqual(p3['subject'], 'Гигиена')
+        self.assertEqual(p3['teacher'], 'Степанова Н.В.')
+        self.assertEqual(p3['type'], 'lecture')
+        self.assertEqual(p3['weekType'], 'odd')
+        self.assertEqual(p3['weeks'], [5, 9, 13])
+        self.assertEqual(p3['room'], '204А')
+        self.assertEqual(p3['building'], 'К.Маркса 74')
+
+    def test_missing_closing_paren_lecture_count(self):
+        raw = 'Общественное здоровье и здравоохранение (7 лекций  3, 7, 11, 15 нед. Степанова Н.В., 5, 9, 13 нед.  Валеева Э.Р. ауд. 205А К.Маркса, 74'
+        parts = split_ifmib_cell_into_lessons(raw)
+        self.assertEqual(len(parts), 2)
+
+        p1 = parse_ifmib_lesson_item(parts[0])
+        self.assertEqual(p1['subject'], 'Общественное здоровье и здравоохранение')
+        self.assertEqual(p1['teacher'], 'Степанова Н.В.')
+        self.assertEqual(p1['type'], 'lecture')
+        self.assertEqual(p1['weekType'], 'odd')
+        self.assertEqual(p1['weeks'], [3, 7, 11, 15])
+        self.assertEqual(p1['room'], '205А')
+        self.assertEqual(p1['building'], 'К.Маркса 74')
+
+        p2 = parse_ifmib_lesson_item(parts[1])
+        self.assertEqual(p2['subject'], 'Общественное здоровье и здравоохранение')
+        self.assertEqual(p2['teacher'], 'Валеева Э.Р.')
+        self.assertEqual(p2['type'], 'lecture')
+        self.assertEqual(p2['weekType'], 'odd')
+        self.assertEqual(p2['weeks'], [5, 9, 13])
+        self.assertEqual(p2['room'], '205А')
+        self.assertEqual(p2['building'], 'К.Маркса 74')
+
+    def test_multi_teacher_distinct_classrooms(self):
+        raw = ('Методы исследования в бологии и медицине (3-4 нед. Харитонова М.А. ауд.016в  Кремл.18, '
+               '5-6 нед. Сыромятникова В.Ю. ауд.203В Кремл.18, 7-8 нед. Шайдуллова К.С.  Ауд.212 (бокс) КМ, 76 (к.2), '
+               '9-12 нед. Саляхутдинова Ш.М. ауд. 301 КМ, 74, 13-15 нед. Ибрагимова М.Я. Ауд.113В  Кремл. 18')
+        parts = split_ifmib_cell_into_lessons(raw)
+        self.assertEqual(len(parts), 5)
+
+        p1 = parse_ifmib_lesson_item(parts[0])
+        self.assertEqual(p1['teacher'], 'Харитонова М.А.')
+        self.assertEqual(p1['weekStart'], 3)
+        self.assertEqual(p1['weekEnd'], 4)
+        self.assertEqual(p1['room'], '016в')
+        self.assertEqual(p1['building'], 'Кремл. 18')
+
+        p3 = parse_ifmib_lesson_item(parts[2])
+        self.assertEqual(p3['teacher'], 'Шайдуллова К.С.')
+        self.assertEqual(p3['weekStart'], 7)
+        self.assertEqual(p3['weekEnd'], 8)
+        self.assertEqual(p3['room'], '212')
+        self.assertEqual(p3['building'], 'К.Маркса 76 корп. 2')
+
+        p4 = parse_ifmib_lesson_item(parts[3])
+        self.assertEqual(p4['teacher'], 'Саляхутдинова Ш.М.')
+        self.assertEqual(p4['weekStart'], 9)
+        self.assertEqual(p4['weekEnd'], 12)
+        self.assertEqual(p4['room'], '301')
+        self.assertEqual(p4['building'], 'К.Маркса 74')
+
 
 if __name__ == "__main__":
     unittest.main()
