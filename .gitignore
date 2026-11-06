@@ -1,5 +1,28 @@
 .venv/
+venv/
+env/
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
 *.xlsx
+.DS_Store
 AGENTS.MD
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# AI tooling & agents
+.superpowers/
+.codex/
+.claude/
+.gemini/
+.agents/
+.cursor/
+*.log
+*.tmp
