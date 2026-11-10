@@ -30,6 +30,31 @@ def split_cell_into_lesson_texts(text):
     res = [p.strip() for p in parts if p.strip()]
     return res if res else [trimmed]
 
+def extract_explicit_weeks(text):
+    """Return an exact list of weeks when the text specifies a discontinuous set or comma-separated list of weeks."""
+    found = set()
+    pattern = r'(\d{1,2}(?:\s*[-–]\s*\d{1,2})?(?:\s*(?:,|;|\.|\s)\s*(?:с\s+)?\d{1,2}(?:\s*[-–]\s*\d{1,2})?)*)\s*н(?:ед(?:ел[яьиь]*)?)?\.?'
+    for match in re.finditer(pattern, text, re.I):
+        raw_parts = re.split(r'[,;]|\s+и\s+', match.group(1))
+        for part in raw_parts:
+            part = re.sub(r'[^\d\-–]', '', part).strip()
+            if not part:
+                continue
+            bounds = re.split(r'[-–]', part)
+            if len(bounds) == 1:
+                start = end = int(bounds[0])
+            elif len(bounds) == 2 and bounds[0] and bounds[1]:
+                start = int(bounds[0])
+                end = int(bounds[1])
+            else:
+                continue
+            if 1 <= start <= end <= 30:
+                found.update(range(start, end + 1))
+    if not found:
+        return None
+    weeks = sorted(found)
+    return weeks if weeks != list(range(weeks[0], weeks[-1] + 1)) else None
+
 def parse_lesson_text(txt):
     trimmed = txt.strip()
     if not trimmed:
@@ -49,6 +74,14 @@ def parse_lesson_text(txt):
     week_type = "all"
     week_start = 1
     week_end = 18
+    explicit_weeks = extract_explicit_weeks(trimmed)
+    if explicit_weeks:
+        week_start = min(explicit_weeks)
+        week_end = max(explicit_weeks)
+        if all(w % 2 == 1 for w in explicit_weeks):
+            week_type = "odd"
+        elif all(w % 2 == 0 for w in explicit_weeks):
+            week_type = "even"
 
     range_pattern = r"\(\s*(?:с\s+)?(?:([нч]/н)\s*)?([0-9]{1,2})\s*-+\s*([0-9]{1,2})\s*(?:нед|недел|лаб|лек|пр|\))"
     parity_match = re.search(range_pattern, trimmed, flags=re.IGNORECASE)
@@ -283,6 +316,7 @@ def parse_lesson_text(txt):
             "weekType": week_type,
             "weekStart": week_start,
             "weekEnd": week_end,
+            "weeks": explicit_weeks,
             "customTime": custom_time
         })
 
@@ -508,7 +542,7 @@ def parse_schedule_xlsx(file_path, source_url):
                     if not meta:
                         continue
 
-                    key = f"{meta['dayIdx']}_{meta['timeSlot']}_{parsed['clean']}_{parsed['weekStart']}_{parsed['weekEnd']}_{parsed['weekType']}_{parsed['teacher']}_{parsed['room']}"
+                    key = f"{meta['dayIdx']}_{meta['timeSlot']}_{parsed['clean']}_{parsed['weekStart']}_{parsed['weekEnd']}_{parsed['weekType']}_{tuple(parsed.get('weeks') or [])}_{parsed['teacher']}_{parsed['room']}"
                     if key in seen:
                         continue
                     seen.add(key)
@@ -535,6 +569,8 @@ def parse_schedule_xlsx(file_path, source_url):
                         "timeStart": start_slot,
                         "timeEnd": end_slot
                     }
+                    if parsed.get("weeks") is not None:
+                        lesson["weeks"] = parsed["weeks"]
                     days_map[meta["dayIdx"]]["lessons"].append(lesson)
 
         days_list = []
