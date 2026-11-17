@@ -10,8 +10,8 @@
     "academicWeeksCount": 18,
     "weekParityRule": "odd_first"
   },
-  "updatedAt": "2026-11-05T23:59:10Z",
-  "sourceUrl": "http://kpfu.ru/portal/docs/F_435510422/Raspisanie.zanyatij.na.osennij.semestr_2026_2027_05.11.2026.xlsx",
+  "updatedAt": "2026-11-17T02:21:30Z",
+  "sourceUrl": "http://kpfu.ru/portal/docs/F_1615733139/Raspisanie.zanyatij.na.osennij.semestr..16.11.2026.xlsx",
   "groups": [
     {
       "id": "06-601",
@@ -7244,6 +7244,40 @@
               "time": "15:50-17:20",
               "timeStart": "15:50",
               "timeEnd": "17:20"
+            },
+            {
+              "id": "06-511-1673",
+              "subject": "Педагогика",
+              "rawText": "Педагогика (пр)\nКиртава Г.Т.\n12н, 906",
+              "teacher": "Киртава Г.Т.",
+              "room": "906",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 12,
+              "time": "15:50-17:20",
+              "timeStart": "15:50",
+              "timeEnd": "17:20"
+            },
+            {
+              "id": "06-511-1674",
+              "subject": "Педагогика",
+              "rawText": "Педагогика (пр)\nКиртава Г.Т.\n12н, 906",
+              "teacher": "Киртава Г.Т.",
+              "room": "906",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 12,
+              "time": "17:30-19:00",
+              "timeStart": "17:30",
+              "timeEnd": "19:00"
             }
           ]
         },
@@ -7366,6 +7400,40 @@
               "time": "13:50-15:20",
               "timeStart": "13:50",
               "timeEnd": "15:20"
+            },
+            {
+              "id": "06-511-1675",
+              "subject": "Педагогика",
+              "rawText": "Педагогика (пр)\nКиртава Г.Т..\n12-14н, 806",
+              "teacher": "Киртава Г.Т.",
+              "room": "806",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 14,
+              "time": "15:50-17:20",
+              "timeStart": "15:50",
+              "timeEnd": "17:20"
+            },
+            {
+              "id": "06-511-1676",
+              "subject": "Педагогика",
+              "rawText": "Педагогика (пр)\nКиртава Г.Т..\n12-14н, 806",
+              "teacher": "Киртава Г.Т.",
+              "room": "806",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 14,
+              "time": "17:30-19:00",
+              "timeStart": "17:30",
+              "timeEnd": "19:00"
             }
           ]
         },
@@ -13455,23 +13523,6 @@
               "time": "13:50-15:20",
               "timeStart": "13:50",
               "timeEnd": "15:20"
-            },
-            {
-              "id": "06-411-860",
-              "subject": "Педагогика",
-              "rawText": "Педагогика (пр)\nИлаева Р.А.\n13-17н, 806",
-              "teacher": "Илаева Р.А.",
-              "room": "806",
-              "building": "Кремлевская, 16А (Институт физики)",
-              "type": "practice",
-              "url": "",
-              "isAdditional": false,
-              "weekType": "all",
-              "weekStart": 13,
-              "weekEnd": 17,
-              "time": "15:50-17:20",
-              "timeStart": "15:50",
-              "timeEnd": "17:20"
             }
           ]
         },
@@ -29386,9 +29437,9 @@
               "timeEnd": "13:40"
             },
             {
-              "id": "06-519 (Теоретическая физика и моделирование физических процессов)-1456",
-              "subject": "Инновационные технологии",
-              "rawText": "Инновационные технологии  (л+пр)\nАлакшин Е.М.\n2-10н, 253 гл.зд",
+              "id": "06-519 (Теоретическая физика и моделирование физических процессов)-1677",
+              "subject": "Факультатив Инновационные технологии",
+              "rawText": "Факультатив: Инновационные технологии  (л+пр)\nАлакшин Е.М.\n2-10н, 253 гл.зд",
               "teacher": "Алакшин Е.М.",
               "room": "253",
               "building": "Главное здание",
@@ -31358,6 +31409,46 @@
                 17,
                 18
               ]
+            }
+          ]
+        },
+        {
+          "dayName": "четверг",
+          "dayIndex": 4,
+          "lessons": [
+            {
+              "id": "06-599-1678",
+              "subject": "Инновационные методики обучения математике",
+              "rawText": "Инновационные методики обучения математике (л+пр)\nСушков С.В.\n12-17н, 1101",
+              "teacher": "Сушков С.В.",
+              "room": "1101",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 17,
+              "time": "12:10-13:40",
+              "timeStart": "12:10",
+              "timeEnd": "13:40"
+            },
+            {
+              "id": "06-599-1679",
+              "subject": "Инновационные методики обучения математике",
+              "rawText": "Инновационные методики обучения математике (л+пр)\nСушков С.В.\n12-14н, 1101",
+              "teacher": "Сушков С.В.",
+              "room": "1101",
+              "building": "Кремлевская, 16А (Институт физики)",
+              "type": "practice",
+              "url": "",
+              "isAdditional": false,
+              "weekType": "all",
+              "weekStart": 12,
+              "weekEnd": 14,
+              "time": "13:50-15:20",
+              "timeStart": "13:50",
+              "timeEnd": "15:20"
             }
           ]
         }
