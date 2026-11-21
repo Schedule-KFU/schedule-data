@@ -26,8 +26,9 @@ def fetch_url(url, post_data=None, retries=3, backoff=1.5):
                     resp = requests.post(url, data=post_data, headers=HEADERS, timeout=25)
                 else:
                     resp = requests.get(url, headers=HEADERS, timeout=25)
+                resp.raise_for_status()
                 resp.encoding = "windows-1251"
-                return resp.text
+                html = resp.text
             else:
                 import urllib.request
                 import urllib.parse
@@ -42,11 +43,14 @@ def fetch_url(url, post_data=None, retries=3, backoff=1.5):
                     req = urllib.request.Request(url, headers=HEADERS)
                 with urllib.request.urlopen(req, timeout=25) as resp:
                     raw = resp.read()
-                    return raw.decode("windows-1251", errors="replace")
+                    html = raw.decode("windows-1251", errors="replace")
+            if not html.strip():
+                raise ValueError("Empty response")
+            return html
         except Exception as e:
             if attempt == retries - 1:
                 print(f"    [Error] Request failed for {url} after {retries} attempts: {e}", file=sys.stderr)
-                return None
+                raise ConnectionError(f"Request failed for {url} after {retries} attempts") from e
             time.sleep(backoff * (attempt + 1))
     return None
 
@@ -279,6 +283,7 @@ def run_curriculum_crawler(faculty_id, faculty_name, output_filename):
 
     parsed_plans = []
     total_plans_discovered = 0
+    failed_plans = []
 
     for s_idx, spec in enumerate(specialities, 1):
         spec_id = spec["id"]
@@ -302,6 +307,7 @@ def run_curriculum_crawler(faculty_id, faculty_name, output_filename):
 
             if not disciplines:
                 print(" [No table data]")
+                failed_plans.append(f"{spec_id}/{plan_id}")
                 continue
 
             max_course = 1
@@ -334,6 +340,9 @@ def run_curriculum_crawler(faculty_id, faculty_name, output_filename):
             })
 
             time.sleep(0.1)
+
+    if failed_plans:
+        raise ValueError(f"Failed to parse {len(failed_plans)} of {total_plans_discovered} discovered plans: {', '.join(failed_plans)}; previous output was preserved")
 
     result_data = {
         "version": 1,

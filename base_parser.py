@@ -5,6 +5,7 @@ import json
 import tempfile
 from collections import defaultdict, deque
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 try:
     import requests
@@ -25,9 +26,14 @@ DAYS_ORDER = [
 ]
 
 TEACHER_PATTERN = r"[А-ЯЁ][а-яё]+(?:-[А-ЯЁ][а-яё]+)?\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.?)?"
+try:
+    KAZAN_TIMEZONE = ZoneInfo("Europe/Kazan")
+except ZoneInfoNotFoundError:
+    # IANA installations commonly identify Kazan's time zone as Europe/Moscow.
+    KAZAN_TIMEZONE = ZoneInfo("Europe/Moscow")
 
 def compute_semester_string():
-    now = datetime.now()
+    now = datetime.now(KAZAN_TIMEZONE)
     month = now.month
     year = now.year
     is_autumn = month >= 9 or month <= 1
@@ -37,7 +43,9 @@ def compute_semester_string():
     return f"{sem_num} семестр {acad_start}/{acad_end}"
 
 def compute_semester_meta(ref_date=None):
-    now = ref_date or datetime.now()
+    now = ref_date or datetime.now(KAZAN_TIMEZONE)
+    if now.tzinfo is not None:
+        now = now.astimezone(KAZAN_TIMEZONE)
     month = now.month
     year = now.year
     is_autumn = month >= 9 or month <= 1

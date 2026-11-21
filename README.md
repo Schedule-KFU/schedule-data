@@ -1,4 +1,4 @@
-# Schedule KFU Data Provider
+# VPare KFU Data Provider
 
 Automated schedule provider and curriculum parser for:
 - **Institute of Computational Mathematics and Information Technologies (IVMIIT)**

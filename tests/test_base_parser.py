@@ -1,12 +1,19 @@
 import unittest
 import json
 import tempfile
+from datetime import datetime, timezone
 from pathlib import Path
 
-from base_parser import preserve_lesson_ids, save_database_with_cache_check
+from base_parser import compute_semester_meta, preserve_lesson_ids, save_database_with_cache_check
 
 
 class BaseParserTests(unittest.TestCase):
+    def test_semester_boundary_uses_kazan_date_for_aware_instant(self):
+        instant = datetime(2026, 8, 31, 22, 0, tzinfo=timezone.utc)
+        meta = compute_semester_meta(instant)
+        self.assertEqual(meta["semesterNumber"], 1)
+        self.assertEqual(meta["academicYear"], "2026/2027")
+
     def test_existing_ids_are_preserved_when_lessons_change(self):
         def lesson(identifier, subject):
             return {
